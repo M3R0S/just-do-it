@@ -1,6 +1,6 @@
 import { ClassNames } from ".";
 
-const classNames: ClassNames = (cls, additional = [], mods = {}) => {
+export const classNames: ClassNames = (cls, additional = [], mods = {}) => {
     return [
         cls,
         ...additional,
@@ -10,6 +10,4 @@ const classNames: ClassNames = (cls, additional = [], mods = {}) => {
             }
         }),
     ].join(" ");
-};
-
-export const cln = classNames;
+}

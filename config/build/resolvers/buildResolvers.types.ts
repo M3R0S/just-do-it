@@ -1,3 +1,5 @@
 import { ResolveOptions } from "webpack";
 
-export type BuildResolvers = () => ResolveOptions
+import { BuildOptions } from "../types";
+
+export type BuildResolvers = (options: BuildOptions) => ResolveOptions
