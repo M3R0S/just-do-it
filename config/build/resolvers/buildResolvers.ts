@@ -1,4 +1,4 @@
-import { BuildResolvers } from ".";
+import { BuildResolvers } from "./buildResolvers.types";
 
 export const buildResolvers: BuildResolvers = (options) => {
     return {

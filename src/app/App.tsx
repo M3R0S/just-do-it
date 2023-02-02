@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 
 import "./styles/index.scss";
-import { useTheme } from "./providers/theme";
-import { MainPage } from "pages/MainPage";
-import { AboutPage } from "pages/AboutPage";
-import { cln } from "../shared/lib";
+import { useTheme } from "./providers/Theme";
+import { MainPage } from "pages/Main";
+import { AboutPage } from "pages/About";
+import { cln } from "shared/lib";
 
 export const App: FC = () => {
     const { theme, toggleTheme } = useTheme();

@@ -1,4 +1,4 @@
-import { BuildLoaders } from ".";
+import { BuildLoaders } from "./buildLoaders.types";
 import { sassLoader } from "./sassLoader";
 import { typescriptLoader } from "./typescriptLoader";
 

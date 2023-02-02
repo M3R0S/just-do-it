@@ -1,4 +1,4 @@
-import { TypescriptLoader } from ".";
+import { TypescriptLoader } from "./typescriptLoader.types";
 
 export const typescriptLoader: TypescriptLoader = () => {
     return {

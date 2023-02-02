@@ -1,4 +1,4 @@
-import { BuildWebpackConfig } from ".";
+import { BuildWebpackConfig } from "./buildWebpackConfig.types";
 import { buildDevServer } from "../devServer";
 import { buildLoaders } from "../loaders";
 import { buildPlugins } from "../plugins";

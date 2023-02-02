@@ -2,7 +2,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { ProgressPlugin } from "webpack";
 
-import { BuildPlugins } from ".";
+import { BuildPlugins } from "./buildPlugins.types";
 
 export const buildPlugins: BuildPlugins = (options) => {
     const { paths } = options;

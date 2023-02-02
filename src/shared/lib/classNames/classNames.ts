@@ -1,4 +1,4 @@
-import { ClassNames } from ".";
+import { ClassNames } from "./classNames.types";
 
 export const classNames: ClassNames = (cls, additional = [], mods = {}) => {
     return [
