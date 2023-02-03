@@ -8,8 +8,8 @@ export interface BuildPath {
 }
 
 export interface BuildEnv {
-    MODE: BuildMode
-    PORT: number
+    MODE: BuildMode | undefined
+    PORT: number | undefined
 }
 
 export interface BuildOptions {
