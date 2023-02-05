@@ -8,13 +8,15 @@ import {
 
 export const useTheme: UseTheme = () => {
     const { theme, setTheme } = useContext(ThemeContext);
-
+    
+    const isLightTheme = theme === "light"
+    
     const toggleTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
+        const newTheme = isLightTheme ? "dark" : "light";
 
         setTheme(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    return { theme, toggleTheme };
+    return { theme, isLightTheme, toggleTheme };
 };

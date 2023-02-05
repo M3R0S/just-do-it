@@ -20,6 +20,7 @@ export const buildWebpackConfig: BuildWebpackConfig = (options) => {
         output: {
             filename: "[name].[contenthash].js",
             path: paths.build,
+            assetModuleFilename: 'assets/[hash][ext][query]',
             clean: true,
         },
         
