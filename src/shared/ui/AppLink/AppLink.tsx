@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import cl from "./AppLink.module.scss";
 import { AppLinkProps } from "./AppLink.types";
-import { cln } from "shared/lib";
+import { cln } from "shared/lib/classNames";
 import { Link } from "react-router-dom";
 
 export const AppLink: FC<AppLinkProps> = (props) => {

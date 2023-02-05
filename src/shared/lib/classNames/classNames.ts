@@ -1,6 +1,6 @@
 import { ClassNames } from "./classNames.types";
 
-export const classNames: ClassNames = (cls, additional = [], mods = {}) => {
+const classNames: ClassNames = (cls, additional = [], mods = {}) => {
     return [
         cls,
         ...additional.filter(Boolean),
@@ -10,4 +10,6 @@ export const classNames: ClassNames = (cls, additional = [], mods = {}) => {
             }
         }),
     ].join(" ");
-}
+};
+
+export const cln = classNames;

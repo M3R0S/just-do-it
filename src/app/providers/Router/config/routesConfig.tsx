@@ -1,4 +1,5 @@
-import { PathRoutes, RoutesConfig } from "./routesConfig.types";
+import { RoutesConfig } from "./routesConfig.types";
+import { PathRoutes } from "shared/config/routes";
 import { AboutPage } from "pages/About";
 import { MainPage } from "pages/Main";
 

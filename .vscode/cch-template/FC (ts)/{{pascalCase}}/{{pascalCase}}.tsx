@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import cl from './{{pascalCase}}.module.scss'
 import { {{pascalCase}}Props } from "./{{pascalCase}}.types";
-import { cln } from "shared/lib";
+import { cln } from "shared/lib/classNames";
 
 export const {{pascalCase}}: FC<{{pascalCase}}Props> = (props) => {
     const { className = "" } = props;

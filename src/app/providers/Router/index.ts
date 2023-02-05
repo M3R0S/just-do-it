@@ -1,3 +1,1 @@
-export { AppRouter } from "./ui/AppRouter"
-
-export { PathRoutes } from "./config"
+export { AppRouter } from "./ui/AppRouter";

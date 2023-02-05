@@ -6,7 +6,7 @@ import {
     Theme,
     ThemeContext,
     ThemeContextProps,
-} from "../../lib/ThemeContext";
+} from "shared/lib/context/ThemeContext";
 
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || "light";
