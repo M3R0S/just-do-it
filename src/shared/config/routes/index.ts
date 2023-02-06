@@ -1,1 +1,1 @@
-export { PathRoutes } from "./pathRoutesConfig"
+export { PathRoutes } from "./types/pathRoutesTypes";

@@ -1,6 +1,6 @@
 import { ClassNames } from "./classNames.types";
 
-const classNames: ClassNames = (cls, additional = [], mods = {}) => {
+const classNames: ClassNames = (cls = "", additional = [], mods = {}) => {
     return [
         cls,
         ...additional.filter(Boolean),

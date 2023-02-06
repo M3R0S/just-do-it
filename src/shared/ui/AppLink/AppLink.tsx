@@ -1,9 +1,10 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 import cl from "./AppLink.module.scss";
 import { AppLinkProps } from "./AppLink.types";
-import { cln } from "shared/lib/classNames";
-import { Link } from "react-router-dom";
+
+import { cln } from "shared/lib";
 
 export const AppLink: FC<AppLinkProps> = (props) => {
     const { to, className, children, theme = "primary", ...otherProps } = props;

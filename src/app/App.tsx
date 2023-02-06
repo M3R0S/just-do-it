@@ -1,10 +1,11 @@
 import { FC } from "react";
 
-import "./styles/index.scss";
-import { useTheme } from "shared/lib/hooks/useTheme";
+import "./App.scss";
 import { AppRouter } from "./providers/Router";
-import { cln } from "shared/lib/classNames";
+
 import { Navbar } from "widgets/Navbar";
+import { useTheme } from "shared/lib/hooks";
+import { cln } from "shared/lib";
 
 export const App: FC = () => {
     const { theme } = useTheme();
@@ -12,7 +13,6 @@ export const App: FC = () => {
     return (
         <div className={cln("app", [theme])}>
             <Navbar />
-            
             <AppRouter />
         </div>
     );

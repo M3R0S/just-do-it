@@ -2,9 +2,10 @@ import { FC } from "react";
 
 import cl from "./Navbar.module.scss";
 import { NavbarProps } from "./Navbar.types";
-import { cln } from "shared/lib/classNames";
-import { AppLink } from "shared/ui/AppLink";
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
+
+import { ThemeSwitcher } from "features/ThemeSwitcher";
+import { cln } from "shared/lib";
+import { AppLink } from "shared/ui";
 
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;

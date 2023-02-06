@@ -1,4 +1,0 @@
-export * from "./AboutPage.lazy"
-
-
-
