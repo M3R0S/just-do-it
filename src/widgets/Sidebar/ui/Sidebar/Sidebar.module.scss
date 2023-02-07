@@ -1,0 +1,22 @@
+.sidebar {
+    width: var(--width-sidebar);
+    height: var(--height-sidebar);
+    position: relative;
+
+    background: var(--inverted-bg-color);
+
+    transition: var(--transition-switch-theme), width 0.3s linear;
+}
+
+.collapsed {
+    width: var(--width-sidebar-collapsed);
+}
+
+.switchers {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+}

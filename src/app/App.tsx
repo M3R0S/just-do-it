@@ -6,6 +6,7 @@ import { AppRouter } from "./providers/Router";
 import { Navbar } from "widgets/Navbar";
 import { useTheme } from "shared/lib/hooks";
 import { cln } from "shared/lib";
+import { Sidebar } from "widgets/Sidebar";
 
 export const App: FC = () => {
     const { theme } = useTheme();
@@ -13,7 +14,10 @@ export const App: FC = () => {
     return (
         <div className={cln("app", [theme])}>
             <Navbar />
-            <AppRouter />
+            <div className="content_page">
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     );
 };

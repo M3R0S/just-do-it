@@ -13,8 +13,13 @@
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
     //? Размеры
-    --navbar-height: 5rem;
+    --height-navbar: 5rem;
+
+    --width-sidebar: 200px;
+    --width-sidebar-collapsed: 80px;
+    --height-sidebar: calc(100vh - var(--height-navbar));
 
     //? Анимации
-    --transition-switch-theme: all 0.5s linear;
+    --transition-switch-theme: background 0.5s linear, color 0.5s linear,
+        fill 0.5s linear;
 }
