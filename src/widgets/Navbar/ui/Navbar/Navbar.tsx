@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import cl from "./Navbar.module.scss";
 import { NavbarProps } from "./Navbar.types";
@@ -9,14 +10,16 @@ import { AppLink } from "shared/ui";
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
 
+    const { t, i18n } = useTranslation();
+
     return (
         <header className={cln(cl.navbar, [className])}>
             <nav className={cl.links}>
                 <AppLink theme="primary-inverted" to="/">
-                    Главная
+                    {t("Main")}
                 </AppLink>
                 <AppLink theme="primary-inverted" to="/about">
-                    О сайте
+                    {t("About us")}
                 </AppLink>
             </nav>
         </header>

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Suspense } from "react";
 
 import "./App.scss";
 import { AppRouter } from "./providers/Router";
@@ -13,11 +13,13 @@ export const App: FC = () => {
 
     return (
         <div className={cln("app", [theme])}>
-            <Navbar />
-            <div className="content_page">
-                <Sidebar />
-                <AppRouter />
-            </div>
+            <Suspense fallback="Перевод загружается...">
+                <Navbar />
+                <div className="content_page">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     );
 };
