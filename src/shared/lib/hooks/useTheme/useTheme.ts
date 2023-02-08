@@ -8,9 +8,9 @@ import {
 
 export const useTheme: UseTheme = () => {
     const { theme, setTheme } = useContext(ThemeContext);
-    
-    const isLightTheme = theme === "light"
-    
+
+    const isLightTheme = theme === "light";
+
     const toggleTheme = () => {
         const newTheme = isLightTheme ? "dark" : "light";
 

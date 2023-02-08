@@ -10,7 +10,7 @@ import { AppLink } from "shared/ui";
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
 
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <header className={cln(cl.navbar, [className])}>
@@ -18,7 +18,11 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 <AppLink theme="primary-inverted" to="/" className={cl.link}>
                     {t("Main")}
                 </AppLink>
-                <AppLink theme="primary-inverted" to="/about" className={cl.link}>
+                <AppLink
+                    theme="primary-inverted"
+                    to="/about"
+                    className={cl.link}
+                >
                     {t("About us")}
                 </AppLink>
             </nav>

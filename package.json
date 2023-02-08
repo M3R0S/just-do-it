@@ -6,7 +6,9 @@
   "scripts": {
     "build:prod": "webpack --env MODE=production",
     "build:dev": "webpack --env MODE=development",
-    "start": "webpack serve --env PORT=3000"
+    "start": "webpack serve --env PORT=3000",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{ts,tsx,scss}\""
   },
   "keywords": [],
   "author": "",
@@ -21,10 +23,15 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "^2.8.4",
     "react-refresh": "^0.12.0",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",

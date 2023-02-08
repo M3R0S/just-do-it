@@ -1,3 +1,3 @@
-export { webpackConfig } from "./webpackConfig"
+export { webpackConfig } from "./webpackConfig";
 
-export * from "./types/webpackConfigSharedTypes"
+export * from "./types/webpackConfigSharedTypes";

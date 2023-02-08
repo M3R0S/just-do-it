@@ -9,7 +9,7 @@ import ThemeSvg from "shared/assets/svg/theme.svg";
 import { Button } from "shared/ui";
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
-    const { className = "", children, ...otherProps } = props;
+    const { className = "", ...otherProps } = props;
 
     const { toggleTheme } = useTheme();
 

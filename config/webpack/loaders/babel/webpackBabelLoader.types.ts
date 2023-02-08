@@ -1,3 +1,3 @@
 import { RuleSetRule } from "webpack";
 
-export type WebpackBabelLoader = () => RuleSetRule
+export type WebpackBabelLoader = () => RuleSetRule;

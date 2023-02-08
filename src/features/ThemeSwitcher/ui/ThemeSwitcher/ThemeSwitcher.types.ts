@@ -1,3 +1,3 @@
 export interface ThemeSwitcherProps {
-    className?: string
+    className?: string;
 }
