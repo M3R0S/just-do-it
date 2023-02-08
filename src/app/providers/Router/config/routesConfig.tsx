@@ -3,7 +3,7 @@ import { RoutesConfig } from "./routesConfig.types";
 import { AboutPage } from "pages/About";
 import { MainPage } from "pages/Main";
 
-import { PathRoutes } from "shared/config/routes";
+import { PathRoutes } from "shared/config/pathRoutes";
 
 export const routesConfig: RoutesConfig = [
     {

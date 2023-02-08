@@ -3,10 +3,13 @@ import { Route, Routes } from "react-router-dom";
 
 import cl from "./AppRouter.module.scss";
 import { routesConfig } from "../config/routesConfig";
+import { useTranslation } from "react-i18next";
 
 export const AppRouter: FC = () => {
+    const { t } = useTranslation();
+
     return (
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<h1>{t("Loading")}</h1>}>
             <Routes>
                 {routesConfig.map(({ element, id, ...otherProps }) => (
                     <Route

@@ -15,10 +15,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
     return (
         <header className={cln(cl.navbar, [className])}>
             <nav className={cl.links}>
-                <AppLink theme="primary-inverted" to="/">
+                <AppLink theme="primary-inverted" to="/" className={cl.link}>
                     {t("Main")}
                 </AppLink>
-                <AppLink theme="primary-inverted" to="/about">
+                <AppLink theme="primary-inverted" to="/about" className={cl.link}>
                     {t("About us")}
                 </AppLink>
             </nav>

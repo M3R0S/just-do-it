@@ -4,8 +4,8 @@ import cl from "./Sidebar.module.scss";
 import { SidebarProps } from "./Sidebar.types";
 
 import { ThemeSwitcher } from "features/ThemeSwitcher";
+import { LangSwitcher } from "features/LangSwitcher";
 import { cln } from "shared/lib";
-import { useTranslation } from "react-i18next";
 
 export const Sidebar: FC<SidebarProps> = (props) => {
     const { className } = props;
@@ -16,8 +16,6 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         setCollapsed((prev) => !prev);
     };
 
-    const { t, i18n } = useTranslation();
-
     return (
         <div
             className={cln(cl.sidebar, [className], {
@@ -27,15 +25,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             <button onClick={onToggle}>toggle</button>
             <div className={cl.switchers}>
                 <ThemeSwitcher />
-                <button
-                    onClick={() => {
-                        i18n.changeLanguage(
-                            i18n.language === "ru" ? "en" : "ru"
-                        );
-                    }}
-                >
-                    {t("Translate")}
-                </button>
+                <LangSwitcher />
             </div>
         </div>
     );

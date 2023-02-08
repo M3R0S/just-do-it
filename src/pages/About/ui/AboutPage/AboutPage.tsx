@@ -1,11 +1,13 @@
-import { FC } from "react"
+import { FC } from "react";
+
+import cl from "./AboutPage.module.scss";
+
+import { useTranslation } from "react-i18next";
 
 const AboutPage: FC = () => {
-   return (
-       <div>
-            AboutPage
-       </div>
-   )
-}
+    const { t } = useTranslation("aboutPage");
 
-export default AboutPage
+    return <div className={cl.main}>{t("About Page")}</div>;
+};
+
+export default AboutPage;

@@ -4,9 +4,11 @@ import { webpackAssetsLoader } from "./assets/webpackAssetsLoader";
 import { webpackSassLoader } from "./sass/webpackSassLoader";
 import { webpackSvgLoader } from "./svg/webpackSvgLoader";
 import { webpackTypescriptLoader } from "./typescript/webpackTypescriptLoader";
+import { webpackBabelLoader } from "./babel/webpackBabelLoader";
 
 export const webpackLoaders: WebpackLoaders = (options) => {
     return [
+        webpackBabelLoader(),
         webpackTypescriptLoader(),
         webpackSassLoader(options),
         webpackSvgLoader(),
