@@ -1,21 +1,17 @@
 .navbar {
-    width: 100%;
-    height: var(--height-navbar);
-    padding: 2rem;
-
     display: flex;
     align-items: center;
-
+    padding: 2rem;
+    width: 100%;
+    height: var(--height-navbar);
     background: var(--inverted-bg-color);
-
     transition: var(--transition-switch-theme-background);
 }
 
 .links {
-    margin-left: auto;
-
     display: flex;
     column-gap: 2rem;
+    margin-left: auto;
 
     .link {
         transition: var(--transition-switch-theme-color);

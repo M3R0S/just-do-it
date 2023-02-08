@@ -1,10 +1,8 @@
 .sidebar {
+    position: relative;
     width: var(--width-sidebar);
     height: var(--height-sidebar);
-    position: relative;
-
     background: var(--inverted-bg-color);
-
     transition: var(--transition-switch-theme-background), width 0.3s linear;
 }
 
@@ -13,11 +11,10 @@
 }
 
 .switchers {
-    width: 100%;
     position: absolute;
     bottom: 20px;
-
     display: flex;
     flex-direction: column;
+    width: 100%;
     row-gap: 1rem;
 }
