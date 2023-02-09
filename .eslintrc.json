@@ -28,6 +28,6 @@
         "react/react-in-jsx-scope": ["off"],
         "@typescript-eslint/ban-ts-comment": ["warn"],
         "prettier/prettier": ["error"],
-        "i18next/no-literal-string": ["warn", { "markupOnly": true , "ignoreAttribute": ["stroke"]} ]
+        "i18next/no-literal-string": ["warn", { "markupOnly": true , "onlyAttribute": [""]} ]
     }
 }
