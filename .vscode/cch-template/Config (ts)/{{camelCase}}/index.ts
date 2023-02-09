@@ -1,2 +1,2 @@
-export * from "./{{camelCase}}"
-export * from "./{{camelCase}}.types"
+export * from "./{{camelCase}}";
+export * from "./{{camelCase}}.types";

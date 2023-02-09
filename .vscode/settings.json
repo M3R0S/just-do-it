@@ -2,7 +2,10 @@
     "i18n-ally.localesPaths": "public/locales",
     "i18n-ally.sourceLanguage": "en",
     "i18n-ally.keystyle": "nested",
+    "scss.validate": false,
+    "css.validate": false,
+    "less.validate": false,
     "editor.codeActionsOnSave": {
         "source.fixAll.stylelint": true
-        }
+    },
 }

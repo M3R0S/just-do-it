@@ -15,6 +15,7 @@ export const App: FC = () => {
         <div className={cln("app", [theme])}>
             <Suspense fallback="Перевод загружается...">
                 <Navbar />
+
                 <div className="content_page">
                     <Sidebar />
                     <AppRouter />
