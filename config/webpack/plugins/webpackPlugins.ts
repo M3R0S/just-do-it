@@ -27,8 +27,8 @@ export const webpackPlugins: WebpackPlugins = (options) => {
     ];
 
     if (isDev) {
-        plugins.push(new HotModuleReplacementPlugin());
         plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(new HotModuleReplacementPlugin());
     }
 
     return plugins;

@@ -4,11 +4,9 @@ const classNames: ClassNames = (cls = "", additional = [], mods = {}) => {
     return [
         cls,
         ...additional.filter(Boolean),
-        ...Object.entries(mods).map(([className, isInclude]) => {
-            if (isInclude) {
-                return className;
-            }
-        }),
+        ...Object.entries(mods)
+            .filter(([, isInclude]) => Boolean(isInclude))
+            .map(([className]) => className),
     ].join(" ");
 };
 
