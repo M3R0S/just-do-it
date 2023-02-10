@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import cl from './{{pascalCase}}.module.scss'
+import cl from "./{{pascalCase}}.module.scss";
 import { {{pascalCase}}Props } from "./{{pascalCase}}.types";
 
 import { cln } from "shared/lib";

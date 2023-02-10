@@ -1,1 +1,1 @@
-export { {{pascalCase}} } from "./{{pascalCase}}/{{pascalCase}}"
+export { {{pascalCase}} } from "./{{pascalCase}}/{{pascalCase}}";

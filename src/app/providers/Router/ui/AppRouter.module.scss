@@ -2,3 +2,8 @@
     flex-grow: 1;
     padding: 2rem;
 }
+
+.loader {
+    flex-grow: 1;
+    height: 100vh - var(--height-navbar);
+}

@@ -1,0 +1,10 @@
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg {
+    fill: var(--primary-color);
+    transition: var(--transition-switch-theme-fill);
+}

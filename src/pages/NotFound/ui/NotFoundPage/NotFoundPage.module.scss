@@ -1,0 +1,12 @@
+.not_found_page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.title {
+    font: var(--font-l);
+    color: var(--primary-color);
+    transition: var(--transition-switch-theme-color);
+}
