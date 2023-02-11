@@ -9,8 +9,13 @@
     color: var(--primary-color);
     background-color: var(--bg-color);
     transition: var(--transition-switch-theme-background);
-}
 
-.content_page {
-    display: flex;
+    &__loader {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &__content_page {
+        display: flex;
+    }
 }

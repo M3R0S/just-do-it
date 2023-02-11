@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import cl from "./Navbar.module.scss";
 import { NavbarProps } from "./Navbar.types";
 
-import { cln } from "shared/lib";
+import { cln } from "shared/lib/helpers";
 import { AppLink } from "shared/ui";
 
 export const Navbar: FC<NavbarProps> = (props) => {

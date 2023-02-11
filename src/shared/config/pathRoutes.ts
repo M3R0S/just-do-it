@@ -1,4 +1,4 @@
-import { ValueOf } from "shared/lib/types";
+import { ValueOf } from "shared/lib/types/helpersTypes";
 
 export const PathRoutes = {
     MAIN: "/",

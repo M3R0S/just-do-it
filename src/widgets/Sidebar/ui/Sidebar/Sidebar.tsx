@@ -5,7 +5,7 @@ import { SidebarProps } from "./Sidebar.types";
 
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
-import { cln } from "shared/lib";
+import { cln } from "shared/lib/helpers";
 
 export const Sidebar: FC<SidebarProps> = (props) => {
     const { className } = props;

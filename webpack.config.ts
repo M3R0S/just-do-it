@@ -1,14 +1,15 @@
 import path from "path";
+import { Configuration } from "webpack";
 
+import { webpackConfig } from "./config/webpack/webpackConfig";
 import {
-    webpackConfig,
     WebpackEnv,
     WebpackMode,
     WebpackOptions,
     WebpackPath,
-} from "./config/webpack";
+} from "./config/webpack/types/webpackConfigSharedTypes";
 
-export default (env: WebpackEnv) => {
+export default (env: WebpackEnv): Configuration => {
     const mode: WebpackMode = env.MODE || "development";
     const port: number = env.PORT || 3000;
     const isDev = mode === "development";

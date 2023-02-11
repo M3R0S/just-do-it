@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import cl from "./LangSwitcher.module.scss";
 import { LangSwitcherProps } from "./LangSwitcher.types";
 
-import { cln } from "shared/lib";
+import { cln } from "shared/lib/helpers";
 import { Lang } from "shared/config/lang";
 import { Button } from "shared/ui";
 

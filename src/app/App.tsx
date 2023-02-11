@@ -4,19 +4,19 @@ import "./styles/app.scss";
 import { AppRouter } from "./providers/Router";
 
 import { Navbar } from "widgets/Navbar";
-import { useTheme } from "shared/lib/hooks";
-import { cln } from "shared/lib";
 import { Sidebar } from "widgets/Sidebar";
+import { useTheme } from "shared/lib/hooks";
+import { cln } from "shared/lib/helpers";
+import { Loader } from "shared/ui";
 
 export const App: FC = () => {
     const { theme } = useTheme();
 
     return (
         <div className={cln("app", [theme])}>
-            <Suspense fallback="Перевод загружается...">
+            <Suspense fallback={<Loader className="app__loader" />}>
                 <Navbar />
-
-                <div className="content_page">
+                <div className="app__content_page">
                     <Sidebar />
                     <AppRouter />
                 </div>
