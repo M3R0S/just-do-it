@@ -9,9 +9,11 @@
         "jsx": "react-jsx",
         "allowJs": true,
         "moduleResolution": "node",
+        "sourceMap": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true
     },
+    "exclude": ["node_modules", ".vscode/**/*"],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"

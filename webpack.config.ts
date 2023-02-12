@@ -6,7 +6,7 @@ import {
     WebpackEnv,
     WebpackMode,
     WebpackOptions,
-    WebpackPath,
+    WebpackPaths,
 } from "./config/webpack/types/webpackConfigSharedTypes";
 
 export default (env: WebpackEnv): Configuration => {
@@ -14,7 +14,7 @@ export default (env: WebpackEnv): Configuration => {
     const port: number = env.PORT || 3000;
     const isDev = mode === "development";
 
-    const paths: WebpackPath = {
+    const paths: WebpackPaths = {
         build: path.resolve(__dirname, "build"),
         entry: path.resolve(__dirname, "src", "index.tsx"),
         html: path.resolve(__dirname, "public", "index.html"),

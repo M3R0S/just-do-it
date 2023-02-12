@@ -1,6 +1,6 @@
 export type WebpackMode = "production" | "development";
 
-export interface WebpackPath {
+export interface WebpackPaths {
     entry: string;
     build: string;
     html: string;
@@ -14,7 +14,7 @@ export interface WebpackEnv {
 
 export interface WebpackOptions {
     mode: WebpackMode;
-    paths: WebpackPath;
+    paths: WebpackPaths;
     isDev: boolean;
     port: number;
 }
