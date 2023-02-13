@@ -6,6 +6,7 @@ import { NavbarProps } from "./Navbar.types";
 
 import { cln } from "shared/lib/helpers";
 import { AppLink } from "shared/ui";
+import { ButtonError } from "shared/ui/ErrorBoundary/ButtonError";
 
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
@@ -25,6 +26,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 >
                     {t("About us")}
                 </AppLink>
+                <ButtonError />
             </nav>
         </header>
     );

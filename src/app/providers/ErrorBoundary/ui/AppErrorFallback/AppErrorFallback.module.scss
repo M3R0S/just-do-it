@@ -1,0 +1,13 @@
+.app_error_fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    font: var(--font-l);
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    row-gap: 3rem;
+}

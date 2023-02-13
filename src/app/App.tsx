@@ -2,6 +2,7 @@ import { FC, Suspense } from "react";
 
 import "./styles/app.scss";
 import { AppRouter } from "./providers/Router";
+import { AppErrorBoundary } from "./providers/ErrorBoundary";
 
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
@@ -15,11 +16,13 @@ export const App: FC = () => {
     return (
         <div className={cln("app", [theme])}>
             <Suspense fallback={<Loader className="app__loader" />}>
-                <Navbar />
-                <div className="app__content_page">
-                    <Sidebar />
-                    <AppRouter />
-                </div>
+                <AppErrorBoundary>
+                    <Navbar />
+                    <div className="app__content_page">
+                        <Sidebar />
+                        <AppRouter />
+                    </div>
+                </AppErrorBoundary>
             </Suspense>
         </div>
     );

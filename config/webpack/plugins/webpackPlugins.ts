@@ -23,7 +23,7 @@ export const webpackPlugins: WebpackPlugins = (options) => {
     ];
 
     if (isDev) {
-        plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
     }
 
     return plugins;
