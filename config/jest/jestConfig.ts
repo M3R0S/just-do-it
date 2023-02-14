@@ -1,3 +1,5 @@
+import path from "path";
+
 import { JestConfig } from "./jestConfig.types";
 
 export const jestConfig: JestConfig = () => {
@@ -17,5 +19,11 @@ export const jestConfig: JestConfig = () => {
             "node",
         ],
         testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+        modulePaths: ["<rootDir>/src"],
+        setupFilesAfterEnv: ["<rootDir>/config/jest/jestSetup.ts"],
+        moduleNameMapper: {
+            "\\.s?css$": "identity-obj-proxy",
+            "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+        },
     };
 };
