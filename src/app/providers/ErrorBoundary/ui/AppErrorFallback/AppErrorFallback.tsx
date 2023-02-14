@@ -16,7 +16,7 @@ export const AppErrorFallback: FC = () => {
         <div className={cl.app_error_fallback}>
             <h1 className={cl.title}>{t("A global error has occurred")}</h1>
             <p className={cl.info}>{t("Try to reload the page")}</p>
-            <Button className={cl.reload} onClick={reload}>
+            <Button theme="reboot" className={cl.reboot} onClick={reload}>
                 {t("Reboot")}
             </Button>
         </div>

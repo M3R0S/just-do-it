@@ -1,12 +1,13 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { DefinePlugin, ProgressPlugin } from "webpack";
 
 import { WebpackPlugins } from "./webpackPlugins.types";
 
 export const webpackPlugins: WebpackPlugins = (options) => {
-    const { paths, isDev } = options;
+    const { paths, isDev, isAnalize } = options;
 
     const plugins = [
         new HtmlWebpackPlugin({
@@ -24,6 +25,10 @@ export const webpackPlugins: WebpackPlugins = (options) => {
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+    }
+
+    if (isAnalize) {
+        plugins.push(new BundleAnalyzerPlugin());
     }
 
     return plugins;

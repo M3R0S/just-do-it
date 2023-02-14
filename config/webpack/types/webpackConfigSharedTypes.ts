@@ -10,6 +10,7 @@ export interface WebpackPaths {
 export interface WebpackEnv {
     MODE: WebpackMode | undefined;
     PORT: number | undefined;
+    ANALYZE: boolean | undefined;
 }
 
 export interface WebpackOptions {
@@ -17,4 +18,5 @@ export interface WebpackOptions {
     paths: WebpackPaths;
     isDev: boolean;
     port: number;
+    isAnalize: boolean;
 }

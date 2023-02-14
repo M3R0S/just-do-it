@@ -13,6 +13,7 @@ export default (env: WebpackEnv): Configuration => {
     const mode: WebpackMode = env.MODE || "development";
     const port: number = env.PORT || 3000;
     const isDev = mode === "development";
+    const isAnalize: boolean = env.ANALYZE || false;
 
     const paths: WebpackPaths = {
         build: path.resolve(__dirname, "build"),
@@ -26,6 +27,7 @@ export default (env: WebpackEnv): Configuration => {
         paths,
         isDev,
         port,
+        isAnalize,
     };
 
     return webpackConfig(options);

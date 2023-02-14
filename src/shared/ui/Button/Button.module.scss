@@ -4,3 +4,15 @@
     background: inherit;
     cursor: pointer;
 }
+
+.reboot {
+    border-radius: 1.4rem;
+    padding: 1rem;
+    color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
+    transition: transform 0.1s linear;
+
+    &:hover {
+        transform: translateY(-0.3rem);
+    }
+}
