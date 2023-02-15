@@ -18,7 +18,7 @@ export const jestConfig: JestConfig = () => {
             "json",
             "node",
         ],
-        testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+        testMatch: ["<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)"],
         modulePaths: ["<rootDir>/src"],
         setupFilesAfterEnv: ["<rootDir>/config/jest/jestSetup.ts"],
         moduleNameMapper: {
