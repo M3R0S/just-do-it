@@ -1,6 +1,7 @@
 .button {
     outline: none;
     border: none;
+    color: var(--primary-color);
     background: inherit;
     cursor: pointer;
 }
@@ -15,4 +16,9 @@
     &:hover {
         transform: translateY(-0.3rem);
     }
+}
+
+.outline {
+    border: 0.1rem solid var(--primary-color);
+    padding: 1rem;
 }
