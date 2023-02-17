@@ -5,7 +5,7 @@ import cl from "./LangSwitcher.module.scss";
 import { LangSwitcherProps } from "./LangSwitcher.types";
 
 import { cln } from "shared/lib/helpers";
-import { Lang } from "shared/config/lang";
+import { Lang } from "shared/config/i18n/lang";
 import { Button } from "shared/ui";
 
 export const LangSwitcher: FC<LangSwitcherProps> = (props) => {

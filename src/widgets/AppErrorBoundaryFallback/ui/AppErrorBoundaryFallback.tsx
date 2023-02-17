@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { Button } from "shared/ui";
-
 import { useTranslation } from "react-i18next";
 
-import cl from "./AppErrorFallback.module.scss";
+import cl from "./AppErrorBoundaryFallback.module.scss";
 
-export const AppErrorFallback: FC = () => {
+import { Button } from "shared/ui";
+
+export const AppErrorBoundaryFallback: FC = () => {
     const { t } = useTranslation();
 
     const reload = () => {
@@ -16,7 +16,7 @@ export const AppErrorFallback: FC = () => {
         <div className={cl.app_error_fallback}>
             <h1 className={cl.title}>{t("A global error has occurred")}</h1>
             <p className={cl.info}>{t("Try to reload the page")}</p>
-            <Button theme="reboot" className={cl.reboot} onClick={reload}>
+            <Button theme="fill" className={cl.reboot} onClick={reload}>
                 {t("Reboot")}
             </Button>
         </div>

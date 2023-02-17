@@ -10,8 +10,8 @@ export const Button: FC<ButtonProps> = (props) => {
 
     return (
         <button
-            className={cln(cl.button, [className, cl[theme]])}
             {...otherProps}
+            className={cln(cl.button, [className, cl[theme]])}
         >
             {children}
         </button>

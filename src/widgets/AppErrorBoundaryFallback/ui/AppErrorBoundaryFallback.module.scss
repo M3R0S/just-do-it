@@ -13,6 +13,7 @@
 }
 
 .reboot {
-    color: #fff;
-    background: #000;
+    &:hover {
+        transform: translateY(-0.3rem);
+    }
 }

@@ -4,7 +4,7 @@ import { AboutPage } from "pages/About";
 import { MainPage } from "pages/Main";
 import { NotFoundPage } from "pages/NotFound";
 
-import { PathRoutes } from "shared/config/pathRoutes";
+import { PathRoutes } from "shared/config/router/pathRoutes";
 
 export const routesConfig: RoutesConfig = {
     [PathRoutes.MAIN]: {

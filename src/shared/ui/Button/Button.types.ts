@@ -3,7 +3,7 @@ import { ValueOf } from "shared/lib/types/helpersTypes";
 
 export const ButtonTheme = {
     CLEAR: "clear",
-    REBOOT: "reboot",
+    FILL: "fill",
     OUTLINE: "outline",
 } as const;
 

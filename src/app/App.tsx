@@ -1,14 +1,14 @@
 import { FC, Suspense } from "react";
 
-import "./styles/app.scss";
+import "./App.scss";
 import { AppRouter } from "./providers/Router";
-import { AppErrorBoundary } from "./providers/ErrorBoundary";
 
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
 import { useTheme } from "shared/lib/hooks";
 import { cln } from "shared/lib/helpers";
-import { Loader } from "shared/ui";
+import { ErrorBoundary, Loader } from "shared/ui";
 
 export const App: FC = () => {
     const { theme } = useTheme();
@@ -16,13 +16,13 @@ export const App: FC = () => {
     return (
         <div className={cln("app", [theme])}>
             <Suspense fallback={<Loader className="app__loader" />}>
-                <AppErrorBoundary>
+                <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
                     <Navbar />
                     <div className="app__content_page">
                         <Sidebar />
                         <AppRouter />
                     </div>
-                </AppErrorBoundary>
+                </ErrorBoundary>
             </Suspense>
         </div>
     );
