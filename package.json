@@ -18,8 +18,10 @@
         "format:json": "prettier --check \"**/*.json\"",
         "format:json:fix": "prettier --write \"**/*.json\"",
         "test:unit": "jest",
+        "test:ui": "loki test",
+        "test:ui:ok": "loki approve",
         "storybook": "start-storybook -p 6006 -c ./config/storybook",
-        "build-storybook": "build-storybook -c ./config/storybook"
+        "storybook:build": "build-storybook -c ./config/storybook"
     },
     "keywords": [],
     "author": "",
