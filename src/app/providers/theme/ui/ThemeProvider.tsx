@@ -34,14 +34,14 @@ import {
 
 // export default ThemeProvider
 
-const ThemeProvider: FC<ThemeProviderProps> = (props) => {
-    const { children } = props;
+// const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+//     const { children } = props;
 
-    return (
-        <ThemeContext.Provider value={"value"}>
-            {children}
-        </ThemeContext.Provider>
-    );
-};
+//     return (
+//         <ThemeContext.Provider value={"value"}>
+//             {children}
+//         </ThemeContext.Provider>
+//     );
+// };
 
-export default ThemeProvider;
+// export default ThemeProvider;
