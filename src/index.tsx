@@ -4,17 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import { App } from "./app/App";
 
 import "shared/config/i18n/i18n";
-import { ThemeProvider } from "app/providers/Theme";
+// import { ThemeProvider } from "app/providers/Theme";
 import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
 import { ErrorBoundary } from "shared/ui";
 
 render(
     <BrowserRouter>
-        <ThemeProvider>
+        {/* <ThemeProvider> */}
             <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
                 <App />
             </ErrorBoundary>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
     </BrowserRouter>,
     document.getElementById("root")
 );
