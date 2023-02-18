@@ -1,7 +1,7 @@
 import { Theme } from "../../context/ThemeContext";
 
 interface UseThemeReturned {
-    theme: Theme;
+    theme?: Theme;
     isLightTheme: boolean;
     toggleTheme: VoidFunction;
 }

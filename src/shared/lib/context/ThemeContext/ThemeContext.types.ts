@@ -8,6 +8,6 @@ export const Theme = {
 export type Theme = ValueOf<typeof Theme>;
 
 export interface ThemeContextProps {
-    theme: Theme;
-    setTheme: (theme: Theme) => void;
+    theme?: Theme;
+    setTheme?: (theme: Theme) => void;
 }

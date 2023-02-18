@@ -10,7 +10,7 @@ import {
 } from "shared/lib/context/ThemeContext";
 
 const defaultTheme =
-    (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || "light";
+    (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
 const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     const { children } = props;
