@@ -4,18 +4,18 @@ import cl from "./ThemeSwitcher.module.scss";
 import { ThemeSwitcherProps } from "./ThemeSwitcher.types";
 
 import { cln } from "shared/lib/helpers";
-import { useTheme } from "shared/lib/hooks";
+// import { useTheme } from "shared/lib/hooks";
 import ThemeSvg from "shared/assets/svg/theme.svg";
 import { Button } from "shared/ui";
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
     const { className, ...otherProps } = props;
 
-    const { toggleTheme } = useTheme();
+    // const { toggleTheme } = useTheme();
 
     return (
         <Button
-            onClick={toggleTheme}
+            // onClick={toggleTheme}
             className={cln(cl.theme_switcher, [className])}
             {...otherProps}
         >
