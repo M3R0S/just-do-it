@@ -4,7 +4,8 @@ import { Theme, ThemeContextProps } from "./ThemeContext.types";
 
 export const ThemeContext = createContext<ThemeContextProps>({
     theme: Theme.LIGHT,
-    setTheme: () => ({}),
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    setTheme: () => {},
 });
 
 export const LOCAL_STORAGE_THEME_KEY = "theme";
