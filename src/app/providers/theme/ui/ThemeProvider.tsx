@@ -12,7 +12,7 @@ import {
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || "light";
 
-export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     const { children } = props;
 
     const [theme, setTheme] = useState<Theme>(defaultTheme);
@@ -31,3 +31,5 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         </ThemeContext.Provider>
     );
 };
+
+export default ThemeProvider
