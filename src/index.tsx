@@ -10,11 +10,11 @@ import { ErrorBoundary } from "shared/ui";
 
 render(
     <BrowserRouter>
-        <ThemeProvider>
-            <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
+        <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
+            <ThemeProvider>
                 <App />
-            </ErrorBoundary>
-        </ThemeProvider>
+            </ThemeProvider>
+        </ErrorBoundary>
     </BrowserRouter>,
     document.getElementById("root")
 );
