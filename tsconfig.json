@@ -14,6 +14,7 @@
         "allowSyntheticDefaultImports": true
     },
     "exclude": ["node_modules", ".vscode/**/*"],
+    "include": ["./src/**/*.ts", "./src/**/*.tsx"],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
