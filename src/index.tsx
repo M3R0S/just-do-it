@@ -15,20 +15,21 @@ import {
 } from "shared/lib/context/ThemeContext";
 // import { ThemeProvider } from "app/providers/Theme";
 import { useState } from "react";
+import { ThemeProvider } from "app/providers/Theme/ui/ThemeProvider";
 
-const defaultTheme =
-    (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+// const defaultTheme =
+//     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
-const [theme, setTheme] = useState<Theme>(defaultTheme);
+// const [theme, setTheme] = useState<Theme>(defaultTheme);
 
 render(
     <BrowserRouter>
         <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
-            <ThemeContext.Provider value={{ theme, setTheme }}>
-                {/* <ThemeProvider> */}
+            {/* <ThemeContext.Provider value={}> */}
+            <ThemeProvider>
                 <App />
-                {/* </ThemeProvider> */}
-            </ThemeContext.Provider>
+            </ThemeProvider>
+            {/* </ThemeContext.Provider> */}
         </ErrorBoundary>
     </BrowserRouter>,
     document.getElementById("root")
