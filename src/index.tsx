@@ -15,7 +15,7 @@ import {
 } from "shared/lib/context/ThemeContext";
 // import { ThemeProvider } from "app/providers/Theme";
 import { useState } from "react";
-import { ThemeProvider } from "app/providers/Theme/ui/ThemeProvider";
+// import { ThemeProvider } from "app/providers/Theme/ui/ThemeProvider";
 
 // const defaultTheme =
 //     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
