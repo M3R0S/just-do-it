@@ -1,10 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "./dist/",
-        "baseUrl": ".",
-        "paths": {
-            "*": ["./src/*"]
-        },
+        "baseUrl": "./src",
         "noImplicitAny": true,
         "strictNullChecks": true,
         "module": "ESNext",
