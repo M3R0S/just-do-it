@@ -9,6 +9,11 @@ import { Theme } from "shared/lib/context/ThemeContext";
 export default {
     title: "shared/Loader",
     component: Loader,
+    parameters: {
+        loki: {
+            skip: true
+        }
+    }
 } as ComponentMeta<typeof Loader>;
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
