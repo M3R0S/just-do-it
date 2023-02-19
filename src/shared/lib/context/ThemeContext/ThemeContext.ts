@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-import { ThemeContextProps } from "./ThemeContext.types";
+import { Theme, ThemeContextProps } from "./ThemeContext.types";
 
 export const LOCAL_STORAGE_THEME_KEY = "theme";
 
