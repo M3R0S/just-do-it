@@ -14,8 +14,7 @@ import {
     Theme,
     ThemeContext,
 } from "shared/lib/context/ThemeContext";
-//@ts-ignore
-import ThemeProvider from "../app/providers/Theme/ui/ThemeProvider.tsx";
+import ThemeProvider from "./providers/Theme/ui/ThemeProvider";
 
 export const App: FC = () => {
     // const { theme } = useTheme();
