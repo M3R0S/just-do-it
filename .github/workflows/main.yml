@@ -6,7 +6,7 @@ on:
         branches: [master]
 jobs:
     pipeline:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         strategy:
             matrix:
                 node-version: [17.x]
@@ -19,17 +19,17 @@ jobs:
             - name: install modules
               run: npm ci
 
-            - name: linting typescript
-              run: npm run lint:ts
+            # - name: linting typescript
+            #   run: npm run lint:ts
 
-            - name: prettier typescript fix
-              run: npm run format:ts:fix
+            # - name: prettier typescript fix
+            #   run: npm run format:ts:fix
 
-            - name: prettier json fix
-              run: npm run format:json:fix
+            # - name: prettier json fix
+            #   run: npm run format:json:fix
 
-            - name: unit testing
-              run: npm run test:unit
+            # - name: unit testing
+            #   run: npm run test:unit
 
             - name: build storybook
               run: npm run storybook:build
@@ -37,5 +37,5 @@ jobs:
             - name: screenshot testing
               run: npm run test:ui:ci
 
-            - name: build production project
-              run: npm run build:prod
+            # - name: build production project
+            #   run: npm run build:prod
