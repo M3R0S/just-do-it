@@ -24,4 +24,4 @@ const ThemeProvider = (props: ThemeProviderProps) => {
     );
 };
 
-export default ThemeProvider
+export default ThemeProvider;

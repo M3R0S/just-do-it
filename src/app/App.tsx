@@ -14,7 +14,7 @@ import {
     Theme,
     ThemeContext,
 } from "shared/lib/context/ThemeContext";
-import ThemeProvider from "./providers/Theme/ui/ThemeProvider";
+import ThemeProvider from "../app/providers/Theme/ui/ThemeProvider";
 
 export const App: FC = () => {
     // const { theme } = useTheme();
