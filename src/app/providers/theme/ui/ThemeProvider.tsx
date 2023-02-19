@@ -9,7 +9,7 @@ import {
     ThemeContextProps,
 } from "shared/lib/context/ThemeContext";
 
-export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+export const ThemeProvider = (props: ThemeProviderProps) => {
     const { children } = props;
 
     const defaultTheme =
@@ -18,6 +18,8 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
 
     return (
-        <ThemeContext.Provider value={{theme, setTheme}}>{children}</ThemeContext.Provider>
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+            {children}
+        </ThemeContext.Provider>
     );
 };
