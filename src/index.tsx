@@ -8,18 +8,17 @@ import "shared/config/i18n/i18n";
 import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
 import { ErrorBoundary } from "shared/ui";
 import {
-    defaultProviderValue,
+    // defaultProviderValue,
     ThemeContext,
 } from "shared/lib/context/ThemeContext";
+import { ThemeProvider } from "app/providers/Theme";
 
 render(
     <BrowserRouter>
         <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
-            {/* <ThemeProvider> */}
-            <ThemeContext.Provider value={defaultProviderValue}>
+            <ThemeProvider>
                 <App />
-            </ThemeContext.Provider>
-            {/* </ThemeProvider> */}
+            </ThemeProvider>
         </ErrorBoundary>
     </BrowserRouter>,
     document.getElementById("root")
