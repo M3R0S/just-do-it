@@ -11,7 +11,7 @@ import { cln } from "shared/lib/helpers";
 import { ErrorBoundary, Loader } from "shared/ui";
 
 export const App: FC = () => {
-    // const { theme } = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={cln("app", [theme])}>
