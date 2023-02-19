@@ -9,7 +9,7 @@ import {
     ThemeContextProps,
 } from "shared/lib/context/ThemeContext";
 
-export const ThemeProvider = (props: ThemeProviderProps) => {
+const ThemeProvider = (props: ThemeProviderProps) => {
     const { children } = props;
 
     // const defaultTheme =
@@ -23,3 +23,5 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
         </ThemeContext.Provider>
     );
 };
+
+export default ThemeProvider
