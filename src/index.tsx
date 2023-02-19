@@ -25,11 +25,9 @@ import { ThemeProvider } from "app/providers/Theme/ui/ThemeProvider";
 render(
     <BrowserRouter>
         <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
-            {/* <ThemeContext.Provider value={}> */}
-            <ThemeProvider>
+                {/* <ThemeProvider> */}
                 <App />
-            </ThemeProvider>
-            {/* </ThemeContext.Provider> */}
+                {/* </ThemeProvider> */}
         </ErrorBoundary>
     </BrowserRouter>,
     document.getElementById("root")
