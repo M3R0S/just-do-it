@@ -1,11 +1,18 @@
 import { ClassNames } from "./classNames.types";
 
 const classNames: ClassNames = (cls = "", additional = [], mods = {}) => {
+    console.log(
+        Object.entries(mods).filter(([className, isInclude]) =>
+            Boolean(isInclude && className)
+        )
+    );
     return [
         cls,
         ...additional.filter(Boolean),
         ...Object.entries(mods)
-            .filter(([, isInclude]) => Boolean(isInclude))
+            .filter(([className, isInclude]) =>
+                Boolean(isInclude && className && className !== "undefined")
+            )
             .map(([className]) => className),
     ].join(" ");
 };

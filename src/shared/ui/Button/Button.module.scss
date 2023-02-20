@@ -1,20 +1,63 @@
 .button {
     outline: none;
     border: none;
+    padding: 0.6rem 1.5rem;
     color: var(--primary-color);
     background: inherit;
     transition: transform 0.1s linear;
     cursor: pointer;
-}
 
-.fill {
-    border-radius: 1.4rem;
-    padding: 1rem;
-    color: var(--inverted-primary-color);
-    background: var(--inverted-bg-color);
-}
+    &.fill {
+        border-radius: 1.4rem;
+        color: var(--inverted-primary-color);
+        background: var(--inverted-bg-color);
+    }
 
-.outline {
-    border: 0.1rem solid var(--primary-color);
-    padding: 1rem;
+    &.outline {
+        border: 0.1rem solid var(--primary-color);
+    }
+
+    &.background {
+        color: var(--primary-color);
+        background: var(--bg-color);
+    }
+
+    &.background_inverted {
+        color: var(--inverted-primary-color);
+        background: var(--inverted-bg-color);
+    }
+
+    &.square {
+        padding: 0;
+
+        &.size_m {
+            width: var(--font-line-m);
+            height: var(--font-line-m);
+            font: var(--font-m);
+        }
+
+        &.size_l {
+            width: var(--font-line-l);
+            height: var(--font-line-l);
+            font: var(--font-l);
+        }
+
+        &.size_xl {
+            width: var(--font-line-xl);
+            height: var(--font-line-xl);
+            font: var(--font-xl);
+        }
+    }
+
+    &.size_m {
+        font: var(--font-m);
+    }
+
+    &.size_l {
+        font: var(--font-l);
+    }
+
+    &.size_xl {
+        font: var(--font-xl);
+    }
 }

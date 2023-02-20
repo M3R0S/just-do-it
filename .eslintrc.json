@@ -32,7 +32,7 @@
             "warn",
             {
                 "markupOnly": true,
-                "ignoreAttribute": ["data-testid", "to", "theme"]
+                "ignoreAttribute": ["data-testid", "to", "theme", "size"]
             }
         ],
         "react/display-name": ["off"]

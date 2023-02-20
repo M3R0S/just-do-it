@@ -9,9 +9,9 @@ import { Lang } from "shared/config/i18n/lang";
 import { Button } from "shared/ui";
 
 export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
-    const { className } = props;
+    const { className, short } = props;
 
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const isRuLang = i18n.language === Lang.RU;
 
@@ -26,7 +26,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
             onClick={changeLang}
             className={cln(cl.lang_switcher, [className])}
         >
-            {isRuLang ? "English" : "Русский"}
+            {short ? t("Lang") : t("Language")}
         </Button>
     );
 };

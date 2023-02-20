@@ -5,5 +5,7 @@
   "Loading": "Загрузка...",
   "A global error has occurred": "Произошла глобальная ошибка",
   "Try to reload the page": "Попробуйте перезагрузить страницу",
-  "Reboot": "Перезагрузка"
+  "Reboot": "Перезагрузка",
+  "Language": "English",
+  "Lang": "EN"
 }

@@ -12,6 +12,11 @@
     --font-line-l: 3.2rem;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
+    // * xl-рамер
+    --font-size-xl: 3.2rem;
+    --font-line-xl: 4rem;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+
     // ? Размеры
     --height-navbar: 5rem;
     --width-sidebar: 200px;
@@ -25,4 +30,7 @@
     --transition-switch-theme: var(--transition-switch-theme-background),
         var(--transition-switch-theme-color),
         var(--transition-switch-theme-fill);
+
+    // ?
+    --transition-toggle-sidebar-timeout: 0.3s linear;
 }

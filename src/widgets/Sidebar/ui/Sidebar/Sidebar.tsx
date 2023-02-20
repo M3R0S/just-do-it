@@ -6,6 +6,7 @@ import { SidebarProps } from "./Sidebar.types";
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
 import { cln } from "shared/lib/helpers";
+import { Button } from "shared/ui";
 
 export const Sidebar: FC<SidebarProps> = (props) => {
     const { className } = props;
@@ -23,12 +24,25 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             })}
             data-testid="sidebar"
         >
-            <button data-testid="sidebar-toggle" onClick={onToggle}>
-                Toggle
-            </button>
+            <Button
+                onClick={onToggle}
+                data-testid="sidebar-toggle"
+                className={cl.collapse_btn}
+                theme="background_inverted"
+                square={true}
+                size="size_l"
+            >
+                <span
+                    className={cln(cl.collapse_btn_span, [], {
+                        [cl.collapse_btn_span_animated]: collapsed,
+                    })}
+                >
+                    {"<"}
+                </span>
+            </Button>
             <div className={cl.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher />
+                <LangSwitcher short={collapsed} />
             </div>
         </div>
     );

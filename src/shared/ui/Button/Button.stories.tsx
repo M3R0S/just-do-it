@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
-import { ButtonTheme, ButtonProps } from "./Button.types";
+import { ButtonTheme, ButtonProps, ButtonSize } from "./Button.types";
 import { Button } from "./Button";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
@@ -50,15 +50,108 @@ RebootDark.args = {
 };
 RebootDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const OutlineLight: Story<ButtonProps> = Template.bind({});
-OutlineLight.args = {
+export const OutlineLightSizeM: Story<ButtonProps> = Template.bind({});
+OutlineLightSizeM.args = {
     children: "Text",
     theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
 };
 
-export const OutlineDark: Story<ButtonProps> = Template.bind({});
-OutlineDark.args = {
+export const OutlineLightSizeL: Story<ButtonProps> = Template.bind({});
+OutlineLightSizeL.args = {
     children: "Text",
     theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.L,
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineLightSizeXL: Story<ButtonProps> = Template.bind({});
+OutlineLightSizeXL.args = {
+    children: "Text",
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.XL,
+};
+
+export const OutlineDarkSizeM: Story<ButtonProps> = Template.bind({});
+OutlineDarkSizeM.args = {
+    children: "Text",
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.M,
+};
+OutlineDarkSizeM.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineDarkSizeL: Story<ButtonProps> = Template.bind({});
+OutlineDarkSizeL.args = {
+    children: "Text",
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.L,
+};
+OutlineDarkSizeL.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineDarkSizeXL: Story<ButtonProps> = Template.bind({});
+OutlineDarkSizeXL.args = {
+    children: "Text",
+    theme: ButtonTheme.OUTLINE,
+    size: ButtonSize.XL,
+};
+OutlineDarkSizeXL.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BackgroundLight: Story<ButtonProps> = Template.bind({});
+BackgroundLight.args = {
+    children: "Text",
+    theme: ButtonTheme.BACKGROUND,
+};
+
+export const BackgroundDark: Story<ButtonProps> = Template.bind({});
+BackgroundDark.args = {
+    children: "Text",
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+};
+BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SquareSizeMLight: Story<ButtonProps> = Template.bind({});
+SquareSizeMLight.args = {
+    children: ">",
+    square: true,
+    theme: ButtonTheme.BACKGROUND,
+    size: ButtonSize.M,
+};
+
+export const SquareSizeLLight: Story<ButtonProps> = Template.bind({});
+SquareSizeLLight.args = {
+    children: ">",
+    square: true,
+    theme: ButtonTheme.BACKGROUND,
+    size: ButtonSize.L,
+};
+
+export const SquareSizeXLLight: Story<ButtonProps> = Template.bind({});
+SquareSizeXLLight.args = {
+    children: ">",
+    square: true,
+    theme: ButtonTheme.BACKGROUND,
+    size: ButtonSize.XL,
+};
+
+export const SquareSizeMDark: Story<ButtonProps> = Template.bind({});
+SquareSizeMDark.args = {
+    children: ">",
+    square: true,
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    size: ButtonSize.M,
+};
+
+export const SquareSizeLDark: Story<ButtonProps> = Template.bind({});
+SquareSizeLDark.args = {
+    children: ">",
+    square: true,
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    size: ButtonSize.L,
+};
+
+export const SquareSizeXLDark: Story<ButtonProps> = Template.bind({});
+SquareSizeXLDark.args = {
+    children: ">",
+    square: true,
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    size: ButtonSize.XL,
+};

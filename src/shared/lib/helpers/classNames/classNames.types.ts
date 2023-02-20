@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>;
+type Mods = Record<string, boolean>;
 
 export type ClassNames = (
     cls: string,
