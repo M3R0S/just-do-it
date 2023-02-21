@@ -35,7 +35,8 @@
                 "ignoreAttribute": ["data-testid", "to", "theme", "size"]
             }
         ],
-        "react/display-name": ["off"]
+        "react/display-name": ["off"],
+        "@typescript-eslint/no-var-requires": ["off"]
     },
     "overrides": [
         {
