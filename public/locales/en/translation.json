@@ -1,11 +1,11 @@
 {
-  "Main": "Main",
-  "About us": "About us",
-  "Translate": "Translate",
-  "Loading": "Loading...",
-  "A global error has occurred": "A global error has occurred",
-  "Try to reload the page": "Try to reload the page",
-  "Reboot": "Reboot",
-  "Language": "Русский",
-  "Lang": "РУС"
+    "Main": "Main",
+    "About us": "About us",
+    "Translate": "Translate",
+    "Loading": "Loading...",
+    "A global error has occurred": "A global error has occurred",
+    "Try to reload the page": "Try to reload the page",
+    "Reboot": "Reboot",
+    "Language": "Русский",
+    "Lang": "РУС"
 }

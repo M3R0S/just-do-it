@@ -23,12 +23,8 @@ jobs:
               run: npm run lint:ts
               if: always()
 
-            - name: prettier typescript
-              run: npm run format:ts
-              if: always()
-
-            - name: prettier json
-              run: npm run format:json
+            - name: prettier typescript json scss
+              run: npm run format
               if: always()
 
             - name: unit testing
