@@ -11,9 +11,9 @@ export default {
     component: Loader,
     parameters: {
         loki: {
-            skip: true
-        }
-    }
+            skip: true,
+        },
+    },
 } as ComponentMeta<typeof Loader>;
 
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;

@@ -8,6 +8,6 @@ export const webpackResolvers: WebpackResolvers = (options) => {
         modules: [paths.src, "node_modules"],
         mainFiles: ["index"],
         alias: {},
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
     };
 };
