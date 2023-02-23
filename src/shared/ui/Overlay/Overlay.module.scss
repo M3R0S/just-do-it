@@ -1,0 +1,31 @@
+.overlay {
+    position: fixed;
+    z-index: var(--overlay-z-index);
+    width: 100%;
+    height: 100%;
+    background: var(--overlay-bg-color);
+    cursor: pointer;
+    inset: 0;
+
+    &_opened {
+        animation: forwards overlay-opened
+            var(--transition-toggle-overlay-timeout);
+    }
+
+    &_closed {
+        animation: forwards overlay-closed
+            var(--transition-toggle-overlay-timeout);
+    }
+}
+
+@keyframes overlay-opened {
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes overlay-closed {
+    100% {
+        opacity: 0;
+    }
+}

@@ -3,7 +3,7 @@
     width: var(--width-sidebar);
     height: var(--height-sidebar);
     background: var(--inverted-bg-color);
-    transition: var(--transition-switch-theme-background),
+    transition: background var(--transition-switch-theme-timeout),
         width var(--transition-toggle-sidebar-timeout),
         flex-direction var(--transition-toggle-sidebar-timeout);
 
@@ -40,14 +40,14 @@
 
             &_text {
                 white-space: nowrap;
-                transition: var(--transition-switch-theme-color),
+                transition: color var(--transition-switch-theme-timeout),
                     opacity var(--transition-toggle-sidebar-timeout);
             }
 
             &_svg {
                 min-width: 30px;
                 fill: var(--inverted-primary-color);
-                transition: var(--transition-switch-theme-fill);
+                transition: fill var(--transition-switch-theme-timeout);
             }
         }
     }

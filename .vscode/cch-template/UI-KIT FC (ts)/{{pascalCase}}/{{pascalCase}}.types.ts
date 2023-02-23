@@ -1,7 +1,6 @@
-import { HTMLAttributes } from "react"
+import { ReactNode } from "react"
 
-export type {{pascalCase}}Theme = 
-
-export interface {{pascalCase}}Props extends HTMLAttributes<> {
-    theme: {{pascalCase}}Theme
+export interface {{pascalCase}}Props {
+    className?: string;
+    children?: ReactNode
 }

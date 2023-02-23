@@ -5,15 +5,12 @@
     width: 100%;
     height: var(--height-navbar);
     background: var(--inverted-bg-color);
-    transition: var(--transition-switch-theme-background);
-}
+    transition: background var(--transition-switch-theme-timeout);
 
-.links {
-    display: flex;
-    column-gap: 2rem;
-    margin-left: auto;
-
-    .link {
-        transition: var(--transition-switch-theme-color);
+    .links {
+        display: flex;
+        column-gap: 2rem;
+        margin-left: auto;
+        color: var(--inverted-primary-color);
     }
 }

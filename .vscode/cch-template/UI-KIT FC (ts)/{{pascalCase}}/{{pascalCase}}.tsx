@@ -6,10 +6,10 @@ import { {{pascalCase}}Props } from "./{{pascalCase}}.types";
 import { cln } from "shared/lib/helpers";
 
 export const {{pascalCase}}: FC<{{pascalCase}}Props> = (props) => {
-    const { className, children, theme, ...otherProps } = props;
+    const { className, children } = props;
 
     return (
-        <div className={cln(cl.{{snakeCase}}, [className, cl[theme]])} {...otherProps}>
+        <div className={cln(cl.{{snakeCase}}, [className])}>
             {children}
         </div>
     );

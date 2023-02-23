@@ -5,14 +5,15 @@
     font: var(--font-m);
     color: var(--primary-color);
     background-color: var(--bg-color);
-    transition: var(--transition-switch-theme-background);
+    transition-property: background, color;
+    transition-duration: var(--transition-switch-theme-timeout);
 
-    &__loader {
+    &_loader {
         width: 100vw;
         height: 100vh;
     }
 
-    &__content_page {
+    &_content_page {
         display: flex;
     }
 }

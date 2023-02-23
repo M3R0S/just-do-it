@@ -1,6 +1,5 @@
-import { FC, Suspense, useMemo, useState } from "react";
+import { FC, ReactNode, Suspense, useMemo, useState } from "react";
 
-import "./App.scss";
 import { AppRouter } from "./providers/Router";
 
 import { Navbar } from "widgets/Navbar";
@@ -29,12 +28,12 @@ export const App: FC = () => {
     );
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={defaultProps}>
             <div className={cln("app", [theme])}>
-                <Suspense fallback={<Loader className="app__loader" />}>
+                <Suspense fallback={<Loader className="app_loader" />}>
                     <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
                         <Navbar />
-                        <div className="app__content_page">
+                        <div className="app_content_page">
                             <Sidebar />
                             <AppRouter />
                         </div>

@@ -6,5 +6,5 @@
 
 .svg {
     fill: var(--primary-color);
-    transition: var(--transition-switch-theme-fill);
+    transition: fill var(--transition-switch-theme-timeout);
 }

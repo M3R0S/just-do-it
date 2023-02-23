@@ -1,4 +1,4 @@
 .lang_switcher {
     color: var(--inverted-primary-color);
-    transition: var(--transition-switch-theme-color);
+    transition: color var(--transition-switch-theme-timeout);
 }

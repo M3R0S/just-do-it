@@ -37,6 +37,19 @@ ClearDark.args = {
 };
 ClearDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const ClearInvertedLight: Story<ButtonProps> = Template.bind({});
+ClearInvertedLight.args = {
+    children: "Text",
+    theme: ButtonTheme.CLEAR,
+};
+ClearInvertedLight.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const ClearInvertedDark: Story<ButtonProps> = Template.bind({});
+ClearInvertedDark.args = {
+    children: "Text",
+    theme: ButtonTheme.CLEAR,
+};
+
 export const RebootLight: Story<ButtonProps> = Template.bind({});
 RebootLight.args = {
     children: "Text",

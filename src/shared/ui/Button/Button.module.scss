@@ -4,8 +4,13 @@
     padding: 0.6rem 1.5rem;
     color: var(--primary-color);
     background: inherit;
-    transition: transform 0.1s linear;
+    transition-property: color, background;
+    transition-duration: var(--transition-switch-theme-timeout);
     cursor: pointer;
+
+    &.clear_inverted {
+        color: var(--inverted-primary-color);
+    }
 
     &.fill {
         border-radius: 1.4rem;

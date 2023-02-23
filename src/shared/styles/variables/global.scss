@@ -23,14 +23,16 @@
     --width-sidebar-collapsed: 80px;
     --height-sidebar: calc(100vh - var(--height-navbar));
 
-    // ? Анимации
-    --transition-switch-theme-background: background 0.5s linear;
-    --transition-switch-theme-color: color 0.5s linear;
-    --transition-switch-theme-fill: fill 0.5s linear;
-    --transition-switch-theme: var(--transition-switch-theme-background),
-        var(--transition-switch-theme-color),
-        var(--transition-switch-theme-fill);
+    // ? Цвета
+    --overlay-bg-color: rgb(0 0 0 / 60%);
 
-    // ?
-    --transition-toggle-sidebar-timeout: 0.3s linear;
+    // ? z-индексы
+    --modal-z-index: 10;
+    --overlay-z-index: -1;
+
+    // ? Продолжительность анимаций
+    --transition-switch-theme-timeout: 0.5s;
+    --transition-toggle-sidebar-timeout: 0.3s;
+    --transition-toggle-overlay-timeout: 0.5s;
+    --transition-toggle-modal-timeout: 0.5s;
 }

@@ -1,0 +1,37 @@
+.portal {
+    z-index: var(--modal-z-index);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    border-radius: 1.2rem;
+    padding: 2rem;
+    max-width: 60%;
+    background: var(--bg-color);
+
+    &_opened {
+        animation: forwards content-opened
+            var(--transition-toggle-modal-timeout);
+    }
+
+    &_closed {
+        animation: forwards content-closed
+            var(--transition-toggle-modal-timeout);
+    }
+}
+
+@keyframes content-opened {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}
+
+@keyframes content-closed {
+    100% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+}

@@ -4,6 +4,7 @@ import { ValueOf } from "shared/lib/types/helpersTypes";
 
 export const ButtonTheme = {
     CLEAR: "clear",
+    CLEAR_INVERTED: "clear_inverted",
     FILL: "fill",
     OUTLINE: "outline",
     BACKGROUND: "background",
