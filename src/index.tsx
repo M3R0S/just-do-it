@@ -4,10 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 import "app/App.scss";
 import { App } from "./app/App";
 
-import "shared/config/i18n/i18n";
-import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
-import { ErrorBoundary } from "shared/ui";
 import { ThemeProvider } from "app/providers/Theme";
+import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
+import "shared/config/i18n/i18n";
+import { ErrorBoundary } from "shared/ui";
 
 render(
     <BrowserRouter>

@@ -1,4 +1,4 @@
-.app_error_fallback {
+.fallback {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,10 +10,11 @@
     color: var(--primary-color);
     background-color: var(--bg-color);
     row-gap: 3rem;
-}
 
-.reboot {
-    &:hover {
-        transform: translateY(-0.3rem);
+    .reboot {
+        &:hover {
+            transform: translateY(-0.3rem);
+            transition: transform 0.2s;
+        }
     }
 }

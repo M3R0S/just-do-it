@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import cl from "./Button.module.scss";
-import { ButtonProps } from "./Button.types";
+import { ButtonProps, ButtonSize, ButtonTheme } from "./Button.types";
 
 import { cln } from "shared/lib/helpers";
 
@@ -9,9 +9,9 @@ export const Button: FC<ButtonProps> = (props) => {
     const {
         className,
         children,
-        theme = "clear",
+        theme = ButtonTheme.CLEAR,
         square = false,
-        size = "size_m",
+        size = ButtonSize.M,
         ...otherProps
     } = props;
 

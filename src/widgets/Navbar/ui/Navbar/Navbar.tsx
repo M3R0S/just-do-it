@@ -1,13 +1,12 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import cl from "./Navbar.module.scss";
 import { NavbarProps } from "./Navbar.types";
 
 import { cln } from "shared/lib/helpers";
-import { ButtonError } from "shared/ui/ErrorBoundary/ButtonError";
-import { Button, Modal } from "shared/ui";
-import { useTranslation } from "react-i18next";
 import { useBooleanCallback } from "shared/lib/hooks";
+import { Button, ButtonTheme, Modal } from "shared/ui";
 
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
@@ -22,9 +21,8 @@ export const Navbar: FC<NavbarProps> = (props) => {
     return (
         <header className={cln(cl.navbar, [className])}>
             <div className={cl.links}>
-                {/* <ButtonError /> */}
                 <Button
-                    theme="clear_inverted"
+                    theme={ButtonTheme.CLEAR_INVERTED}
                     onClick={onOpenModal}
                 >
                     {t("Log in")}

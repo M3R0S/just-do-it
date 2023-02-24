@@ -2,9 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
-.svg {
-    fill: var(--primary-color);
-    transition: fill var(--transition-switch-theme-timeout);
+    .svg {
+        fill: var(--primary-color);
+        transition: fill var(--transition-switch-theme-timeout);
+    }
+
+    &.app {
+        width: 100vw;
+        height: 100vh;
+    }
 }

@@ -4,20 +4,20 @@ import { AppRouter } from "./providers/Router";
 
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { Main } from "widgets/Main";
 import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
-import { ErrorBoundary, Loader } from "shared/ui";
-import { cln } from "shared/lib/helpers";
+import { ErrorBoundary, Loader, LoaderTheme } from "shared/ui";
 
 export const App: FC = () => {
     return (
-        <div className={cln("app")}>
-            <Suspense fallback={<Loader className="app_loader" />}>
+        <div className="app">
+            <Suspense fallback={<Loader theme={LoaderTheme.APP} />}>
                 <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
                     <Navbar />
-                    <div className="app_content_page">
+                    <Main>
                         <Sidebar />
                         <AppRouter />
-                    </div>
+                    </Main>
                 </ErrorBoundary>
             </Suspense>
         </div>
