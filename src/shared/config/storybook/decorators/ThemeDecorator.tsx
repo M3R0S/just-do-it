@@ -3,7 +3,7 @@ import { Story } from "@storybook/react";
 
 import { Theme } from "shared/lib/context/ThemeContext";
 
-export const ThemeDecorator = (theme: Theme) => (Story: Story) => {
+export const ThemeDecorator = (theme: Theme) => {
     useEffect(() => {
         document.body.classList.add(theme);
         const isLight = document.body.className.includes("light");
@@ -19,5 +19,7 @@ export const ThemeDecorator = (theme: Theme) => (Story: Story) => {
         };
     }, [theme]);
 
-    return <Story />;
+    return (Story: Story) => {
+        return <Story />;
+    };
 };
