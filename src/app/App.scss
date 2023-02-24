@@ -1,19 +1,22 @@
 @use "shared/styles/index" as *;
 
-.app {
-    min-height: 100vh;
+body {
     font: var(--font-m);
     color: var(--primary-color);
-    background-color: var(--bg-color);
-    transition-property: background, color;
-    transition-duration: var(--transition-switch-theme-timeout);
+    transition: color var(--transition-switch-theme-timeout);
+}
 
-    &_loader {
-        width: 100vw;
-        height: 100vh;
-    }
+#root {
+    min-height: 100vh;
+    background: var(--bg-color);
+    transition: background var(--transition-switch-theme-timeout);
+}
 
-    &_content_page {
-        display: flex;
-    }
+.root_content_page {
+    display: flex;
+}
+
+.root_loader {
+    width: 100vw;
+    height: 100vh;
 }

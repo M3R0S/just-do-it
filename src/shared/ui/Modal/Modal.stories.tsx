@@ -4,7 +4,6 @@ import { ModalProps } from "./Modal.types";
 import { Modal } from "./Modal";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { PortalDecorator } from "shared/config/storybook/decorators/PortalDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
@@ -20,7 +19,6 @@ Light.args = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, at!",
     isOpened: true,
 };
-// Light.decorators = [PortalDecorator]
 
 export const Dark: Story<ModalProps> = Template.bind({});
 Dark.args = {

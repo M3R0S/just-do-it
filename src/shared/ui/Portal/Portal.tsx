@@ -5,11 +5,7 @@ import { PortalProps } from "./Portal.types";
 import cl from "./Portal.module.scss";
 
 export const Portal: FC<PortalProps> = (props) => {
-    const {
-        children,
-        className,
-        htmlElement = document.querySelector(".app"),
-    } = props;
+    const { children, className, htmlElement = document.body } = props;
 
     const createElement = () => document.createElement("div");
     const [container] = useState<HTMLElement>(createElement);

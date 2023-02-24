@@ -24,9 +24,9 @@ export default ({ config }: { config: Configuration }) => {
     config?.module?.rules?.push(webpackSassLoader(options));
 
     const rules = config?.module?.rules;
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    config!.module!.rules = rules?.map((rule: RuleSetRule) => {
-        if (/svg/.test(rule.test as string)) {
+
+    config!.module!.rules = rules?.map((rule) => {
+        if (rule !== "..." && /svg/.test(rule.test as string)) {
             return {
                 ...rule,
                 exclude: /\.svg$/i,
