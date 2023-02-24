@@ -9,18 +9,17 @@ import { ErrorBoundary, Loader } from "shared/ui";
 import { cln } from "shared/lib/helpers";
 
 export const App: FC = () => {
-
     return (
-            <div className={cln("app")}>
-                <Suspense fallback={<Loader className="app_loader" />}>
-                    <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
-                        <Navbar />
-                        <div className="app_content_page">
-                            <Sidebar />
-                            <AppRouter />
-                        </div>
-                    </ErrorBoundary>
-                </Suspense>
-            </div>
+        <div className={cln("app")}>
+            <Suspense fallback={<Loader className="app_loader" />}>
+                <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
+                    <Navbar />
+                    <div className="app_content_page">
+                        <Sidebar />
+                        <AppRouter />
+                    </div>
+                </ErrorBoundary>
+            </Suspense>
+        </div>
     );
 };

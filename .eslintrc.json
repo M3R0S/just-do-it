@@ -10,7 +10,8 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:i18next/recommended",
         "plugin:storybook/recommended",
-        "plugin:react-hooks/recommended"
+        "plugin:react-hooks/recommended",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,13 +21,20 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint", "i18next", "react-hooks"],
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "i18next",
+        "react-hooks",
+        "prettier"
+    ],
     "settings": {
         "react": {
             "version": "detect"
         }
     },
     "rules": {
+        "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/ban-ts-comment": "warn",
         "i18next/no-literal-string": [
