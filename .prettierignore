@@ -8,6 +8,7 @@ node_modules
 
 #build
 /build
+/storybook-static
 
 # settings
 .vscode
