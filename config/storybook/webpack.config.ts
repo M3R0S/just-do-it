@@ -25,6 +25,7 @@ export default ({ config }: { config: Configuration }) => {
 
     const rules = config?.module?.rules;
 
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     config!.module!.rules = rules?.map((rule) => {
         if (rule !== "..." && /svg/.test(rule.test as string)) {
             return {

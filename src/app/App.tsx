@@ -1,4 +1,4 @@
-import { FC, Suspense, useEffect, useMemo, useState } from "react";
+import { FC, Suspense, useMemo, useState } from "react";
 
 import { AppRouter } from "./providers/Router";
 
@@ -11,6 +11,7 @@ import {
     Theme,
     ThemeContext,
 } from "shared/lib/context/ThemeContext";
+import { cln } from "shared/lib/helpers";
 
 const defaultTheme =
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
@@ -26,25 +27,19 @@ export const App: FC = () => {
         [theme]
     );
 
-    useEffect(() => {
-        document.body.classList.add(theme);
-
-        return () => {
-            document.body.classList.remove(theme);
-        };
-    }, [theme]);
-
     return (
         <ThemeContext.Provider value={defaultProps}>
-            <Suspense fallback={<Loader className="root_loader" />}>
-                <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
-                    <Navbar />
-                    <div className="root_content_page">
-                        <Sidebar />
-                        <AppRouter />
-                    </div>
-                </ErrorBoundary>
-            </Suspense>
+            <div className={cln("app")}>
+                <Suspense fallback={<Loader className="app_loader" />}>
+                    <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
+                        <Navbar />
+                        <div className="app_content_page">
+                            <Sidebar />
+                            <AppRouter />
+                        </div>
+                    </ErrorBoundary>
+                </Suspense>
+            </div>
         </ThemeContext.Provider>
     );
 };

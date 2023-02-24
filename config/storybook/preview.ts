@@ -1,7 +1,7 @@
-import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { StyleDecorator } from "shared/config/storybook/decorators/StyleDecorator";
-import { RouterDecorator } from "shared/config/storybook/decorators/RouterDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
+import { ThemeDecorator } from "../../src/shared/config/storybook/decorators/ThemeDecorator";
+import { StyleDecorator } from "../../src/shared/config/storybook/decorators/StyleDecorator";
+import { RouterDecorator } from "../../src/shared/config/storybook/decorators/RouterDecorator";
+import { Theme } from "../../src/shared/lib/context/ThemeContext";
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },

@@ -6,17 +6,17 @@ body {
     transition: color var(--transition-switch-theme-timeout);
 }
 
-#root {
+.app {
     min-height: 100vh;
     background: var(--bg-color);
     transition: background var(--transition-switch-theme-timeout);
-}
 
-.root_content_page {
-    display: flex;
-}
+    &_content_page {
+        display: flex;
+    }
 
-.root_loader {
-    width: 100vw;
-    height: 100vh;
+    &_loader {
+        width: 100vw;
+        height: 100vh;
+    }
 }
