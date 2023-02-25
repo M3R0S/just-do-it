@@ -23,19 +23,18 @@ export default ({ config }: { config: Configuration }) => {
     config.resolve = webpackResolvers(options);
     config?.module?.rules?.push(webpackSassLoader(options));
 
-    const rules = config?.module?.rules;
+    if (config.module?.rules) {
+        config.module.rules = config.module?.rules?.map((rule) => {
+            if (rule !== "..." && /svg/.test(rule.test as string)) {
+                return {
+                    ...rule,
+                    exclude: /\.svg$/i,
+                };
+            }
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    config!.module!.rules = rules?.map((rule) => {
-        if (rule !== "..." && /svg/.test(rule.test as string)) {
-            return {
-                ...rule,
-                exclude: /\.svg$/i,
-            };
-        }
-
-        return rule;
-    });
+            return rule;
+        });
+    }
 
     config.module?.rules?.push(webpackSvgLoader());
 
