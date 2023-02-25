@@ -1,5 +1,5 @@
 import path from "path";
-import { Configuration, RuleSetRule } from "webpack";
+import { Configuration } from "webpack";
 
 import { webpackSassLoader } from "../webpack/loaders/sass/webpackSassLoader";
 import { webpackSvgLoader } from "../webpack/loaders/svg/webpackSvgLoader";
