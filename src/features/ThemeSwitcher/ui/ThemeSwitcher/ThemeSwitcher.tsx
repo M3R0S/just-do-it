@@ -3,7 +3,7 @@ import { FC } from "react";
 import cl from "./ThemeSwitcher.module.scss";
 import { ThemeSwitcherProps } from "./ThemeSwitcher.types";
 
-import { ThemeSvg } from "shared/assets/svg";
+import ThemeSvg from "shared/assets/svg/theme.svg";
 import { cln } from "shared/lib/helpers";
 import { useTheme } from "shared/lib/hooks";
 import { Button } from "shared/ui";

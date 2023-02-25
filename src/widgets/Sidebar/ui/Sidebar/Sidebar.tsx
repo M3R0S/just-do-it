@@ -6,7 +6,8 @@ import { SidebarProps } from "./Sidebar.types";
 
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
-import { LinkAboutSvg, LinkHomeSvg } from "shared/assets/svg";
+import LinkAboutSvg from "shared/assets/svg/link_about.svg";
+import LinkHomeSvg from "shared/assets/svg/link_home.svg";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers";
 import {
