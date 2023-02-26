@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
 import { render } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
 import { RenderWithComponentsOptions } from "./RenderWithComponents.types";
 
 import i18nTestConfig from "shared/config/i18n/i18nForTest";
-import { MemoryRouter } from "react-router-dom";
 
 export const RenderWithComponents = (
     component: ReactNode,

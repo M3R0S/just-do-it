@@ -1,8 +1,7 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import cl from "./AboutPage.module.scss";
-
-import { useTranslation } from "react-i18next";
 
 const AboutPage: FC = () => {
     const { t } = useTranslation("aboutPage");

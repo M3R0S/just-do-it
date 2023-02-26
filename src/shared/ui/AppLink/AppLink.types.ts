@@ -1,4 +1,5 @@
 import { LinkProps } from "react-router-dom";
+
 import { ValueOf } from "shared/lib/types/helpersTypes";
 
 export const AppLinkTheme = {

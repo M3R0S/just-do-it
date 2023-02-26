@@ -1,8 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-import { PortalProps } from "./Portal.types";
 import cl from "./Portal.module.scss";
+import { PortalProps } from "./Portal.types";
+
 import { useTheme } from "shared/lib/hooks";
 
 export const Portal: FC<PortalProps> = (props) => {

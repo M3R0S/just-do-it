@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import cl from "./AppRouter.module.scss";
 import { routesConfig } from "../config/routesConfig";
+
 import { Loader } from "shared/ui";
 
 export const AppRouter: FC = () => {

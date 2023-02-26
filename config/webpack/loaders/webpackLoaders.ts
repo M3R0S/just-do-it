@@ -1,5 +1,4 @@
 import { WebpackLoaders } from "./webpackLoaders.types";
-
 import { webpackAssetsLoader } from "./assets/webpackAssetsLoader";
 import { webpackSassLoader } from "./sass/webpackSassLoader";
 import { webpackSvgLoader } from "./svg/webpackSvgLoader";

@@ -1,5 +1,4 @@
 import { WebpackConfig } from "./webpackConfig.types";
-
 import { webpackDevServer } from "./devServer/webpackDevServer";
 import { webpackLoaders } from "./loaders/webpackLoaders";
 import { webpackPlugins } from "./plugins/webpackPlugins";
