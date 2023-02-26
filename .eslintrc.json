@@ -42,6 +42,9 @@
             }
         }
     },
+    "globals": {
+        "__dirname": "readonly"
+    },
     "rules": {
         "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
