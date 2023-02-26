@@ -4,7 +4,6 @@
     "i18n-ally.keystyle": "nested",
     "scss.validate": false,
     "css.validate": false,
-    "less.validate": false,
     "editor.tabSize": 4,
     "editor.codeActionsOnSave": {
         "source.fixAll.stylelint": true,
