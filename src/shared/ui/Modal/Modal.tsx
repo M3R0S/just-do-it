@@ -26,7 +26,10 @@ export const Modal: FC<ModalProps> = (props) => {
     }
 
     return (
-        <Portal className={cl.portal}>
+        <Portal
+            className={cl.portal}
+            data-testid="modal"
+        >
             <Overlay
                 onClose={onClose}
                 isActive={isOpened}
