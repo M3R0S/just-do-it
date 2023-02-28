@@ -11,8 +11,8 @@ export const useMounted: UseMounted = (params) => {
         setIsMounted(false);
     };
 
-    const handleAnimationEnd: HandleAnimationEnd = (animationName) => (e) => {
-        if (animationName && e.animationName.includes(animationName)) {
+    const handleAnimationEnd: HandleAnimationEnd = (animName) => (e) => {
+        if (animName && e.animationName.includes(animName)) {
             unmounted();
         }
     };

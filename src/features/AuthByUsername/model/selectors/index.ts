@@ -1,1 +1,1 @@
-export { getAuthByUsername } from "./getAuthByUsername/getAuthByUsername"
+export { getAuthByUsername } from "./getAuthByUsername/getAuthByUsername";

@@ -1,3 +1,14 @@
-.loginform {
-    
+.login_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .input {
+        border-radius: 1rem;
+    }
+
+    .login_btn {
+        margin-left: auto;
+        border-radius: 1rem;
+    }
 }

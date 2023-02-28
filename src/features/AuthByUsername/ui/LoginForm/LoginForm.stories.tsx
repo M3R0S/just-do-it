@@ -7,19 +7,15 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "/LoginForm",
+    title: "features/LoginForm",
     component: LoginForm,
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: ComponentStory<typeof LoginForm> = (args) => (
+    <LoginForm {...args} />
+);
 
 export const Light: Story<LoginFormProps> = Template.bind({});
-Light.args = {
-    children: "Text",
-};
 
 export const Dark: Story<LoginFormProps> = Template.bind({});
-Dark.args = {
-    children: "Text",
-};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

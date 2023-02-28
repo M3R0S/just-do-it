@@ -1,3 +1,1 @@
-export interface AuthByUsernameSchema {
-    
-}
+// export interface AuthByUsernameSchema {}

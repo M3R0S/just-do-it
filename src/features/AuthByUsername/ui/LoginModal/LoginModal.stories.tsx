@@ -7,19 +7,21 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "/LoginModal",
+    title: "features/LoginModal",
     component: LoginModal,
 } as ComponentMeta<typeof LoginModal>;
 
-const Template: ComponentStory<typeof LoginModal> = (args) => <LoginModal {...args} />;
+const Template: ComponentStory<typeof LoginModal> = (args) => (
+    <LoginModal {...args} />
+);
 
 export const Light: Story<LoginModalProps> = Template.bind({});
 Light.args = {
-    children: "Text",
+    isOpened: true,
 };
 
 export const Dark: Story<LoginModalProps> = Template.bind({});
 Dark.args = {
-    children: "Text",
+    isOpened: true,
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

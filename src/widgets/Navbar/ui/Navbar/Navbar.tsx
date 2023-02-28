@@ -4,9 +4,10 @@ import { useTranslation } from "react-i18next";
 import cl from "./Navbar.module.scss";
 import { NavbarProps } from "./Navbar.types";
 
+import { LoginModal } from "features/AuthByUsername";
 import { cln } from "shared/lib/helpers";
 import { useBooleanCallback } from "shared/lib/hooks";
-import { Button, ButtonTheme, Modal } from "shared/ui";
+import { Button, ButtonTheme } from "shared/ui";
 
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
@@ -28,15 +29,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
                     {t("Log in")}
                 </Button>
             </div>
-            <Modal
+            <LoginModal
                 isOpened={isAuthModal}
                 onClose={onCloseModal}
-            >
-                {
-                    // eslint-disable-next-line i18next/no-literal-string
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,repellendus?"
-                }
-            </Modal>
+            />
         </header>
     );
 };

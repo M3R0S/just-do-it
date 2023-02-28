@@ -15,7 +15,7 @@ export const Portal: FC<PortalProps> = (props) => {
     const [container] = useState<HTMLElement>(createElement);
 
     useEffect(() => {
-        htmlElement?.appendChild(container);
+        htmlElement.appendChild(container);
         container.classList.add(cl.portal);
         container.classList.add(theme);
 
@@ -24,7 +24,7 @@ export const Portal: FC<PortalProps> = (props) => {
         }
 
         return () => {
-            htmlElement?.removeChild(container);
+            htmlElement.removeChild(container);
         };
     }, [className, container, htmlElement, theme]);
 

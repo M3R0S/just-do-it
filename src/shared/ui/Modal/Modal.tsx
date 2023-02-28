@@ -21,20 +21,18 @@ export const Modal: FC<ModalProps> = (props) => {
         [cl.content_closed]: !isOpened,
     };
 
-    if (!isMounted) {
+    if (!isOpened && !isMounted) {
         return null;
     }
 
     return (
-        <Portal
-            className={cl.portal}
-            data-testid="modal"
-        >
+        <Portal className={cl.portal}>
             <Overlay
                 onClose={onClose}
                 isActive={isOpened}
             />
             <div
+                data-testid="content"
                 onAnimationEnd={handleAnimationEnd("content-closed")}
                 className={cln(cl.content, [className], mods)}
             >

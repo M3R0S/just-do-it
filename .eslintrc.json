@@ -53,10 +53,11 @@
             "warn",
             {
                 "markupOnly": true,
-                "ignoreAttribute": ["data-testid", "to", "theme", "size"]
+                "ignoreAttribute": ["data-testid"]
             }
         ],
         "react/display-name": "off",
+        "react/prop-types": "off",
         "@typescript-eslint/no-var-requires": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",

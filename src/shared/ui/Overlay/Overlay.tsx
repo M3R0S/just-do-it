@@ -21,6 +21,7 @@ export const Overlay: FC<OverlayProps> = (props) => {
     return (
         <div
             role="button"
+            data-testid="overlay"
             onClick={onClose}
             onAnimationEnd={handleAnimationEnd("overlay-closed")}
             className={cln(cl.overlay, [className], mods)}

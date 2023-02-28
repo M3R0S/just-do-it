@@ -8,5 +8,7 @@
     "Reboot": "Перезагрузка",
     "Language": "English",
     "Lang": "EN",
-    "Log in": "Войти"
+    "Log in": "Войти",
+    "Enter the user name": "Введите имя пользователя",
+    "Enter the password": "Введите пароль"
 }
