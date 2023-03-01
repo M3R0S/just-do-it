@@ -11,7 +11,7 @@
         "plugin:i18next/recommended",
         "plugin:storybook/recommended",
         "plugin:react-hooks/recommended",
-        "prettier",
+        // "prettier",
         "plugin:import/recommended",
         "plugin:import/typescript"
     ],
@@ -28,7 +28,7 @@
         "@typescript-eslint",
         "i18next",
         "react-hooks",
-        "prettier",
+        // "prettier",
         "import"
     ],
     "settings": {
@@ -46,7 +46,7 @@
         "__dirname": "readonly"
     },
     "rules": {
-        "prettier/prettier": "error",
+        // "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/ban-ts-comment": "warn",
         "i18next/no-literal-string": [

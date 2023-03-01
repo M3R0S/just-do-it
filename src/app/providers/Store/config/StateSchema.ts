@@ -1,10 +1,5 @@
-import { CounterSchema, counterSlice } from "entities/Counter";
-import {
-    UserSchema,
-    //  userSlice
-} from "entities/User";
+import { LoginSchema, loginSlice } from "features/AuthByUsername";
 
 export interface StateSchema {
-    [counterSlice.name]: CounterSchema;
-    // [userSlice.name]: UserSchema;
+    [loginSlice.name]?: LoginSchema;
 }

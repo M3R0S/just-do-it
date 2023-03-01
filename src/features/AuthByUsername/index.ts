@@ -1,6 +1,3 @@
 export { LoginModal } from "./ui/LoginModal/LoginModal";
-// export {
-//     authByUsernameSlice,
-//     authByUsernameActions,
-// } from "./model/slice/authByUsernameSlice";
-// export { AuthByUsernameSchema } from "./model/types/AuthByUsernameSchema";
+export { loginSlice, loginActions } from "./model/slice/loginSlice";
+export { LoginSchema } from "./model/types/LoginSchema";
