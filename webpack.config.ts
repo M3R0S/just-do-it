@@ -2,12 +2,7 @@ import path from "path";
 import { Configuration } from "webpack";
 
 import { webpackConfig } from "./config/webpack/webpackConfig";
-import {
-    WebpackEnv,
-    WebpackMode,
-    WebpackOptions,
-    WebpackPaths,
-} from "./config/webpack/types/webpackConfigSharedTypes";
+import { WebpackEnv, WebpackMode, WebpackOptions, WebpackPaths } from "./config/webpack/types/webpackConfigSharedTypes";
 
 export default (env: WebpackEnv): Configuration => {
     const mode: WebpackMode = env.MODE || "development";

@@ -2,34 +2,38 @@
     outline: none;
     border: none;
     padding: 0.6rem 1.5rem;
-    color: var(--primary-color);
+    color: var(--color-primary);
     background: inherit;
     transition-property: color, background;
     transition-duration: var(--transition-switch-theme-timeout);
     cursor: pointer;
 
+    &:disabled {
+        opacity: 0.5;
+    }
+
     &.clear_inverted {
-        color: var(--inverted-primary-color);
+        color: var(--primary-color-inverted);
     }
 
     &.fill {
         border-radius: 1.4rem;
-        color: var(--inverted-primary-color);
-        background: var(--inverted-bg-color);
+        color: var(--primary-color-inverted);
+        background: var(--bg-color-inverted);
     }
 
     &.outline {
-        border: 0.1rem solid var(--primary-color);
+        border: 0.1rem solid var(--color-primary);
     }
 
     &.background {
-        color: var(--primary-color);
+        color: var(--color-primary);
         background: var(--bg-color);
     }
 
     &.background_inverted {
-        color: var(--inverted-primary-color);
-        background: var(--inverted-bg-color);
+        color: var(--primary-color-inverted);
+        background: var(--bg-color-inverted);
     }
 
     &.square {

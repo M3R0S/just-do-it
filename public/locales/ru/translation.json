@@ -10,5 +10,9 @@
     "Lang": "EN",
     "Log in": "Войти",
     "Enter the user name": "Введите имя пользователя",
-    "Enter the password": "Введите пароль"
+    "Enter the password": "Введите пароль",
+    "Authorization form": "Форма авторизации",
+    "You have entered an incorrect username or password": "Вы ввели неверный логин или пароль",
+    "Unexpected error": "Непредвиденная ошибка",
+    "Logout": "Выйти"
 }

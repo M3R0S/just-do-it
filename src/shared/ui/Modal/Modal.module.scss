@@ -1,5 +1,5 @@
 .portal {
-    z-index: var(--modal-login-z-index);
+    z-index: var(--z-index-modal-login);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,13 +12,11 @@
     background: var(--bg-color);
 
     &_opened {
-        animation: forwards content-opened
-            var(--transition-toggle-modal-timeout);
+        animation: forwards content-opened var(--transition-toggle-modal-timeout);
     }
 
     &_closed {
-        animation: forwards content-closed
-            var(--transition-toggle-modal-timeout);
+        animation: forwards content-closed var(--transition-toggle-modal-timeout);
     }
 }
 

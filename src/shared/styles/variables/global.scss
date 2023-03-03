@@ -24,11 +24,12 @@
     --height-sidebar: calc(100vh - var(--height-navbar));
 
     // ? Цвета
-    --overlay-bg-color: rgb(0 0 0 / 60%);
+    --bg-color-overlay: rgb(0 0 0 / 60%);
+    --color-red-primary: #f00;
+    --color-red-secondary: #ce0505;
 
     // ? z-индексы
-    --modal-login-z-index: 10;
-    --overlay-z-index: -1;
+    --z-index-modal-login: 10;
 
     // ? Продолжительность анимаций
     --transition-switch-theme-timeout: 0.5s;

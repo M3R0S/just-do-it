@@ -10,9 +10,7 @@ export default {
     component: NotFoundPage,
 } as ComponentMeta<typeof NotFoundPage>;
 
-const Template: ComponentStory<typeof NotFoundPage> = (args) => (
-    <NotFoundPage {...args} />
-);
+const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
 
 export const Light: Story = Template.bind({});
 

@@ -2,9 +2,8 @@
     position: relative;
     width: var(--width-sidebar);
     height: var(--height-sidebar);
-    background: var(--inverted-bg-color);
-    transition: background var(--transition-switch-theme-timeout),
-        width var(--transition-toggle-sidebar-timeout),
+    background: var(--bg-color-inverted);
+    transition: background var(--transition-switch-theme-timeout), width var(--transition-toggle-sidebar-timeout),
         flex-direction var(--transition-toggle-sidebar-timeout);
 
     .collapse_btn {
@@ -46,7 +45,7 @@
 
             &_svg {
                 min-width: 30px;
-                fill: var(--inverted-primary-color);
+                fill: var(--primary-color-inverted);
                 transition: fill var(--transition-switch-theme-timeout);
             }
         }

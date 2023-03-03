@@ -9,7 +9,7 @@ describe("getLoginError", () => {
         const state: DeepPartial<StateSchema> = {
             login: {
                 username: "",
-                isLoading: null,
+                isLoading: false,
                 password: "",
                 error: "error",
             },

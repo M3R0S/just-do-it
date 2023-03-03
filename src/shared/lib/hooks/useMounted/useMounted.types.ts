@@ -4,9 +4,7 @@ export interface UseMountedParams {
     isActive: boolean;
 }
 
-export type HandleAnimationEnd = (
-    animationName: string
-) => (e: AnimationEvent) => void;
+export type HandleAnimationEnd = (animationName: string) => (e: AnimationEvent) => void;
 
 export interface UseMountedReturns {
     isMounted: boolean;

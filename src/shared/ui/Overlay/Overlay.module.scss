@@ -2,18 +2,16 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: var(--overlay-bg-color);
+    background: var(--bg-color-overlay);
     cursor: pointer;
     inset: 0;
 
     &_opened {
-        animation: forwards overlay-opened
-            var(--transition-toggle-overlay-timeout);
+        animation: forwards overlay-opened var(--transition-toggle-overlay-timeout);
     }
 
     &_closed {
-        animation: forwards overlay-closed
-            var(--transition-toggle-overlay-timeout);
+        animation: forwards overlay-closed var(--transition-toggle-overlay-timeout);
     }
 }
 

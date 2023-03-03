@@ -9,23 +9,17 @@ import { Loader } from "shared/ui";
 export const AppRouter: FC = () => {
     return (
         <Routes>
-            {Object.values(routesConfig).map(
-                ({ element, id, ...otherProps }) => (
-                    <Route
-                        element={
-                            <Suspense
-                                fallback={<Loader className={cl.loader} />}
-                            >
-                                <main className={cl.page_wrapper}>
-                                    {element}
-                                </main>
-                            </Suspense>
-                        }
-                        {...otherProps}
-                        key={id}
-                    />
-                )
-            )}
+            {Object.values(routesConfig).map(({ element, id, ...otherProps }) => (
+                <Route
+                    element={
+                        <Suspense fallback={<Loader className={cl.loader} />}>
+                            <main className={cl.page_wrapper}>{element}</main>
+                        </Suspense>
+                    }
+                    {...otherProps}
+                    key={id}
+                />
+            ))}
         </Routes>
     );
 };

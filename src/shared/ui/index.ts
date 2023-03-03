@@ -12,3 +12,4 @@ export { LoaderTheme } from "./Loader/Loader.types";
 export { ButtonTheme, ButtonSize } from "./Button/Button.types";
 export { AppLinkTheme } from "./AppLink/AppLink.types";
 export { InputTheme } from "./Input/Input.types";
+export { Title } from "./Title/Title";

@@ -11,7 +11,6 @@ describe("getLoginIsLoading", () => {
                 username: "",
                 isLoading: true,
                 password: "",
-                error: null,
             },
         };
 

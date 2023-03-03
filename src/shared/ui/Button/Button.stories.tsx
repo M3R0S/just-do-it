@@ -152,6 +152,7 @@ SquareSizeMDark.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
     size: ButtonSize.M,
 };
+SquareSizeMDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SquareSizeLDark: Story<ButtonProps> = Template.bind({});
 SquareSizeLDark.args = {
@@ -160,6 +161,7 @@ SquareSizeLDark.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
     size: ButtonSize.L,
 };
+SquareSizeLDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SquareSizeXLDark: Story<ButtonProps> = Template.bind({});
 SquareSizeXLDark.args = {
@@ -168,3 +170,19 @@ SquareSizeXLDark.args = {
     theme: ButtonTheme.BACKGROUND_INVERTED,
     size: ButtonSize.XL,
 };
+SquareSizeXLDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DisabledLight: Story<ButtonProps> = Template.bind({});
+DisabledLight.args = {
+    children: "Text",
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    disabled: true,
+};
+
+export const DisabledDark: Story<ButtonProps> = Template.bind({});
+DisabledDark.args = {
+    children: "Text",
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    disabled: true,
+};
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

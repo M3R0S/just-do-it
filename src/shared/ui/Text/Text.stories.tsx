@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
-import { TextProps } from "./Text.types";
+import { TextProps, TextTheme } from "./Text.types";
 import { Text } from "./Text";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
@@ -23,3 +23,16 @@ Dark.args = {
     children: "Text",
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const ErrorLight: Story<TextProps> = Template.bind({});
+ErrorLight.args = {
+    children: "Text",
+    theme: TextTheme.ERROR,
+};
+
+export const ErrorDark: Story<TextProps> = Template.bind({});
+ErrorDark.args = {
+    children: "Text",
+    theme: TextTheme.ERROR,
+};
+ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];

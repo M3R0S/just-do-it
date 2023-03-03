@@ -8,6 +8,4 @@ export interface UseBooleanCallbackReturns {
     toggle: VoidFunction;
 }
 
-export type UseBooleanCallback = (
-    defaultValue?: boolean
-) => UseBooleanCallbackReturns;
+export type UseBooleanCallback = (defaultValue?: boolean) => UseBooleanCallbackReturns;

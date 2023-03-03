@@ -14,9 +14,7 @@ export const webpackSassLoader: WebpackSassLoader = (options) => {
                 options: {
                     modules: {
                         auto: /\.module\./,
-                        localIdentName: isDev
-                            ? "[name]__[local]--[hash:base64:5]"
-                            : "[hash:base64:5]",
+                        localIdentName: isDev ? "[name]__[local]--[hash:base64:5]" : "[hash:base64:5]",
                     },
                 },
             },

@@ -6,53 +6,41 @@ describe("classNames", () => {
     });
 
     test("with additional classes", () => {
-        const expected =
-            "mainClasses firstAdditionalClass secondAdditionalClass";
+        const expected = "mainClasses firstAdditionalClass secondAdditionalClass";
 
-        expect(
-            cln("mainClasses", [
-                "firstAdditionalClass",
-                "secondAdditionalClass",
-            ])
-        ).toBe(expected);
+        expect(cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"])).toBe(expected);
     });
 
     test("with mods classes true", () => {
-        const expected =
-            "mainClasses firstAdditionalClass secondAdditionalClass firstModsClass secondModsClass";
+        const expected = "mainClasses firstAdditionalClass secondAdditionalClass firstModsClass secondModsClass";
 
         expect(
-            cln(
-                "mainClasses",
-                ["firstAdditionalClass", "secondAdditionalClass"],
-                { firstModsClass: true, secondModsClass: true }
-            )
+            cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"], {
+                firstModsClass: true,
+                secondModsClass: true,
+            })
         ).toBe(expected);
     });
 
     test("with mods classes false", () => {
-        const expected =
-            "mainClasses firstAdditionalClass secondAdditionalClass";
+        const expected = "mainClasses firstAdditionalClass secondAdditionalClass";
 
         expect(
-            cln(
-                "mainClasses",
-                ["firstAdditionalClass", "secondAdditionalClass"],
-                { firstModsClass: false, secondModsClass: false }
-            )
+            cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"], {
+                firstModsClass: false,
+                secondModsClass: false,
+            })
         ).toBe(expected);
     });
 
     test("with mods classes true and false", () => {
-        const expected =
-            "mainClasses firstAdditionalClass secondAdditionalClass firstModsClass";
+        const expected = "mainClasses firstAdditionalClass secondAdditionalClass firstModsClass";
 
         expect(
-            cln(
-                "mainClasses",
-                ["firstAdditionalClass", "secondAdditionalClass"],
-                { firstModsClass: true, secondModsClass: false }
-            )
+            cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"], {
+                firstModsClass: true,
+                secondModsClass: false,
+            })
         ).toBe(expected);
     });
 });

@@ -10,9 +10,7 @@ export default {
     component: AppErrorBoundaryFallback,
 } as ComponentMeta<typeof AppErrorBoundaryFallback>;
 
-const Template: ComponentStory<typeof AppErrorBoundaryFallback> = (args) => (
-    <AppErrorBoundaryFallback {...args} />
-);
+const Template: ComponentStory<typeof AppErrorBoundaryFallback> = (args) => <AppErrorBoundaryFallback {...args} />;
 
 export const Light: Story = Template.bind({});
 

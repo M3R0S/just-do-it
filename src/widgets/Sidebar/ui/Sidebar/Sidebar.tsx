@@ -10,13 +10,7 @@ import LinkAboutSvg from "shared/assets/svg/link_about.svg";
 import LinkHomeSvg from "shared/assets/svg/link_home.svg";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers";
-import {
-    AppLink,
-    AppLinkTheme,
-    Button,
-    ButtonSize,
-    ButtonTheme,
-} from "shared/ui";
+import { AppLink, AppLinkTheme, Button, ButtonSize, ButtonTheme } from "shared/ui";
 
 export const Sidebar: FC<SidebarProps> = (props) => {
     const { className } = props;

@@ -3,17 +3,17 @@
     border: none;
     font: var(--font-m);
     font-weight: 300;
-    color: var(--primary-color);
+    color: var(--color-primary);
     background: inherit;
 }
 
 .inverted {
     padding: 0.5rem 1rem;
-    color: var(--inverted-primary-color);
-    background: var(--inverted-bg-color);
+    color: var(--primary-color-inverted);
+    background: var(--bg-color-inverted);
 
     &::placeholder {
-        color: var(--inverted-primary-color);
+        color: var(--primary-color-inverted);
         opacity: 0.8;
     }
 }

@@ -10,5 +10,9 @@
     "Lang": "РУС",
     "Log in": "Log in",
     "Enter the user name": "Enter the user name",
-    "Enter the password": "Enter the password"
+    "Enter the password": "Enter the password",
+    "Authorization form": "Authorization form",
+    "You have entered an incorrect username or password": "You have entered an incorrect username or password",
+    "Unexpected error": "Unexpected error",
+    "Logout": "Logout"
 }

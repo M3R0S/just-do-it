@@ -9,9 +9,8 @@ describe("getLoginPassword", () => {
         const state: DeepPartial<StateSchema> = {
             login: {
                 username: "",
-                isLoading: null,
+                isLoading: false,
                 password: "password",
-                error: null,
             },
         };
 

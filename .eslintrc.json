@@ -71,14 +71,7 @@
         "import/order": [
             "error",
             {
-                "groups": [
-                    ["external", "builtin"],
-                    ["sibling", "parent"],
-                    "internal",
-                    "index",
-                    "object",
-                    "type"
-                ],
+                "groups": [["external", "builtin"], ["sibling", "parent"], "internal", "index", "object", "type"],
                 "newlines-between": "always",
                 "distinctGroup": false,
                 "pathGroupsExcludedImportTypes": ["react"],

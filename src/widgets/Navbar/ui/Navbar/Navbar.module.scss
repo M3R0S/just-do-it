@@ -4,13 +4,13 @@
     padding: 2rem;
     width: 100%;
     height: var(--height-navbar);
-    background: var(--inverted-bg-color);
+    background: var(--bg-color-inverted);
     transition: background var(--transition-switch-theme-timeout);
 
     .links {
         display: flex;
         column-gap: 2rem;
         margin-left: auto;
-        color: var(--inverted-primary-color);
+        color: var(--primary-color-inverted);
     }
 }

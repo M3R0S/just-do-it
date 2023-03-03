@@ -1,0 +1,8 @@
+.text {
+    font: var(--font-m);
+    color: var(--color-secondary);
+
+    &.error {
+        color: var(--color-red-secondary);
+    }
+}
