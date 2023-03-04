@@ -8,7 +8,10 @@ import { RenderWithComponentOptions } from "./RenderWithComponent.types";
 import { StateSchema, StoreProvider } from "app/providers/Store";
 import i18nTestConfig from "shared/config/i18n/i18nForTest";
 
-export const RenderWithComponent = (component: ReactNode, options: RenderWithComponentOptions = {}) => {
+export const RenderWithComponent = (
+    component: ReactNode,
+    options: RenderWithComponentOptions = {}
+) => {
     const { route = "/", initialState } = options;
 
     return render(

@@ -3,7 +3,8 @@
     width: var(--width-sidebar);
     height: var(--height-sidebar);
     background: var(--bg-color-inverted);
-    transition: background var(--transition-switch-theme-timeout), width var(--transition-toggle-sidebar-timeout),
+    transition: background var(--transition-switch-theme-timeout),
+        width var(--transition-toggle-sidebar-timeout),
         flex-direction var(--transition-toggle-sidebar-timeout);
 
     .collapse_btn {

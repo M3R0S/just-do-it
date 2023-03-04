@@ -8,11 +8,14 @@ describe("classNames", () => {
     test("with additional classes", () => {
         const expected = "mainClasses firstAdditionalClass secondAdditionalClass";
 
-        expect(cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"])).toBe(expected);
+        expect(cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"])).toBe(
+            expected
+        );
     });
 
     test("with mods classes true", () => {
-        const expected = "mainClasses firstAdditionalClass secondAdditionalClass firstModsClass secondModsClass";
+        const expected =
+            "mainClasses firstAdditionalClass secondAdditionalClass firstModsClass secondModsClass";
 
         expect(
             cln("mainClasses", ["firstAdditionalClass", "secondAdditionalClass"], {

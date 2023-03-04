@@ -5,7 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import cl from "./LoginForm.module.scss";
 import { LoginFormProps } from "./LoginForm.types";
 import { loginActions } from "../../model/slice/loginSlice";
-import { getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername } from "../../model/selectors";
+import {
+    getLoginError,
+    getLoginIsLoading,
+    getLoginPassword,
+    getLoginUsername,
+} from "../../model/selectors";
 import { loginByUsername } from "../../model/services";
 
 import { cln } from "shared/lib/helpers";

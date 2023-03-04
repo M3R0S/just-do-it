@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, DeepPartial } from "@reduxjs/toolkit";
 
 import { StateSchema } from "./StateSchema";
 import { rootReducer } from "./rootReducer";
 
-export const createReduxStore = (initialState?: StateSchema) => {
+export const createReduxStore = (initialState?: DeepPartial<StateSchema>) => {
     return configureStore<StateSchema>({
         reducer: rootReducer,
         devTools: __IS_DEV__,

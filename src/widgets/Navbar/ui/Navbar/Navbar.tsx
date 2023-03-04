@@ -18,7 +18,11 @@ export const Navbar: FC<NavbarProps> = (props) => {
     const dispatch = useDispatch();
     const authData = useSelector(getUserAuthData);
 
-    const { value: isAuthModal, active: onOpenModal, inactive: onCloseModal } = useBooleanCallback(false);
+    const {
+        value: isAuthModal,
+        active: onOpenModal,
+        inactive: onCloseModal,
+    } = useBooleanCallback(false);
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
