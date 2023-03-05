@@ -16,7 +16,7 @@ export const loginByUsername = createAsyncThunk<
         const response = await axios.post<User>("http://localhost:8000/login", authData);
         const data = response.data;
         if (!data) {
-            throw new Error("no data");
+            throw new Error("403");
         }
 
         localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(data));
@@ -24,7 +24,7 @@ export const loginByUsername = createAsyncThunk<
 
         return response.data;
     } catch (error) {
-        if (error.message.includes("403")) {
+        if (error.message.toString().includes("403")) {
             return thunkAPI.rejectWithValue("403");
         }
 
