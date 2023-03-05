@@ -36,3 +36,4 @@ export const loginSlice = createSlice({
 });
 
 export const loginActions = loginSlice.actions;
+export const loginReducer = loginSlice.reducer;

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import cl from "./LoginForm.module.scss";
 import { LoginFormProps } from "./LoginForm.types";
-import { loginActions } from "../../model/slice/loginSlice";
 import {
     getLoginError,
     getLoginIsLoading,
@@ -12,23 +11,30 @@ import {
     getLoginUsername,
 } from "../../model/selectors";
 import { loginByUsername } from "../../model/services";
+import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 
 import { cln } from "shared/lib/helpers";
-import { useAutoFocus } from "shared/lib/hooks";
+import { ReducersList, useAutoFocus, useDynamicReducerLoader } from "shared/lib/hooks";
 import { TextTheme } from "shared/ui/Text/Text.types";
 import { Button, ButtonTheme, Input, InputTheme, Text, Title } from "shared/ui";
 
-export const LoginForm: FC<LoginFormProps> = (props) => {
+const initialReducers: ReducersList = {
+    login: loginReducer,
+};
+
+const LoginForm: FC<LoginFormProps> = (props) => {
     const { className } = props;
+
+    useDynamicReducerLoader({ reducers: initialReducers });
 
     const dispatch = useDispatch();
     const { t } = useTranslation();
     const { ref } = useAutoFocus();
 
-    const loginError = useSelector(getLoginError);
-    const loginUsername = useSelector(getLoginUsername);
-    const loginPassword = useSelector(getLoginPassword);
-    const loginIsLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
 
     const onChangeUsername = useCallback(
         (username: string) => {
@@ -47,19 +53,21 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
     const onLoginClick = useCallback(() => {
         dispatch(
             loginByUsername({
-                password: loginPassword,
-                username: loginUsername,
+                password: password,
+                username: username,
             })
         );
-    }, [dispatch, loginPassword, loginUsername]);
+    }, [dispatch, password, username]);
 
     const ErrorText = () => {
-        if (loginError === "403") {
+        if (error === "403") {
             return t("You have entered an incorrect username or password");
         }
-        if (loginError === "500") {
+        if (error === "500") {
             return t("Unexpected error");
         }
+
+        return t("Unexpected error");
     };
 
     const usernamePlaceholder = t("Enter the user name");
@@ -72,11 +80,11 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
                 theme={TextTheme.ERROR}
                 className={cl.error}
             >
-                {loginError ? ErrorText() : ""}
+                {error ? ErrorText() : ""}
             </Text>
             <Input
                 onChangeValue={onChangeUsername}
-                value={loginUsername}
+                value={username}
                 className={cl.input}
                 theme={InputTheme.INVERTED}
                 placeholder={usernamePlaceholder}
@@ -84,7 +92,7 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
             />
             <Input
                 onChangeValue={onChangePassword}
-                value={loginPassword}
+                value={password}
                 className={cl.input}
                 theme={InputTheme.INVERTED}
                 placeholder={passwordPlaceholder}
@@ -93,10 +101,12 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 className={cl.login_btn}
                 onClick={onLoginClick}
-                disabled={loginIsLoading}
+                disabled={isLoading}
             >
                 {t("Log in")}
             </Button>
         </div>
     );
 };
+
+export default LoginForm;

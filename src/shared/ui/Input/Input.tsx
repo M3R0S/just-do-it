@@ -12,7 +12,6 @@ export const Input: FC<InputProps> = memo((props) => {
         value,
         type = "text",
         onChangeValue,
-        onChange,
         placeholder,
         isAutoFocus,
         inputRef,
@@ -20,7 +19,7 @@ export const Input: FC<InputProps> = memo((props) => {
     } = props;
 
     const onChangeValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange ? onChange : onChangeValue?.(e.target.value);
+        onChangeValue?.(e.target.value);
     };
 
     return (

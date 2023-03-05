@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 import { DeepPartial } from "@reduxjs/toolkit";
 
 import { LoginFormProps } from "./LoginForm.types";
-import { LoginForm } from "./LoginForm";
+import LoginForm from "./LoginForm";
 
 import { StateSchema } from "app/providers/Store";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";

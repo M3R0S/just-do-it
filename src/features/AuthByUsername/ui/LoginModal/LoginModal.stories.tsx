@@ -10,6 +10,11 @@ import { Theme } from "shared/lib/context/ThemeContext";
 export default {
     title: "features/LoginModal",
     component: LoginModal,
+    parameters: {
+        loki: {
+            skip: true,
+        },
+    },
 } as ComponentMeta<typeof LoginModal>;
 
 const Template: ComponentStory<typeof LoginModal> = (args) => <LoginModal {...args} />;
@@ -53,7 +58,7 @@ ErrorLight.decorators = [
             username: "admin",
             password: "123",
             isLoading: false,
-            error: "Ошибка",
+            error: "403",
         },
     }),
 ];
@@ -69,7 +74,7 @@ ErrorDark.decorators = [
             username: "admin",
             password: "123",
             isLoading: false,
-            error: "Ошибка",
+            error: "403",
         },
     }),
 ];

@@ -1,11 +1,14 @@
-import { combineReducers } from "@reduxjs/toolkit";
+import { ReducersMapObject } from "@reduxjs/toolkit";
 
-import { StateSchema } from "./StateSchema";
+import { StateSchema, StoreProviderAsyncReducers } from "./StateSchema";
 
-import { loginSlice } from "features/AuthByUsername";
-import { userSlice } from "entities/User/model/slice/userSlice";
+import { userReducer } from "entities/User";
 
-export const rootReducer = combineReducers<StateSchema>({
-    login: loginSlice.reducer,
-    user: userSlice.reducer,
-});
+export const rootReducer = (
+    asyncReducers?: StoreProviderAsyncReducers
+): ReducersMapObject<StateSchema> => {
+    return {
+        ...asyncReducers,
+        user: userReducer,
+    };
+};
