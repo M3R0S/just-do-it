@@ -5,7 +5,7 @@ import { LoginByUsernameProps } from "./loginByUsername.types";
 
 import { User } from "entities/User";
 import { userActions } from "entities/User/model/slice/userSlice";
-import { USER_LOCALSTORAGE_KEY } from "shared/constants/localStorage";
+import { USER_LOCALSTORAGE_KEY } from "shared/lib/constants/localStorage";
 
 export const loginByUsername = createAsyncThunk<
     User,

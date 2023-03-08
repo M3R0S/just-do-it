@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import cl from "./AppRouter.module.scss";
 import { routesConfig } from "../config/routesConfig";
 
-import { Loader } from "shared/ui";
+import { Loader } from "shared/ui/Loader";
 
 export const AppRouter: FC = () => {
     return (

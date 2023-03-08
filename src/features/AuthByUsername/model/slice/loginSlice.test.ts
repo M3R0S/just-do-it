@@ -2,7 +2,7 @@ import { DeepPartial, PayloadAction } from "@reduxjs/toolkit";
 
 import { loginActions, loginReducer } from "./loginSlice";
 import { LoginSchema } from "../types/LoginSchema";
-import { loginByUsername } from "../services";
+import { loginByUsername } from "../services/loginByUsername/loginByUsername";
 
 type DPLoginSchema = DeepPartial<LoginSchema>;
 

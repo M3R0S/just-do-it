@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import cl from "./Portal.module.scss";
 import { PortalProps } from "./Portal.types";
 
-import { useTheme } from "shared/lib/hooks";
+import { useTheme } from "shared/lib/hooks/useTheme";
 
 export const Portal: FC<PortalProps> = (props) => {
     const { children, className, htmlElement = document.body } = props;

@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import cl from "./Overlay.module.scss";
 import { OverlayProps } from "./Overlay.types";
 
-import { cln } from "shared/lib/helpers";
-import { useMounted } from "shared/lib/hooks";
+import { cln } from "shared/lib/helpers/classNames";
+import { useMounted } from "shared/lib/hooks/useMounted";
 
-export const Overlay: FC<OverlayProps> = (props) => {
+export const Overlay: FC<OverlayProps> = memo((props) => {
     const { className, isActive, onClose } = props;
 
     const { handleAnimationEnd } = useMounted({
@@ -27,4 +27,4 @@ export const Overlay: FC<OverlayProps> = (props) => {
             className={cln(cl.overlay, [className], mods)}
         />
     );
-};
+});

@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import cl from "./Title.module.scss";
 import { TitleAttributes, TitleProps, TitleTagRecord } from "./Title.types";
 
-import { cln } from "shared/lib/helpers";
+import { cln } from "shared/lib/helpers/classNames";
 
-export const Title: FC<TitleProps> = (props) => {
+export const Title: FC<TitleProps> = memo((props) => {
     const { className, children, tag = "h1", theme = "clear" } = props;
 
     const newProps: TitleAttributes = {
@@ -24,4 +24,4 @@ export const Title: FC<TitleProps> = (props) => {
     const element = titleTagAccordance[tag];
 
     return element;
-};
+});

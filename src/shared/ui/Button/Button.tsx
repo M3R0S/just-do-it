@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import cl from "./Button.module.scss";
 import { ButtonProps, ButtonSize, ButtonTheme } from "./Button.types";
 
-import { cln } from "shared/lib/helpers";
+import { cln } from "shared/lib/helpers/classNames";
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = memo((props) => {
     const {
         className,
         children,
@@ -29,4 +29,4 @@ export const Button: FC<ButtonProps> = (props) => {
             {children}
         </button>
     );
-};
+});
