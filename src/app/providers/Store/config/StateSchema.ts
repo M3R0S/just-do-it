@@ -6,6 +6,7 @@ import {
     Reducer,
     ReducersMapObject,
 } from "@reduxjs/toolkit";
+import { AxiosInstance } from "axios";
 
 import { LoginSchema } from "features/AuthByUsername";
 import { UserSchema } from "entities/User";
@@ -29,4 +30,13 @@ export interface ReducerManager {
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
     reducerManager: ReducerManager;
+}
+
+export interface ThunkExtraArg {
+    api: AxiosInstance;
+}
+
+export interface ThunkConfig<T = string> {
+    rejectValue: T;
+    extra: ThunkExtraArg;
 }

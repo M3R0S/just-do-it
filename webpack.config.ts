@@ -14,6 +14,7 @@ export default (env: WebpackEnv): Configuration => {
     const port: number = env.PORT || 3000;
     const isDev = mode === "development";
     const isAnalize: boolean = env.ANALYZE || false;
+    const apiUrl: string = env.API_URL || "http://localhost:8000";
 
     const paths: WebpackPaths = {
         build: path.resolve(__dirname, "build"),
@@ -28,6 +29,7 @@ export default (env: WebpackEnv): Configuration => {
         isDev,
         port,
         isAnalize,
+        apiUrl,
     };
 
     return webpackConfig(options);

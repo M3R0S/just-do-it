@@ -11,6 +11,7 @@ export interface WebpackEnv {
     MODE: WebpackMode | undefined;
     PORT: number | undefined;
     ANALYZE: boolean | undefined;
+    API_URL: string | undefined;
 }
 
 export interface WebpackOptions {
@@ -19,4 +20,5 @@ export interface WebpackOptions {
     isDev: boolean;
     port: number;
     isAnalize: boolean;
+    apiUrl: string;
 }
