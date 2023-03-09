@@ -4,6 +4,7 @@
         "baseUrl": "./src",
         "noImplicitAny": true,
         "strictNullChecks": true,
+        // "strict": true,
         "module": "ESNext",
         "target": "es5",
         "jsx": "react-jsx",

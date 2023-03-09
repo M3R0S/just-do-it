@@ -1,0 +1,19 @@
+.profile_card {
+    border: 0.2rem solid var(--bg-color-inverted);
+    padding: 2rem;
+
+    .header {
+        display: flex;
+    }
+
+    .edit_btn {
+        margin-left: auto;
+    }
+
+    .data {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        row-gap: 1rem;
+    }
+}

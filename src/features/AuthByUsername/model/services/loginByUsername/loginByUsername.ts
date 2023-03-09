@@ -6,6 +6,7 @@ import { ThunkConfig } from "app/providers/Store";
 import { User } from "entities/User";
 import { userActions } from "entities/User/model/slice/userSlice";
 import { LOCALSTORAGE_USER_KEY } from "shared/lib/constants/localStorage";
+import { ServerEndpoints, StatusCodes } from "shared/lib/types/serverTypes";
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig>(
     "login/loginByUsername",
@@ -14,10 +15,11 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
         const { api } = extra;
 
         try {
-            const response = await api.post<User>("/login", authData);
+            const response = await api.post<User>(ServerEndpoints.LOGIN, authData);
             const data = response.data;
+            console.log(data);
             if (!data) {
-                throw new Error("403");
+                throw new Error(StatusCodes.NO_DATA);
             }
 
             localStorage.setItem(LOCALSTORAGE_USER_KEY, JSON.stringify(data));
@@ -25,11 +27,11 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
             return response.data;
         } catch (error) {
-            if (error.message.toString().includes("403")) {
-                return rejectWithValue("403");
+            if (error.message.toString().includes(StatusCodes.NOT_AUTHORIZED)) {
+                return rejectWithValue(StatusCodes.NOT_AUTHORIZED);
             }
 
-            return rejectWithValue("500");
+            return rejectWithValue(StatusCodes.UNKNOWN);
         }
     }
 );
