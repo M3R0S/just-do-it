@@ -14,12 +14,6 @@ export default {
 const Template: ComponentStory<typeof {{pascalCase}}> = (args) => <{{pascalCase}} {...args} />;
 
 export const Light: Story<{{pascalCase}}Props> = Template.bind({});
-Light.args = {
-    children: "Text",
-};
 
 export const Dark: Story<{{pascalCase}}Props> = Template.bind({});
-Dark.args = {
-    children: "Text",
-};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

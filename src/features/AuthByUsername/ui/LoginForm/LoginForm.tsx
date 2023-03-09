@@ -1,33 +1,35 @@
-import { FC, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import cl from "./LoginForm.module.scss";
 import { LoginFormProps } from "./LoginForm.types";
-import {
-    getLoginError,
-    getLoginIsLoading,
-    getLoginPassword,
-    getLoginUsername,
-} from "../../model/selectors";
-import { loginByUsername } from "../../model/services";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
+import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
+import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
+import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
+import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 
-import { cln } from "shared/lib/helpers";
-import { ReducersList, useAutoFocus, useDynamicReducerLoader } from "shared/lib/hooks";
-import { TextTheme } from "shared/ui/Text/Text.types";
-import { Button, ButtonTheme, Input, InputTheme, Text, Title } from "shared/ui";
+import { cln } from "shared/lib/helpers/classNames";
+import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { useAutoFocus } from "shared/lib/hooks/useAutoFocus";
+import { Title } from "shared/ui/Title";
+import { Text, TextTheme } from "shared/ui/Text";
+import { Input, InputTheme } from "shared/ui/Input";
+import { Button, ButtonTheme } from "shared/ui/Button";
 
 const initialReducers: ReducersList = {
     login: loginReducer,
 };
 
-const LoginForm: FC<LoginFormProps> = (props) => {
-    const { className } = props;
+const LoginForm: FC<LoginFormProps> = memo((props) => {
+    const { className, onSuccess } = props;
 
     useDynamicReducerLoader({ reducers: initialReducers });
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const { ref } = useAutoFocus();
 
@@ -50,14 +52,18 @@ const LoginForm: FC<LoginFormProps> = (props) => {
         [dispatch]
     );
 
-    const onLoginClick = useCallback(() => {
-        dispatch(
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(
             loginByUsername({
                 password: password,
                 username: username,
             })
         );
-    }, [dispatch, password, username]);
+
+        if (result.meta.requestStatus === "fulfilled") {
+            onSuccess?.();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     const ErrorText = () => {
         if (error === "403") {
@@ -107,6 +113,6 @@ const LoginForm: FC<LoginFormProps> = (props) => {
             </Button>
         </div>
     );
-};
+});
 
 export default LoginForm;

@@ -10,10 +10,14 @@ import { AxiosInstance } from "axios";
 
 import { LoginSchema } from "features/AuthByUsername";
 import { UserSchema } from "entities/User";
+import { ProfileSchema } from "entities/Profile";
 
 export interface StateSchema {
     user: UserSchema;
+
+    //? async reducers
     login?: LoginSchema;
+    profile?: ProfileSchema;
 }
 
 export type StoreProviderInitialState = StateSchema | DeepPartial<StateSchema>;

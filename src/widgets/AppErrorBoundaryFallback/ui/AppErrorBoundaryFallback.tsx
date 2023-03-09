@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import cl from "./AppErrorBoundaryFallback.module.scss";
 
-import { Button, ButtonTheme } from "shared/ui";
+import { Button, ButtonTheme } from "shared/ui/Button";
 
-export const AppErrorBoundaryFallback: FC = () => {
+export const AppErrorBoundaryFallback: FC = memo(() => {
     const { t } = useTranslation();
 
     const reload = () => {
@@ -25,4 +25,4 @@ export const AppErrorBoundaryFallback: FC = () => {
             </Button>
         </div>
     );
-};
+});

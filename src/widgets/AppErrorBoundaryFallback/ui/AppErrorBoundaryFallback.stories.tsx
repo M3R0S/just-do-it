@@ -6,7 +6,7 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "widget/AppErrorBoundaryFallback",
+    title: "widgets/AppErrorBoundaryFallback",
     component: AppErrorBoundaryFallback,
 } as ComponentMeta<typeof AppErrorBoundaryFallback>;
 

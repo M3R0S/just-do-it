@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import cl from "./Text.module.scss";
 import { TextAttributes, TextProps, TextTagRecord } from "./Text.types";
 
-import { cln } from "shared/lib/helpers";
+import { cln } from "shared/lib/helpers/classNames";
 
-export const Text: FC<TextProps> = (props) => {
+export const Text: FC<TextProps> = memo((props) => {
     const { className, children, tag = "span", theme = "clear" } = props;
 
     const newProps: TextAttributes = {
@@ -20,4 +20,4 @@ export const Text: FC<TextProps> = (props) => {
     const element = textTagAccordance[tag];
 
     return element;
-};
+});

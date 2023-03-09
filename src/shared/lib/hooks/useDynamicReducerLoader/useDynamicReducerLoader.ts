@@ -1,14 +1,15 @@
 import { useEffect } from "react";
-import { useDispatch, useStore } from "react-redux";
+import { useStore } from "react-redux";
 
 import { ReducerListEntries, UseDynamicReducerLoader } from "./useDynamicReducerLoader.types";
+import { useAppDispatch } from "../useAppDispatch/useAppDispatch";
 
 import { ReduxStoreWithManager } from "app/providers/Store";
 
 export const useDynamicReducerLoader: UseDynamicReducerLoader = (props) => {
     const { reducers, removeAfterUnmount = true } = props;
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {

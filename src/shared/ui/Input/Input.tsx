@@ -3,7 +3,7 @@ import { ChangeEvent, FC, memo } from "react";
 import cl from "./Input.module.scss";
 import { InputProps } from "./Input.types";
 
-import { cln } from "shared/lib/helpers";
+import { cln } from "shared/lib/helpers/classNames";
 
 export const Input: FC<InputProps> = memo((props) => {
     const {

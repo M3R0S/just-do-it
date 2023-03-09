@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import cl from "./Loader.module.scss";
 import { LoaderProps, LoaderTheme } from "./Loader.types";
 
 import LoaderSvg from "shared/assets/svg/Loader.svg";
-import { cln } from "shared/lib/helpers";
+import { cln } from "shared/lib/helpers/classNames";
 
-export const Loader: FC<LoaderProps> = (props) => {
+export const Loader: FC<LoaderProps> = memo((props) => {
     const { className, theme = LoaderTheme.STANDART } = props;
 
     return (
@@ -14,4 +14,4 @@ export const Loader: FC<LoaderProps> = (props) => {
             <LoaderSvg className={cl.svg} />
         </div>
     );
-};
+});

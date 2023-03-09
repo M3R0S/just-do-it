@@ -1,0 +1,32 @@
+.link {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+    transition: column-gap var(--transition-toggle-sidebar-timeout);
+
+    &_text {
+        white-space: nowrap;
+        transition: color var(--transition-switch-theme-timeout),
+            opacity var(--transition-toggle-sidebar-timeout);
+    }
+
+    &_svg {
+        display: flex;
+        justify-content: center;
+        fill: var(--primary-color-inverted);
+        transition: fill var(--transition-switch-theme-timeout);
+    }
+}
+
+.collapsed {
+    &.link {
+        column-gap: 0;
+        width: max-content;
+
+        .link_text {
+            width: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}

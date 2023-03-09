@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import cl from "./NotFoundPage.module.scss";
 
-const NotFoundPage: FC = () => {
+const NotFoundPage: FC = memo(() => {
     const { t } = useTranslation("notFoundPage");
 
     return (
@@ -11,6 +11,6 @@ const NotFoundPage: FC = () => {
             <h1 className={cl.title}>{t("Page not found")}</h1>
         </div>
     );
-};
+});
 
 export default NotFoundPage;

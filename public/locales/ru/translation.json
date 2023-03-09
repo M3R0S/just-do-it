@@ -14,5 +14,6 @@
     "Authorization form": "Форма авторизации",
     "You have entered an incorrect username or password": "Вы ввели неверный логин или пароль",
     "Unexpected error": "Непредвиденная ошибка",
-    "Logout": "Выйти"
+    "Logout": "Выйти",
+    "Profile": "Профиль"
 }

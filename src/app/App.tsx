@@ -1,5 +1,4 @@
 import { FC, Suspense, useEffect } from "react";
-import { useDispatch } from "react-redux";
 
 import { AppRouter } from "./providers/Router";
 
@@ -8,10 +7,12 @@ import { Sidebar } from "widgets/Sidebar";
 import { Main } from "widgets/Main";
 import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
 import { userActions } from "entities/User";
-import { ErrorBoundary, Loader, LoaderTheme } from "shared/ui";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { Loader, LoaderTheme } from "shared/ui/Loader";
+import { ErrorBoundary } from "shared/ui/ErrorBoundary";
 
 export const App: FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(userActions.initAuthData());

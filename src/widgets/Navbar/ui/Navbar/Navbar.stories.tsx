@@ -7,7 +7,7 @@ import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "widget/Navbar",
+    title: "widgets/Navbar",
     component: Navbar,
 } as ComponentMeta<typeof Navbar>;
 
