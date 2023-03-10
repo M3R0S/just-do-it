@@ -1,8 +1,34 @@
 .text {
     font: var(--font-m);
     color: var(--color-secondary);
+    transition: color var(--transition-switch-theme-timeout);
 
     &.error {
         color: var(--color-red-secondary);
+    }
+}
+
+.title {
+    font: var(--font-l);
+    color: var(--color-primary);
+    transition: color var(--transition-switch-theme-timeout);
+
+    &.error {
+        color: var(--color-red-primary);
+    }
+}
+
+.text,
+.title {
+    &.left {
+        text-align: left;
+    }
+
+    &.right {
+        text-align: right;
+    }
+
+    &.center {
+        text-align: center;
     }
 }

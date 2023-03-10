@@ -1,34 +1,60 @@
 import { FC } from "react";
-import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import cl from "./Profile.module.scss";
 import { ProfileCardProps } from "./ProfileCard.types";
-import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
-import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
-import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 
 import { cln } from "shared/lib/helpers/classNames";
-import { Title } from "shared/ui/Title";
 import { Button, ButtonTheme } from "shared/ui/Button";
-import { Input, InputTheme } from "shared/ui/Input";
-import { Text } from "shared/ui/Text";
+import { Input } from "shared/ui/Input";
+import { Text, TextTag, TextTheme } from "shared/ui/Text";
+import { Loader } from "shared/ui/Loader";
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
-    const { className } = props;
+    const { className, data, error, isLoading } = props;
 
     const { t } = useTranslation("profilePage");
-    const data = useSelector(getProfileData);
-    const isLoading = useSelector(getProfileIsLoading);
-    const error = useSelector(getProfileError);
 
     const firstnamePlaceholder = t("Your name");
     const lastnamePlaceholder = t("Your last name");
 
+    if (isLoading) {
+        return (
+            <div className={cln(cl.profile_card, [className, cl.loading])}>
+                <Loader />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={cln(cl.profile_card, [className, cl.error])}>
+                <Text
+                    isTitle
+                    tag={TextTag.H1}
+                    theme={TextTheme.ERROR}
+                >
+                    {t("There was an error loading the profile")}
+                </Text>
+                <Text
+                    tag={TextTag.P}
+                    theme={TextTheme.ERROR}
+                >
+                    {t("Try to reload the page")}
+                </Text>
+            </div>
+        );
+    }
+
     return (
         <div className={cln(cl.profile_card, [className])}>
             <div className={cl.header}>
-                <Title>{t("User profile")}</Title>
+                <Text
+                    tag={TextTag.H1}
+                    isTitle
+                >
+                    {t("User profile")}
+                </Text>
                 <Button
                     className={cl.edit_btn}
                     theme={ButtonTheme.OUTLINE}
@@ -37,16 +63,18 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 </Button>
             </div>
             <div className={cl.data}>
-                <div>
-                    <Text>{firstnamePlaceholder}</Text>
+                <div className={cl.data_row}>
+                    <Text tag={TextTag.P}>{`${firstnamePlaceholder} :`}</Text>
                     <Input
+                        className={cl.data_input}
                         value={data?.firstname}
                         placeholder={firstnamePlaceholder}
                     />
                 </div>
-                <div>
-                    <Text>{lastnamePlaceholder}</Text>
+                <div className={cl.data_row}>
+                    <Text tag={TextTag.P}>{`${lastnamePlaceholder} :`}</Text>
                     <Input
+                        className={cl.data_input}
                         value={data?.lastname}
                         placeholder={lastnamePlaceholder}
                     />

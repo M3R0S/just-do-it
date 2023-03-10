@@ -3,5 +3,7 @@
     "User profile": "User profile",
     "Edit": "Edit",
     "Your name": "Your name",
-    "Your last name": "Your last name"
+    "Your last name": "Your last name",
+    "There was an error loading the profile": "There was an error loading the profile",
+    "Try to reload the page": "Try to reload the page"
 }

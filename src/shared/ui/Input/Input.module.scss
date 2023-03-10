@@ -5,6 +5,8 @@
     font-weight: 300;
     color: var(--color-primary);
     background: inherit;
+    transition-property: color background;
+    transition-duration: var(--transition-switch-theme-timeout);
 }
 
 .inverted {

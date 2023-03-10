@@ -1,6 +1,7 @@
 .profile_card {
     border: 0.2rem solid var(--bg-color-inverted);
     padding: 2rem;
+    transition: border var(--transition-switch-theme-timeout);
 
     .header {
         display: flex;
@@ -15,5 +16,22 @@
         flex-direction: column;
         margin-top: 3rem;
         row-gap: 1rem;
+
+        &_row {
+            display: flex;
+        }
+
+        &_input {
+            margin-left: 1rem;
+        }
+    }
+
+    &.loading,
+    &.error {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
     }
 }

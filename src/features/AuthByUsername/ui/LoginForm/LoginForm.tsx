@@ -15,10 +15,9 @@ import { cln } from "shared/lib/helpers/classNames";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useAutoFocus } from "shared/lib/hooks/useAutoFocus";
-import { Title } from "shared/ui/Title";
-import { Text, TextTheme } from "shared/ui/Text";
 import { Input, InputTheme } from "shared/ui/Input";
 import { Button, ButtonTheme } from "shared/ui/Button";
+import { Text, TextTag, TextTheme } from "shared/ui/Text";
 
 const initialReducers: ReducersList = {
     login: loginReducer,
@@ -81,7 +80,7 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
 
     return (
         <div className={cln(cl.login_form, [className])}>
-            <Title>{t("Authorization form")}</Title>
+            <Text tag={TextTag.H1}>{t("Authorization form")}</Text>
             <Text
                 theme={TextTheme.ERROR}
                 className={cl.error}

@@ -14,6 +14,7 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
         try {
             const response = await api.get<Profile>(ServerEndpoints.PROFILE);
             const data = response.data;
+            throw new Error();
             if (!data) {
                 throw new Error(StatusCodes.NO_DATA);
             }
