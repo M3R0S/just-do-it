@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 import cl from "./Button.module.scss";
 import { ButtonProps, ButtonSize, ButtonTheme } from "./Button.types";
 
-import { cln } from "shared/lib/helpers/classNames";
+import { cln, Mods } from "shared/lib/helpers/classNames";
 
 export const Button: FC<ButtonProps> = memo((props) => {
     const {
@@ -16,7 +16,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cl.square]: square,
     };
 

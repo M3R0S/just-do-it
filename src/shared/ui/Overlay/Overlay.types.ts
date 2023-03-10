@@ -1,5 +1,5 @@
 export interface OverlayProps {
-    isActive: boolean;
+    isActive?: boolean;
     onClose?: VoidFunction;
     className?: string;
 }

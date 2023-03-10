@@ -19,9 +19,11 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
             }
 
             return response.data;
-        } catch (error) {
-            if (error.message.toString().includes(StatusCodes.NO_DATA)) {
-                return rejectWithValue(StatusCodes.NO_DATA);
+        } catch (e) {
+            if (e instanceof Error) {
+                if (e.message.toString().includes(StatusCodes.NO_DATA)) {
+                    return rejectWithValue(StatusCodes.NO_DATA);
+                }
             }
 
             return rejectWithValue(StatusCodes.UNKNOWN);

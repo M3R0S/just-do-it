@@ -1,4 +1,4 @@
-import { DeepPartial, PayloadAction } from "@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
 
 import { loginActions, loginReducer } from "./loginSlice";
 import { LoginSchema } from "../types/LoginSchema";

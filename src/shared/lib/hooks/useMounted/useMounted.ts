@@ -5,7 +5,7 @@ import { HandleAnimationEnd, UseMounted } from "./useMounted.types";
 export const useMounted: UseMounted = (params) => {
     const { isActive } = params;
 
-    const [isMounted, setIsMounted] = useState<boolean>(isActive);
+    const [isMounted, setIsMounted] = useState<boolean | undefined>(isActive);
 
     const unmounted = () => {
         setIsMounted(false);

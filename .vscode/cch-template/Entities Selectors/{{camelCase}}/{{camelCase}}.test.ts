@@ -1,5 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
-
 import { {{camelCase}} } from "./{{camelCase}}";
 
 import { StateSchema } from "app/providers/Store";

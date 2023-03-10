@@ -1,5 +1,5 @@
 export interface UseKeyDownParams {
-    action: VoidFunction;
+    action?: VoidFunction;
 }
 
 export type UseKeyDown = (params: UseKeyDownParams) => void;

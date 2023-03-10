@@ -1,5 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
-
 import { getLoginError } from "./getLoginError";
 
 import { StateSchema } from "app/providers/Store";
@@ -8,9 +6,6 @@ describe("getLoginError", () => {
     test("should return getLoginError ", () => {
         const state: DeepPartial<StateSchema> = {
             login: {
-                username: "",
-                isLoading: false,
-                password: "",
                 error: "error",
             },
         };

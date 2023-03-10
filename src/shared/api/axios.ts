@@ -5,7 +5,6 @@ import { LOCALSTORAGE_USER_KEY } from "shared/lib/constants/localStorage";
 export const $axios = axios.create({
     baseURL: __API__,
     headers: {
-        // @ts-ignore
-        authorization: localStorage.getItem(LOCALSTORAGE_USER_KEY),
+        authorization: localStorage.getItem(LOCALSTORAGE_USER_KEY) ?? "",
     },
 });

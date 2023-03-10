@@ -1,5 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
-
 import { get{{pascalCase}} } from "./get{{pascalCase}}";
 
 import { StateSchema } from "app/providers/Store";

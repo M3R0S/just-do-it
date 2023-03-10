@@ -10,11 +10,10 @@ export const useTheme: UseTheme = () => {
 
     const toggleTheme = () => {
         const newTheme = isLightTheme ? Theme.DARK : Theme.LIGHT;
-        setTheme && setTheme(newTheme);
+        setTheme(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
     document.body.className = theme;
-
     return { theme, isLightTheme, toggleTheme };
 };

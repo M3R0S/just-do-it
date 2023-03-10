@@ -1,5 +1,3 @@
-import { DeepPartial } from "@reduxjs/toolkit";
-
 import { getLoginState } from "./getLoginState";
 import { LoginSchema } from "../../types/LoginSchema";
 

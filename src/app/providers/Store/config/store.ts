@@ -1,27 +1,29 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 
-import { StoreProviderAsyncReducers, StoreProviderInitialState } from "./StateSchema";
+import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { rootReducer } from "./rootReducer";
 import { createReducerManager } from "./reducerManager";
 
 import { $axios } from "shared/api/axios";
 
 export const createReduxStore = (
-    initialState?: StoreProviderInitialState,
-    asyncReducers?: StoreProviderAsyncReducers
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>
 ) => {
     const reducerManager = createReducerManager(rootReducer(asyncReducers));
 
+    const extraArgument: ThunkExtraArg = {
+        api: $axios,
+    };
+
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 thunk: {
-                    extraArgument: {
-                        api: $axios,
-                    },
+                    extraArgument,
                 },
             }),
     });

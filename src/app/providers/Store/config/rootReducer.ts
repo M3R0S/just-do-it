@@ -1,11 +1,11 @@
 import { ReducersMapObject } from "@reduxjs/toolkit";
 
-import { StateSchema, StoreProviderAsyncReducers } from "./StateSchema";
+import { StateSchema } from "./StateSchema";
 
 import { userReducer } from "entities/User";
 
 export const rootReducer = (
-    asyncReducers?: StoreProviderAsyncReducers
+    asyncReducers?: ReducersMapObject<StateSchema>
 ): ReducersMapObject<StateSchema> => {
     return {
         ...asyncReducers,

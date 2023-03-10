@@ -6,8 +6,6 @@ export type ReducersList = {
     [key in StateSchemaKey]?: Reducer;
 };
 
-export type ReducerListEntries = [StateSchemaKey, Reducer];
-
 export interface UseDynamicReducerLoaderParams {
     reducers: ReducersList;
     removeAfterUnmount?: boolean;

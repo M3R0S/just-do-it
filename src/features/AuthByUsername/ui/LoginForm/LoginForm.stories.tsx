@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
-import { DeepPartial } from "@reduxjs/toolkit";
 
 import { LoginFormProps } from "./LoginForm.types";
 import LoginForm from "./LoginForm";

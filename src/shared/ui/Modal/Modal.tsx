@@ -5,7 +5,7 @@ import { ModalProps } from "./Modal.types";
 import { Portal } from "../Portal";
 import { Overlay } from "../Overlay";
 
-import { cln } from "shared/lib/helpers/classNames";
+import { cln, Mods } from "shared/lib/helpers/classNames";
 import { useMounted } from "shared/lib/hooks/useMounted";
 import { useKeyDown } from "shared/lib/hooks/useKeyDown";
 
@@ -18,7 +18,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
     useKeyDown({ action: onClose });
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cl.content_opened]: isOpened,
         [cl.content_closed]: !isOpened,
     };

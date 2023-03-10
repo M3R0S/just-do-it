@@ -19,16 +19,18 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
             const data = response.data;
             console.log(data);
             if (!data) {
-                throw new Error(StatusCodes.NO_DATA);
+                throw new Error(StatusCodes.NOT_AUTHORIZED);
             }
 
             localStorage.setItem(LOCALSTORAGE_USER_KEY, JSON.stringify(data));
             dispatch(userActions.setAuthData(data));
 
             return response.data;
-        } catch (error) {
-            if (error.message.toString().includes(StatusCodes.NOT_AUTHORIZED)) {
-                return rejectWithValue(StatusCodes.NOT_AUTHORIZED);
+        } catch (e) {
+            if (e instanceof Error) {
+                if (e.message.toString().includes(StatusCodes.NOT_AUTHORIZED)) {
+                    return rejectWithValue(StatusCodes.NOT_AUTHORIZED);
+                }
             }
 
             return rejectWithValue(StatusCodes.UNKNOWN);

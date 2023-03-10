@@ -8,7 +8,7 @@ export const useKeyDown: UseKeyDown = (params) => {
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
-                action();
+                action?.();
             }
         };
 

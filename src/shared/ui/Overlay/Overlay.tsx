@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 import cl from "./Overlay.module.scss";
 import { OverlayProps } from "./Overlay.types";
 
-import { cln } from "shared/lib/helpers/classNames";
+import { cln, Mods } from "shared/lib/helpers/classNames";
 import { useMounted } from "shared/lib/hooks/useMounted";
 
 export const Overlay: FC<OverlayProps> = memo((props) => {
@@ -13,7 +13,7 @@ export const Overlay: FC<OverlayProps> = memo((props) => {
         isActive,
     });
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cl.overlay_opened]: isActive,
         [cl.overlay_closed]: !isActive,
     };

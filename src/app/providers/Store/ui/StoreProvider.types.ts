@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import { ReducersMapObject } from "@reduxjs/toolkit";
 
-import { StoreProviderAsyncReducers, StoreProviderInitialState } from "../config/StateSchema";
+import { StateSchema } from "../config/StateSchema";
 
 export interface StoreProviderProps {
     children: ReactNode;
-    initialState?: StoreProviderInitialState;
-    asyncReducers?: StoreProviderAsyncReducers;
+    initialState?: DeepPartial<StateSchema>;
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }

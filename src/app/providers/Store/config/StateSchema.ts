@@ -1,7 +1,6 @@
 import {
     AnyAction,
     CombinedState,
-    DeepPartial,
     EnhancedStore,
     Reducer,
     ReducersMapObject,
@@ -20,8 +19,8 @@ export interface StateSchema {
     profile?: ProfileSchema;
 }
 
-export type StoreProviderInitialState = StateSchema | DeepPartial<StateSchema>;
-export type StoreProviderAsyncReducers = DeepPartial<ReducersMapObject<StateSchema>>;
+// export type StoreProviderInitialState = DeepPartial<StateSchema>;
+// export type StoreProviderAsyncReducers = DeepPartial<ReducersMapObject<StateSchema>>;
 
 export type StateSchemaKey = keyof StateSchema;
 
