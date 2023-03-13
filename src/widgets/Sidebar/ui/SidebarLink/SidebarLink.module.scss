@@ -14,7 +14,7 @@
         display: flex;
         justify-content: center;
         min-width: 20px;
-        fill: var(--primary-color-inverted);
+        fill: var(--color-primary-inverted);
         transition: fill var(--transition-switch-theme-timeout);
     }
 }

@@ -14,4 +14,5 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     onChangeValue?: (value: string) => void;
     isAutoFocus?: boolean;
     inputRef?: MutableRefObject<HTMLInputElement | null>;
+    isReadOnly?: boolean;
 }

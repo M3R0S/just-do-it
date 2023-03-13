@@ -3,18 +3,19 @@ import { ChangeEvent, FC, memo } from "react";
 import cl from "./Input.module.scss";
 import { InputProps } from "./Input.types";
 
-import { cln } from "shared/lib/helpers/classNames";
+import { cln, Mods } from "shared/lib/helpers/classNames";
 
 export const Input: FC<InputProps> = memo((props) => {
     const {
         theme = "clear",
         className,
-        value,
+        value = "",
         type = "text",
         onChangeValue,
         placeholder,
         isAutoFocus,
         inputRef,
+        isReadOnly = false,
         ...otherProps
     } = props;
 
@@ -22,15 +23,20 @@ export const Input: FC<InputProps> = memo((props) => {
         onChangeValue?.(e.target.value);
     };
 
+    const mods: Mods = {
+        [cl.readonly]: isReadOnly,
+    };
+
     return (
         <input
             value={value}
             type={type}
-            className={cln(cl.input, [cl[theme], className])}
+            className={cln(cl.input, [cl[theme], className], mods)}
             onChange={onChangeValueHandler}
             placeholder={placeholder}
             autoFocus={isAutoFocus}
             ref={inputRef}
+            readOnly={isReadOnly}
             {...otherProps}
         />
     );

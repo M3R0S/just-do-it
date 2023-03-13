@@ -16,6 +16,7 @@ export interface SidebarLinkItem {
     path: PathRoutes;
     text: SidebarLinkItemText;
     Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    authOnly?: boolean;
 }
 
 export type SidebarLinksList = SidebarLinkItem[];

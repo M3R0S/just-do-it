@@ -15,3 +15,5 @@ export const {{camelCase}}Slice = createSlice({
 });
 
 export const {{camelCase}}Actions = {{camelCase}}Slice.actions;
+export const {{camelCase}}Reducer = {{camelCase}}Slice.reducer;
+

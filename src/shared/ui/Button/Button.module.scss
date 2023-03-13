@@ -13,17 +13,22 @@
     }
 
     &.clear_inverted {
-        color: var(--primary-color-inverted);
+        color: var(--color-primary-inverted);
     }
 
     &.fill {
         border-radius: 1.4rem;
-        color: var(--primary-color-inverted);
+        color: var(--color-primary-inverted);
         background: var(--bg-color-inverted);
     }
 
     &.outline {
         border: 0.1rem solid var(--color-primary);
+    }
+
+    &.outline_red {
+        border: 0.1rem solid var(--color-red-primary);
+        color: var(--color-red-primary);
     }
 
     &.background {
@@ -32,7 +37,7 @@
     }
 
     &.background_inverted {
-        color: var(--primary-color-inverted);
+        color: var(--color-primary-inverted);
         background: var(--bg-color-inverted);
     }
 

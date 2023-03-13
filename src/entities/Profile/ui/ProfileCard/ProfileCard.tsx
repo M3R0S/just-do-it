@@ -1,22 +1,49 @@
-import { FC } from "react";
+import { FC, memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import cl from "./Profile.module.scss";
+import cl from "./ProfileCard.module.scss";
 import { ProfileCardProps } from "./ProfileCard.types";
+import { ProfileCardItem } from "../ProfileCardItem/ProfileCardItem";
 
-import { cln } from "shared/lib/helpers/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button";
-import { Input } from "shared/ui/Input";
+import { CurrencySelect } from "entities/Currency";
+import { CountrySelect } from "entities/Country";
+import { cln, Mods } from "shared/lib/helpers/classNames";
 import { Text, TextTag, TextTheme } from "shared/ui/Text";
 import { Loader } from "shared/ui/Loader";
+import { Avatar } from "shared/ui/Avatar";
 
-export const ProfileCard: FC<ProfileCardProps> = (props) => {
-    const { className, data, error, isLoading } = props;
+export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
+    const {
+        className,
+        data,
+        error,
+        isLoading,
+        isReadonly,
+        onChangeCountry,
+        onChangeCurrency,
+        dataInputsList,
+    } = props;
 
     const { t } = useTranslation("profilePage");
 
-    const firstnamePlaceholder = t("Your name");
-    const lastnamePlaceholder = t("Your last name");
+    const dataInputsListItems = useMemo(
+        () =>
+            dataInputsList?.map((item) => {
+                const { id, className, onChangeValue, placeholder, value, type } = item;
+                return (
+                    <ProfileCardItem
+                        key={id}
+                        className={className}
+                        isReadonly={isReadonly}
+                        onChangeValue={onChangeValue}
+                        placeholder={placeholder}
+                        value={value}
+                        type={type}
+                    />
+                );
+            }),
+        [dataInputsList, isReadonly]
+    );
 
     if (isLoading) {
         return (
@@ -46,40 +73,31 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         );
     }
 
+    const mods: Mods = {
+        [cl.editing]: !isReadonly,
+    };
+
     return (
-        <div className={cln(cl.profile_card, [className])}>
-            <div className={cl.header}>
-                <Text
-                    tag={TextTag.H1}
-                    isTitle
-                >
-                    {t("User profile")}
-                </Text>
-                <Button
-                    className={cl.edit_btn}
-                    theme={ButtonTheme.OUTLINE}
-                >
-                    {t("Edit")}
-                </Button>
-            </div>
-            <div className={cl.data}>
-                <div className={cl.data_row}>
-                    <Text tag={TextTag.P}>{`${firstnamePlaceholder} :`}</Text>
-                    <Input
-                        className={cl.data_input}
-                        value={data?.firstname}
-                        placeholder={firstnamePlaceholder}
-                    />
-                </div>
-                <div className={cl.data_row}>
-                    <Text tag={TextTag.P}>{`${lastnamePlaceholder} :`}</Text>
-                    <Input
-                        className={cl.data_input}
-                        value={data?.lastname}
-                        placeholder={lastnamePlaceholder}
-                    />
-                </div>
-            </div>
+        <div className={cln(cl.profile_card, [className], mods)}>
+            {data?.avatar && (
+                <Avatar
+                    className={cl.avatar}
+                    src={data?.avatar}
+                />
+            )}
+            {dataInputsListItems}
+            <CurrencySelect
+                className={cl.select}
+                value={data?.currency}
+                onChangeValue={onChangeCurrency}
+                isReadonly={isReadonly}
+            />
+            <CountrySelect
+                className={cl.select}
+                value={data?.country}
+                onChangeValue={onChangeCountry}
+                isReadonly={isReadonly}
+            />
         </div>
     );
-};
+});

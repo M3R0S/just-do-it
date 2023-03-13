@@ -1,29 +1,21 @@
 .profile_card {
+    display: flex;
+    flex-direction: column;
     border: 0.2rem solid var(--bg-color-inverted);
     padding: 2rem;
     transition: border var(--transition-switch-theme-timeout);
+    row-gap: 1rem;
 
-    .header {
-        display: flex;
+    .avatar {
+        align-self: center;
     }
 
-    .edit_btn {
-        margin-left: auto;
+    .select {
+        color: var(--color-secondary);
     }
 
-    .data {
-        display: flex;
-        flex-direction: column;
-        margin-top: 3rem;
-        row-gap: 1rem;
-
-        &_row {
-            display: flex;
-        }
-
-        &_input {
-            margin-left: 1rem;
-        }
+    &.editing {
+        border: 0.2rem solid var(--color-orange-active);
     }
 
     &.loading,

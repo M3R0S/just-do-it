@@ -23,5 +23,6 @@ export const sidebarLinksList: SidebarLinksList = [
         path: PathRoutes.PROFILE,
         text: SidebarLinkItemText.PROFILE,
         Icon: LinkProfileSvg,
+        authOnly: true,
     },
 ];

@@ -21,6 +21,7 @@ export const routesConfig: RoutesConfig = {
         id: 3,
         path: PathRoutes.PROFILE,
         element: <ProfilePage />,
+        authOnly: true,
     },
     // last
     [PathRoutes.NOT_FOUND]: {

@@ -15,5 +15,7 @@
     "You have entered an incorrect username or password": "You have entered an incorrect username or password",
     "Unexpected error": "Unexpected error",
     "Logout": "Logout",
-    "Profile": "Profile"
+    "Profile": "Profile",
+    "Specify the currency": "Specify the currency",
+    "Specify the country": "Specify the country"
 }

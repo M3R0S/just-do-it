@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary);
+
+    .label {
+        margin-right: 0.5rem;
+        color: inherit;
+    }
+
+    .select {
+        outline: none;
+        border: 0.1rem solid var(--color-primary);
+        padding: 0.2rem 1rem 0.2rem 0.2rem;
+        color: var(--color-primary);
+        background: none;
+
+        .option {
+            color: var(--color-primary-inverted);
+            background: var(--bg-color-inverted);
+        }
+    }
+}

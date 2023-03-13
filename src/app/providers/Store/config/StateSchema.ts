@@ -8,8 +8,8 @@ import {
 import { AxiosInstance } from "axios";
 
 import { LoginSchema } from "features/AuthByUsername";
+import { ProfileSchema } from "features/EditableProfileCard";
 import { UserSchema } from "entities/User";
-import { ProfileSchema } from "entities/Profile";
 
 export interface StateSchema {
     user: UserSchema;
@@ -18,9 +18,6 @@ export interface StateSchema {
     login?: LoginSchema;
     profile?: ProfileSchema;
 }
-
-// export type StoreProviderInitialState = DeepPartial<StateSchema>;
-// export type StoreProviderAsyncReducers = DeepPartial<ReducersMapObject<StateSchema>>;
 
 export type StateSchemaKey = keyof StateSchema;
 
@@ -42,4 +39,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T = string> {
     rejectValue: T;
     extra: ThunkExtraArg;
+    state: StateSchema;
 }

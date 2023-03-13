@@ -7,15 +7,19 @@
     background: inherit;
     transition-property: color background;
     transition-duration: var(--transition-switch-theme-timeout);
-}
 
-.inverted {
-    padding: 0.5rem 1rem;
-    color: var(--primary-color-inverted);
-    background: var(--bg-color-inverted);
+    &.readonly {
+        opacity: 0.7;
+    }
 
-    &::placeholder {
-        color: var(--primary-color-inverted);
-        opacity: 0.8;
+    &.inverted {
+        padding: 0.5rem 1rem;
+        color: var(--color-primary-inverted);
+        background: var(--bg-color-inverted);
+
+        &::placeholder {
+            color: var(--color-primary-inverted);
+            opacity: 0.8;
+        }
     }
 }

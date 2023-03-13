@@ -7,6 +7,7 @@ export const ButtonTheme = {
     CLEAR_INVERTED: "clear_inverted",
     FILL: "fill",
     OUTLINE: "outline",
+    OUTLINE_RED: "outline_red",
     BACKGROUND: "background",
     BACKGROUND_INVERTED: "background_inverted",
 } as const;

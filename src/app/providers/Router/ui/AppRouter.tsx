@@ -1,15 +1,29 @@
-import { FC, Suspense } from "react";
+import { FC, memo, Suspense, useMemo } from "react";
 import { Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import cl from "./AppRouter.module.scss";
 import { routesConfig } from "../config/routesConfig";
 
+import { getUserAuthData } from "entities/User";
 import { Loader } from "shared/ui/Loader";
 
-export const AppRouter: FC = () => {
+export const AppRouter: FC = memo(() => {
+    const isAuth = useSelector(getUserAuthData);
+
+    const routes = useMemo(() => {
+        return Object.values(routesConfig).filter(({ authOnly }) => {
+            if (authOnly && !isAuth) {
+                return false;
+            }
+
+            return true;
+        });
+    }, [isAuth]);
+
     return (
         <Routes>
-            {Object.values(routesConfig).map(({ element, id, ...otherProps }) => (
+            {routes.map(({ element, id, ...otherProps }) => (
                 <Route
                     element={
                         <Suspense fallback={<Loader className={cl.loader} />}>
@@ -22,4 +36,4 @@ export const AppRouter: FC = () => {
             ))}
         </Routes>
     );
-};
+});
