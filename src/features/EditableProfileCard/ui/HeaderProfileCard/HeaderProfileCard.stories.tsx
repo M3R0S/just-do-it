@@ -11,7 +11,9 @@ export default {
     component: HeaderProfileCard,
 } as ComponentMeta<typeof HeaderProfileCard>;
 
-const Template: ComponentStory<typeof HeaderProfileCard> = (args) => <HeaderProfileCard {...args} />;
+const Template: ComponentStory<typeof HeaderProfileCard> = (args) => (
+    <HeaderProfileCard {...args} />
+);
 
 export const Light: Story<HeaderProfileCardProps> = Template.bind({});
 

@@ -1,15 +1,15 @@
 {
-  "Profile Page": "Profile Page",
-  "User profile": "User profile",
-  "Edit": "Edit",
-  "Your name": "Your name",
-  "Your last name": "Your last name",
-  "There was an error loading the profile": "There was an error loading the profile",
-  "Try to reload the page": "Try to reload the page",
-  "Cancel": "Cansel",
-  "Save": "Save",
-  "Your age": "Your age",
-  "Your city": "Your city",
-  "Your username": "Your username",
-  "Your link in avatar": "Your link in avatar"
+    "Profile Page": "Profile Page",
+    "User profile": "User profile",
+    "Edit": "Edit",
+    "Your name": "Your name",
+    "Your last name": "Your last name",
+    "There was an error loading the profile": "There was an error loading the profile",
+    "Try to reload the page": "Try to reload the page",
+    "Cancel": "Cansel",
+    "Save": "Save",
+    "Your age": "Your age",
+    "Your city": "Your city",
+    "Your username": "Your username",
+    "Your link in avatar": "Your link in avatar"
 }
