@@ -14,6 +14,8 @@ export interface WebpackEnv {
     API_URL: string | undefined;
 }
 
+export type WebpackProject = "storybook" | "frontend" | "jest";
+
 export interface WebpackOptions {
     mode: WebpackMode;
     paths: WebpackPaths;
@@ -21,4 +23,5 @@ export interface WebpackOptions {
     port: number;
     isAnalize: boolean;
     apiUrl: string;
+    project: WebpackProject;
 }

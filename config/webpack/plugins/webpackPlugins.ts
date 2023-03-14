@@ -7,7 +7,7 @@ import { DefinePlugin, ProgressPlugin } from "webpack";
 import { WebpackPlugins } from "./webpackPlugins.types";
 
 export const webpackPlugins: WebpackPlugins = (options) => {
-    const { paths, isDev, isAnalize, apiUrl } = options;
+    const { paths, isDev, isAnalize, apiUrl, project } = options;
 
     const plugins = [
         new HtmlWebpackPlugin({
@@ -21,6 +21,7 @@ export const webpackPlugins: WebpackPlugins = (options) => {
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project),
         }),
     ];
 

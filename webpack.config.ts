@@ -7,6 +7,7 @@ import {
     WebpackMode,
     WebpackOptions,
     WebpackPaths,
+    WebpackProject,
 } from "./config/webpack/types/webpackConfigSharedTypes";
 
 export default (env: WebpackEnv): Configuration => {
@@ -15,6 +16,7 @@ export default (env: WebpackEnv): Configuration => {
     const isDev = mode === "development";
     const isAnalize: boolean = env.ANALYZE || false;
     const apiUrl: string = env.API_URL || "http://localhost:8000";
+    const project: WebpackProject = "frontend";
 
     const paths: WebpackPaths = {
         build: path.resolve(__dirname, "build"),
@@ -30,6 +32,7 @@ export default (env: WebpackEnv): Configuration => {
         port,
         isAnalize,
         apiUrl,
+        project,
     };
 
     return webpackConfig(options);

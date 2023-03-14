@@ -19,6 +19,7 @@ export const jestConfig: JestConfig = () => {
         globals: {
             __IS_DEV__: true,
             __API__: "",
+            __PROJECT__: "jest",
         },
     };
 };

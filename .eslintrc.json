@@ -53,7 +53,7 @@
             "warn",
             {
                 "markupOnly": true,
-                "ignoreAttribute": ["data-testid"]
+                "onlyAttribute": [""]
             }
         ],
         "no-undef": "off",

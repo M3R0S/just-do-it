@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, memo, useEffect } from "react";
 
 import cl from "./UserProfile.module.scss";
 import { UserProfileProps } from "./UserProfile.types";
@@ -16,7 +16,7 @@ const reducers: ReducersList = {
     profile: profileReducer,
 };
 
-export const UserProfile: FC<UserProfileProps> = (props) => {
+export const UserProfile: FC<UserProfileProps> = memo((props) => {
     const { className } = props;
 
     useDynamicReducerLoader({ reducers: reducers });
@@ -24,7 +24,9 @@ export const UserProfile: FC<UserProfileProps> = (props) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== "storybook") {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     return (
@@ -32,4 +34,4 @@ export const UserProfile: FC<UserProfileProps> = (props) => {
             <EditableProfileCard />
         </div>
     );
-};
+});

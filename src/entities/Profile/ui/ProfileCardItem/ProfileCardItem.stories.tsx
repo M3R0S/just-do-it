@@ -7,8 +7,12 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "/ProfileCardItem",
+    title: "entities/Profile/ProfileCardItem",
     component: ProfileCardItem,
+    args: {
+        value: "Bogdan",
+        placeholder: "Your name",
+    },
 } as ComponentMeta<typeof ProfileCardItem>;
 
 const Template: ComponentStory<typeof ProfileCardItem> = (args) => <ProfileCardItem {...args} />;

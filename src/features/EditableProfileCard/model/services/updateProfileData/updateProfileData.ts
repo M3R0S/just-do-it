@@ -1,35 +1,43 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
+import { ValidateProfileError } from "../../types/ProfileSchema";
+import { validateProfileData } from "../validateProfileData/validateProfileData";
 
 import { ThunkConfig } from "app/providers/Store";
 import { Profile } from "entities/Profile";
-import { StatusCodes, ServerEndpoints } from "shared/lib/types/serverTypes";
+import { ServerEndpoints } from "shared/lib/types/serverTypes";
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
-    "profile/updateProfileData",
-    async (_, thunkAPI) => {
-        const { extra, rejectWithValue, getState } = thunkAPI;
-        const { api } = extra;
+export const updateProfileData = createAsyncThunk<
+    Profile,
+    void,
+    ThunkConfig<ValidateProfileError[]>
+>("profile/updateProfileData", async (_, thunkAPI) => {
+    const { extra, rejectWithValue, getState } = thunkAPI;
+    const { api } = extra;
 
-        try {
-            const formData = getProfileForm(getState());
+    const formData = getProfileForm(getState());
+    const errors = validateProfileData(formData);
 
-            const response = await api.put<Profile>(ServerEndpoints.PROFILE, formData);
-            const data = response.data;
-            if (!data) {
-                throw new Error(StatusCodes.NO_DATA);
-            }
-
-            return data;
-        } catch (e) {
-            if (e instanceof Error) {
-                if (e.message.toString().includes(StatusCodes.NO_DATA)) {
-                    return rejectWithValue(StatusCodes.NO_DATA);
-                }
-            }
-
-            return rejectWithValue(StatusCodes.UNKNOWN);
-        }
+    if (errors.length) {
+        return rejectWithValue(errors);
     }
-);
+
+    try {
+        const response = await api.put<Profile>(ServerEndpoints.PROFILE, formData);
+        const data = response.data;
+        if (!data) {
+            throw new Error(ValidateProfileError.NO_DATA);
+        }
+
+        return data;
+    } catch (e) {
+        if (e instanceof Error) {
+            if (e.message.toString().includes(ValidateProfileError.NO_DATA)) {
+                return rejectWithValue([ValidateProfileError.NO_DATA]);
+            }
+        }
+
+        return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
+    }
+});

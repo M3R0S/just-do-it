@@ -10,10 +10,6 @@
         align-self: center;
     }
 
-    .select {
-        color: var(--color-secondary);
-    }
-
     &.editing {
         border: 0.2rem solid var(--color-orange-active);
     }

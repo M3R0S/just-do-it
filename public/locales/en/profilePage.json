@@ -11,5 +11,12 @@
     "Your age": "Your age",
     "Your city": "Your city",
     "Your username": "Your username",
-    "Your link in avatar": "Your link in avatar"
+    "Your link in avatar": "Your link in avatar",
+    "Server response error": "Server response error",
+    "No data available": "No data available",
+    "Incorrect age": "Incorrect age",
+    "Enter the name of the city": "Enter the name of the city",
+    "Enter a name": "Enter a name",
+    "Enter your last name": "Enter your last name",
+    "Enter the user name": "Enter the user name"
 }

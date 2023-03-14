@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -13,7 +13,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Text, TextTag } from "shared/ui/Text";
 import { Button, ButtonTheme } from "shared/ui/Button";
 
-export const HeaderProfileCard: FC<HeaderProfileCardProps> = (props) => {
+export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
     const { className } = props;
 
     const { t } = useTranslation("profilePage");
@@ -69,4 +69,4 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = (props) => {
             )}
         </div>
     );
-};
+});

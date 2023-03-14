@@ -28,7 +28,7 @@ export const Select: FC<SelectProps> = memo((props) => {
 
     return (
         <div className={cln(cl.wrapper, [className])}>
-            {label && <label className={cl.label}>{label}</label>}
+            {label && <label className={cl.label}>{`${label} :`}</label>}
             <select
                 value={value}
                 className={cl.select}

@@ -1,10 +1,5 @@
-import { HTMLInputTypeAttribute } from "react";
+import { ProfileCardItem } from "../ProfileCard/ProfileCard.types";
 
-export interface ProfileCardItemProps {
+export interface ProfileCardItemProps extends ProfileCardItem {
     className?: string;
-    placeholder?: string;
-    value?: string;
-    onChangeValue?: (value: string) => void;
-    isReadonly?: boolean;
-    type?: HTMLInputTypeAttribute;
 }

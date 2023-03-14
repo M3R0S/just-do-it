@@ -18,6 +18,7 @@ const options: WebpackOptions = {
         html: "",
         src: path.resolve(__dirname, "..", "..", "src"),
     },
+    project: "storybook",
 };
 
 export default ({ config }: { config: Configuration }) => {
@@ -43,6 +44,7 @@ export default ({ config }: { config: Configuration }) => {
         new DefinePlugin({
             __IS_DEV__: true,
             __API__: JSON.stringify(options.apiUrl),
+            __PROJECT__: JSON.stringify(options.project),
         })
     );
 

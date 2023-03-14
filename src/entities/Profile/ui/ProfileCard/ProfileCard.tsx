@@ -1,12 +1,10 @@
-import { FC, memo, useMemo } from "react";
+import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import cl from "./ProfileCard.module.scss";
 import { ProfileCardProps } from "./ProfileCard.types";
-import { ProfileCardItem } from "../ProfileCardItem/ProfileCardItem";
+import { ProfileCardList } from "../ProfileCardList/ProfileCardList";
 
-import { CurrencySelect } from "entities/Currency";
-import { CountrySelect } from "entities/Country";
 import { cln, Mods } from "shared/lib/helpers/classNames";
 import { Text, TextTag, TextTheme } from "shared/ui/Text";
 import { Loader } from "shared/ui/Loader";
@@ -21,29 +19,15 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
         isReadonly,
         onChangeCountry,
         onChangeCurrency,
-        dataInputsList,
+        onChangeAge,
+        onChangeAvatar,
+        onChangeCity,
+        onChangeFirstname,
+        onChangeLastname,
+        onChangeUsername,
     } = props;
 
     const { t } = useTranslation("profilePage");
-
-    const dataInputsListItems = useMemo(
-        () =>
-            dataInputsList?.map((item) => {
-                const { id, className, onChangeValue, placeholder, value, type } = item;
-                return (
-                    <ProfileCardItem
-                        key={id}
-                        className={className}
-                        isReadonly={isReadonly}
-                        onChangeValue={onChangeValue}
-                        placeholder={placeholder}
-                        value={value}
-                        type={type}
-                    />
-                );
-            }),
-        [dataInputsList, isReadonly]
-    );
 
     if (isLoading) {
         return (
@@ -85,18 +69,17 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
                     src={data?.avatar}
                 />
             )}
-            {dataInputsListItems}
-            <CurrencySelect
-                className={cl.select}
-                value={data?.currency}
-                onChangeValue={onChangeCurrency}
+            <ProfileCardList
+                data={data}
                 isReadonly={isReadonly}
-            />
-            <CountrySelect
-                className={cl.select}
-                value={data?.country}
-                onChangeValue={onChangeCountry}
-                isReadonly={isReadonly}
+                onChangeCountry={onChangeCountry}
+                onChangeCurrency={onChangeCurrency}
+                onChangeAge={onChangeAge}
+                onChangeAvatar={onChangeAvatar}
+                onChangeCity={onChangeCity}
+                onChangeFirstname={onChangeFirstname}
+                onChangeLastname={onChangeLastname}
+                onChangeUsername={onChangeUsername}
             />
         </div>
     );
