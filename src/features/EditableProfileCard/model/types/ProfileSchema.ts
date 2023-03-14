@@ -7,7 +7,7 @@ export interface ProfileSchema {
     isLoading: boolean;
     isReadonly: boolean;
     error?: string;
-    validateErrors?: ValidateProfileError[]; 
+    validateErrors?: ValidateProfileError[];
 }
 
 export const ValidateProfileError = {

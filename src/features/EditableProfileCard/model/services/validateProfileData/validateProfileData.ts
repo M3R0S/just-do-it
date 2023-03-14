@@ -30,6 +30,6 @@ export const validateProfileData = (profile?: Profile) => {
     if (!username) {
         errors.push(ValidateProfileError.INCORRECT_USERNAME);
     }
-    
+
     return errors;
 };
