@@ -4,7 +4,6 @@ import { ProfileCardProps } from "./ProfileCard.types";
 import { ProfileCard } from "./ProfileCard";
 import { Profile } from "../../model/types/Profile";
 
-import AvatarImage from "shared/assets/tests/storybook_avatar.jpg";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
@@ -23,7 +22,7 @@ const data: Profile = {
     country: "Russia",
     city: "Yalta",
     username: "admin",
-    avatar: AvatarImage,
+    avatar: "https://anekdo.net/pic/photo/221026-233029vwf.jpg",
 };
 
 export const Light: Story<ProfileCardProps> = Template.bind({});

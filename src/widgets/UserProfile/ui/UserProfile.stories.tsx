@@ -4,7 +4,6 @@ import { UserProfileProps } from "./UserProfile.types";
 import { UserProfile } from "./UserProfile";
 
 import { StateSchema } from "app/providers/Store";
-import AvatarImage from "shared/assets/tests/storybook_avatar.jpg";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
@@ -24,7 +23,7 @@ const store: DeepPartial<StateSchema> = {
             country: "Russia",
             city: "Yalta",
             username: "admin",
-            avatar: AvatarImage,
+            avatar: "https://anekdo.net/pic/photo/221026-233029vwf.jpg",
         },
     },
 };

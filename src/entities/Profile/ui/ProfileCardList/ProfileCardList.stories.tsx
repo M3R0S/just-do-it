@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 import { ProfileCardListProps } from "./ProfileCardList.types";
 import { ProfileCardList } from "./ProfileCardList";
 
-import AvatarImage from "shared/assets/tests/storybook_avatar.jpg";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
@@ -19,7 +18,7 @@ export default {
             country: "Russia",
             city: "Yalta",
             username: "admin",
-            avatar: AvatarImage,
+            avatar: "https://anekdo.net/pic/photo/221026-233029vwf.jpg",
         },
     },
 } as ComponentMeta<typeof ProfileCardList>;
