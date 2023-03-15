@@ -7,7 +7,7 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "entities/CurrencySelect",
+    title: "entities/Currency/CurrencySelect",
     component: CurrencySelect,
 } as ComponentMeta<typeof CurrencySelect>;
 

@@ -6,10 +6,11 @@ import { SidebarLinkItem } from "../Sidebar/Sidebar.types";
 
 import LinkHomeSvg from "shared/assets/svg/link_home.svg";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
+import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "widgets/SidebarLink",
+    title: "widgets/Sidebar/SidebarLink",
     component: SidebarLink,
 } as ComponentMeta<typeof SidebarLink>;
 
@@ -27,10 +28,11 @@ Light.args = {
     collapsed: false,
     item,
 };
+Light.decorators = [StoreDecorator({ user: { authData: {} } })];
 
 export const Dark: Story<SidebarLinkProps> = Template.bind({});
 Dark.args = {
     collapsed: false,
     item,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: { authData: {} } })];

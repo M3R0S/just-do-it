@@ -8,7 +8,7 @@ import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "features/LoginModal",
+    title: "features/AuthByUsername/LoginModal",
     component: LoginModal,
     parameters: {
         loki: {

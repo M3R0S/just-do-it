@@ -47,3 +47,24 @@ WithErrorDark.args = {
     error: "error",
 };
 WithErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithIsLoadingLight: Story<ProfileCardProps> = Template.bind({});
+WithIsLoadingLight.args = {
+    isLoading: true,
+};
+WithIsLoadingLight.parameters = {
+    loki: {
+        skip: true,
+    },
+};
+
+export const WithIsLoadingDark: Story<ProfileCardProps> = Template.bind({});
+WithIsLoadingDark.args = {
+    isLoading: true,
+};
+WithIsLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+WithIsLoadingDark.parameters = {
+    loki: {
+        skip: true,
+    },
+};

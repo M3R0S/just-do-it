@@ -7,7 +7,7 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "entities/CountrySelect",
+    title: "entities/Country/CountrySelect",
     component: CountrySelect,
 } as ComponentMeta<typeof CountrySelect>;
 
