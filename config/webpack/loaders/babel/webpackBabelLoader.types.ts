@@ -1,3 +1,5 @@
 import { RuleSetRule } from "webpack";
 
-export type WebpackBabelLoader = () => RuleSetRule;
+import { WebpackOptions } from "../../types/webpackConfigSharedTypes";
+
+export type WebpackBabelLoader = (options: WebpackOptions) => RuleSetRule;

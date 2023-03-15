@@ -7,7 +7,7 @@ import { webpackBabelLoader } from "./babel/webpackBabelLoader";
 
 export const webpackLoaders: WebpackLoaders = (options) => {
     return [
-        webpackBabelLoader(),
+        webpackBabelLoader(options),
         webpackTypescriptLoader(),
         webpackSassLoader(options),
         webpackSvgLoader(),
