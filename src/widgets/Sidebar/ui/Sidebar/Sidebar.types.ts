@@ -7,7 +7,7 @@ export const SidebarLinkItemText = {
     MAIN: "Main",
     ABOUT_US: "About us",
     PROFILE: "Profile",
-    ARTICLES: "Articles"
+    ARTICLES: "Articles",
 } as const;
 
 export type SidebarLinkItemText = ValueOf<typeof SidebarLinkItemText>;
