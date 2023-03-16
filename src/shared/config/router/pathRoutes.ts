@@ -4,6 +4,8 @@ export const PathRoutes = {
     MAIN: "/",
     ABOUT: "/about",
     PROFILE: "/profile",
+    ARTICLES: "/articles",
+    ARTICLE_DETAILS: "/articles/", // + :id,
     // last
     NOT_FOUND: "*",
 } as const;

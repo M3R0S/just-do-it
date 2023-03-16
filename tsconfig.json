@@ -13,7 +13,7 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true
     },
-    "exclude": ["node_modules", ".vscode/**/*"],
+    "exclude": ["node_modules"],
     "include": ["./src/**/*.ts", "./src/**/*.tsx"],
     "ts-node": {
         "compilerOptions": {

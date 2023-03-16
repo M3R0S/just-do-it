@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react";
+import { FC, memo, useMemo } from "react";
 
 import cl from "./ProfileCardList.module.scss";
 import { ProfileCardListProps } from "./ProfileCardList.types";
@@ -9,7 +9,7 @@ import { CurrencySelect } from "entities/Currency";
 import { CountrySelect } from "entities/Country";
 import { cln } from "shared/lib/helpers/classNames";
 
-export const ProfileCardList: FC<ProfileCardListProps> = (props) => {
+export const ProfileCardList: FC<ProfileCardListProps> = memo((props) => {
     const {
         className,
         data,
@@ -70,4 +70,4 @@ export const ProfileCardList: FC<ProfileCardListProps> = (props) => {
             />
         </div>
     );
-};
+});

@@ -12,5 +12,5 @@
     "files.eol": "\n",
     "yaml.schemas": {
         "https://json.schemastore.org/github-workflow.json": "file:///e%3A/Work/React/just-do-it/.github/workflows/main.yml"
-    }
+    },
 }

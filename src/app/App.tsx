@@ -1,4 +1,4 @@
-import { FC, Suspense, useEffect } from "react";
+import { FC, memo, Suspense, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import { AppRouter } from "./providers/Router";
@@ -12,7 +12,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Loader, LoaderTheme } from "shared/ui/Loader";
 import { ErrorBoundary } from "shared/ui/ErrorBoundary";
 
-export const App: FC = () => {
+export const App: FC = memo(() => {
     const dispatch = useAppDispatch();
     const isInited = useSelector(getUserIsInited);
 
@@ -33,4 +33,4 @@ export const App: FC = () => {
             </Suspense>
         </div>
     );
-};
+});

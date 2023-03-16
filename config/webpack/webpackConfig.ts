@@ -22,6 +22,7 @@ export const webpackConfig: WebpackConfig = (options) => {
             path: paths.build,
             assetModuleFilename: "assets/[hash][ext][query]",
             clean: true,
+            publicPath: "/",
         },
     };
 };

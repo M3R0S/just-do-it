@@ -1,10 +1,10 @@
 import { RouteProps } from "react-router-dom";
 
-import { PathRoutes } from "shared/config/router/pathRoutes";
-
 export interface AppRouteProps extends RouteProps {
     readonly id: number;
     authOnly?: boolean;
 }
 
-export type RoutesConfig = Record<PathRoutes, AppRouteProps>;
+export type AppRoutes = "main" | "about" | "profile" | "articles" | "article_details" | "not_found";
+
+export type RoutesConfig = Record<AppRoutes, AppRouteProps>;

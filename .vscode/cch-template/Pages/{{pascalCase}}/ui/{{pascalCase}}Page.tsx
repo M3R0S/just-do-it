@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import cl from './{{pascalCase}}Page.module.scss'
 
@@ -10,4 +10,4 @@ const {{pascalCase}}Page: FC = () => {
     );
 };
 
-export default {{pascalCase}}Page
+export default memo({{pascalCase}}Page)

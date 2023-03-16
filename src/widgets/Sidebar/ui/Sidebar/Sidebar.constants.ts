@@ -3,6 +3,7 @@ import { SidebarLinkItemText, SidebarLinksList } from "./Sidebar.types";
 import LinkAboutSvg from "shared/assets/svg/link_about.svg";
 import LinkHomeSvg from "shared/assets/svg/link_home.svg";
 import LinkProfileSvg from "shared/assets/svg/link_profile.svg";
+import ArticleSvg from "shared/assets/svg/link_articles.svg";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 
 export const sidebarLinksList: SidebarLinksList = [
@@ -23,6 +24,13 @@ export const sidebarLinksList: SidebarLinksList = [
         path: PathRoutes.PROFILE,
         text: SidebarLinkItemText.PROFILE,
         Icon: LinkProfileSvg,
+        authOnly: true,
+    },
+    {
+        id: "4",
+        path: PathRoutes.ARTICLES,
+        text: SidebarLinkItemText.ARTICLES,
+        Icon: ArticleSvg,
         authOnly: true,
     },
 ];
