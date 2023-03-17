@@ -1,2 +1,10 @@
 .article_block_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+
+    .img {
+        max-width: 100%;
+    }
 }

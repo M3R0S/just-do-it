@@ -1,12 +1,23 @@
-// import { FC, memo } from "react";
+import { CSSProperties, FC, memo } from "react";
 
-// import cl from "./Skeleton.module.scss";
-// import { SkeletonProps } from "./Skeleton.types";
+import cl from "./Skeleton.module.scss";
+import { SkeletonProps } from "./Skeleton.types";
 
-// import { cln } from "shared/lib/helpers/classNames";
+import { cln } from "shared/lib/helpers/classNames";
 
-// export const Skeleton: FC<SkeletonProps> = memo((props) => {
-//     const { className, border, height, width } = props;
+export const Skeleton: FC<SkeletonProps> = memo((props) => {
+    const { className, borderRadius, height, width } = props;
 
-//     // return <div className={cln(cl.skeleton, [className])}>{children}</div>;
-// });
+    const styles: CSSProperties = {
+        width,
+        height,
+        borderRadius,
+    };
+
+    return (
+        <div
+            className={cln(cl.skeleton, [className])}
+            style={styles}
+        />
+    );
+});

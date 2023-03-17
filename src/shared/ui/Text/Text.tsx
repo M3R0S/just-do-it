@@ -1,9 +1,9 @@
 import { FC, memo } from "react";
 
 import cl from "./Text.module.scss";
-import { TextAttributes, TextProps, TextTagRecord } from "./Text.types";
+import { TextProps, TextSize, TextTagRecord } from "./Text.types";
 
-import { cln } from "shared/lib/helpers/classNames";
+import { cln, Mods } from "shared/lib/helpers/classNames";
 
 export const Text: FC<TextProps> = memo((props) => {
     const {
@@ -13,10 +13,19 @@ export const Text: FC<TextProps> = memo((props) => {
         theme = "clear",
         isTitle = false,
         align = "left",
+        size,
     } = props;
 
-    const newProps: TextAttributes = {
-        className: cln(cl[isTitle ? "title" : "text"], [cl[theme], cl[align], className], {}),
+    const defaultSize: TextSize = isTitle ? "size_l" : "size_m";
+    const actualSize: TextSize = size ? size : defaultSize;
+
+    const mods: Mods = {
+        [cl.title]: isTitle,
+        [cl.text]: !isTitle,
+    };
+
+    const newProps: TextProps = {
+        className: cln(cl.title_and_text, [cl[theme], cl[align], cl[actualSize], className], mods),
     };
 
     const textTagAccordance: TextTagRecord = {

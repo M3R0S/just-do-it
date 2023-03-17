@@ -1,4 +1,4 @@
-export type ArticleBlockType = "IMG" | "TEXT" | "CODE";
+export type ArticleBlockType = "IMAGE" | "TEXT" | "CODE";
 
 export interface ArticleBlockBase {
     id: string;
@@ -11,7 +11,7 @@ export interface ArticleBlockCode extends ArticleBlockBase {
 }
 
 export interface ArticleBlockImage extends ArticleBlockBase {
-    type: "IMG";
+    type: "IMAGE";
     src: string;
     title: string;
 }

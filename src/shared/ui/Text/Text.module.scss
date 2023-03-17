@@ -1,7 +1,9 @@
-.text {
-    font: var(--font-m);
-    color: var(--color-secondary);
+.title_and_text {
     transition: color var(--transition-switch-theme-timeout);
+}
+
+.text {
+    color: var(--color-secondary);
 
     &.error {
         color: var(--color-red-secondary);
@@ -9,9 +11,7 @@
 }
 
 .title {
-    font: var(--font-l);
     color: var(--color-primary);
-    transition: color var(--transition-switch-theme-timeout);
 
     &.error {
         color: var(--color-red-primary);
@@ -30,5 +30,17 @@
 
     &.center {
         text-align: center;
+    }
+
+    &.size_m {
+        font: var(--font-m);
+    }
+
+    &.size_l {
+        font: var(--font-l);
+    }
+
+    &.size_xl {
+        font: var(--font-xl);
     }
 }

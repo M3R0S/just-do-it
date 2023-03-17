@@ -13,7 +13,30 @@ export default {
 
 const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
 
-export const Light: Story<SkeletonProps> = Template.bind({});
+export const NormalLight: Story<SkeletonProps> = Template.bind({});
+NormalLight.args = {
+    width: "100%",
+    height: 200,
+};
 
-export const Dark: Story<SkeletonProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const NormalDark: Story<SkeletonProps> = Template.bind({});
+NormalDark.args = {
+    width: "100%",
+    height: 200,
+};
+NormalDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const CircleLight: Story<SkeletonProps> = Template.bind({});
+CircleLight.args = {
+    width: 100,
+    height: 100,
+    borderRadius: "50%",
+};
+
+export const CircleDark: Story<SkeletonProps> = Template.bind({});
+CircleDark.args = {
+    width: 100,
+    height: 100,
+    borderRadius: "50%",
+};
+CircleDark.decorators = [ThemeDecorator(Theme.DARK)];

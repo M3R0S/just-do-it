@@ -27,6 +27,7 @@ export const TextAlign = {
 export type TextTag = ValueOf<typeof TextTag>;
 export type TextTheme = ValueOf<typeof TextTheme>;
 export type TextAlign = ValueOf<typeof TextAlign>;
+export type TextSize = "size_m" | "size_l" | "size_xl";
 
 export type TextTagRecord = Record<
     TextTag,
@@ -39,4 +40,5 @@ export interface TextProps extends TextAttributes {
     tag?: TextTag;
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize;
 }

@@ -1,9 +1,13 @@
 .page_wrapper {
     flex-grow: 1;
-    padding: 2rem;
+    overflow-y: auto;
+    padding: 2rem 2rem 2rem 4.5rem;
+    width: 100%;
+    height: calc(100vh - var(--height-navbar));
 }
 
 .loader {
     flex-grow: 1;
+    width: 100%;
     height: 100vh - var(--height-navbar);
 }

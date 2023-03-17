@@ -1,19 +1,24 @@
 .app_link {
     font-weight: 600;
-}
+    transition: opacity var(--transition-hover-timeout);
 
-.primary {
-    color: var(--color-primary);
-}
+    &:hover {
+        opacity: 0.8;
+    }
 
-.primary_inverted {
-    color: var(--color-primary-inverted);
-}
+    &.primary {
+        color: var(--color-primary);
+    }
 
-.secondary {
-    color: var(--color-secondary);
-}
+    &.primary_inverted {
+        color: var(--color-primary-inverted);
+    }
 
-.secondary_inverted {
-    color: var(--color-secondary-inverted);
+    &.secondary {
+        color: var(--color-secondary);
+    }
+
+    &.secondary_inverted {
+        color: var(--color-secondary-inverted);
+    }
 }
