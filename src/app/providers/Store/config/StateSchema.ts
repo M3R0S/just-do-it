@@ -9,6 +9,7 @@ import { AxiosInstance } from "axios";
 
 import { LoginSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "features/EditableProfileCard";
+import { ArticleDetailsCommentsSchema } from "features/ArticleCommentsList";
 import { UserSchema } from "entities/User";
 import { ArticleDetailsSchema } from "entities/Article";
 
@@ -19,6 +20,7 @@ export interface StateSchema {
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

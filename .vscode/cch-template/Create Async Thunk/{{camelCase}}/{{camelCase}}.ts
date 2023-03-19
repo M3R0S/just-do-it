@@ -1,29 +1,30 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { {{pascalCase}}Props } from "./{{camelCase}}.types";
-
 import { ThunkConfig } from "app/providers/Store";
+import { StatusCodes } from "shared/lib/types/serverTypes";
 
-export const {{camelCase}} = createAsyncThunk<any, any, ThunkConfig>(
-    "___/{{camelCase}}",
+export const {{camelCase}} = createAsyncThunk<_, _, ThunkConfig>(
+    "_/{{camelCase}}",
     async (_, thunkAPI) => {
-        const { dispatch, extra, rejectWithValue } = thunkAPI;
+        const { extra, rejectWithValue } = thunkAPI;
         const { api } = extra;
 
         try {
-            const response = await api.get<any>("");
+            const response = await api.get<_>("");
             const data = response.data;
             if (!data) {
-                throw new Error("403");
+                throw new Error(StatusCodes.NO_DATA);
             }
 
-            return response.data;
-        } catch (error) {
-            if (error.message.toString().includes("403")) {
-                return rejectWithValue("403");
+            return data;
+        } catch (e) {
+            if (e instanceof Error) {
+                if (e.message.toString().includes(StatusCodes.NO_DATA)) {
+                    return rejectWithValue(StatusCodes.NO_DATA);
+                }
             }
 
-            return rejectWithValue("500");
+            return rejectWithValue(StatusCodes.UNKNOWN);
         }
     }
 );

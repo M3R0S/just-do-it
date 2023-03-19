@@ -1,7 +1,4 @@
-export interface User {
-    id: string;
-    username: string;
-}
+import { User } from "./user";
 
 export interface UserSchema {
     authData?: User;

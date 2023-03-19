@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from "react";
+import { FC, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -21,6 +21,7 @@ import CalendarSvg from "shared/assets/svg/calendar.svg";
 import { cln } from "shared/lib/helpers/classNames";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { Text } from "shared/ui/Text";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Avatar } from "shared/ui/Avatar";
@@ -68,11 +69,11 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     const error = useSelector(getArticleDetailsError);
     const data = useSelector(getArticleDetailsData);
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchArticleById(id));
-        }
+    const initialFetchArticleById = useCallback(() => {
+        dispatch(fetchArticleById(id));
     }, [dispatch, id]);
+
+    useInitialEffect(initialFetchArticleById);
 
     let content: JSX.Element;
 

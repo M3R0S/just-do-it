@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import cl from "./ArticleDetailsPage.module.scss";
 
+import { ArticleDetailsCommentsList } from "features/ArticleCommentsList";
 import { ArticleDetails } from "entities/Article";
 
 const ArticleDetailsPage: FC = () => {
@@ -17,6 +18,7 @@ const ArticleDetailsPage: FC = () => {
     return (
         <div className={cl.article_details_page}>
             <ArticleDetails id={id} />
+            <ArticleDetailsCommentsList id={id} />
         </div>
     );
 };
