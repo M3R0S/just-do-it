@@ -7,9 +7,10 @@ import {
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 
+import { CommentsForArticleSchema } from "widgets/CommentsForArticle";
 import { LoginSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "features/EditableProfileCard";
-import { ArticleDetailsCommentsSchema } from "features/ArticleCommentsList";
+import { AddNewCommentSchema } from "features/AddNewComment";
 import { UserSchema } from "entities/User";
 import { ArticleDetailsSchema } from "entities/Article";
 
@@ -20,7 +21,8 @@ export interface StateSchema {
     login?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
+    articleDetailsComments?: CommentsForArticleSchema;
+    addNewComment?: AddNewCommentSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

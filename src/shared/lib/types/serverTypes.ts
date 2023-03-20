@@ -3,6 +3,7 @@ import { ValueOf } from "./helpersTypes";
 export const ServerEndpoints = {
     PROFILE: "/profile",
     LOGIN: "/login",
+    COMMENTS: "/comments",
 } as const;
 
 export const StatusCodes = {

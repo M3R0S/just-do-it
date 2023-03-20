@@ -1,0 +1,12 @@
+.add_new_comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border: 0.1rem solid var(--color-primary);
+    padding: 2rem;
+
+    .input {
+        flex-grow: 1;
+    }
+}

@@ -14,7 +14,6 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
     const { className, comments, isLoading } = props;
     const { t } = useTranslation();
 
-    const skeletonComments = [1, 2, 3];
     const renderCommentsList = useCallback(
         (comment: Comment) => (
             <CommentCard
@@ -24,12 +23,15 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
         ),
         []
     );
-    const renderCommentsSkeletonList = useCallback(() => <CommentCardSkeleton />, []);
+    const renderCommentsSkeletonList = useCallback(
+        (comment: Comment) => <CommentCardSkeleton key={comment.id} />,
+        []
+    );
 
     if (isLoading) {
         return (
             <div className={cln(cl.comment_list, [className])}>
-                {skeletonComments.map(renderCommentsSkeletonList)}
+                {comments?.map(renderCommentsSkeletonList)}
             </div>
         );
     }

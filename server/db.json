@@ -99,7 +99,49 @@
             "id": "3",
             "text": "some comment 3",
             "articleId": "1",
-            "userId": "1"
+            "userId": "2"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "new comment",
+            "id": "ws3ygCS"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "[f[f[f[f[[f",
+            "id": "j4-4mNT"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "new comment",
+            "id": "faKXV9R"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "1",
+            "id": "UTp--Bx"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "asda",
+            "id": "69-lbjZ"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "",
+            "id": "UH1jtaE"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "cbcb",
+            "id": "jjUnULI"
         }
     ],
     "users": [
@@ -118,14 +160,28 @@
             "role": "USER"
         }
     ],
-    "profile": {
-        "firstname": "Bogdan",
-        "lastname": "Moskalenko",
-        "age": "21",
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Yalta",
-        "username": "admin",
-        "avatar": "https://anekdo.net/pic/photo/221026-233029vwf.jpg"
-    }
+    "profile": [
+        {
+            "id": "1",
+            "firstname": "Bogdan",
+            "lastname": "Moskalenko",
+            "age": "20",
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Yalta",
+            "username": "admin",
+            "avatar": "https://anekdo.net/pic/photo/221026-233029vwf.jpg"
+        },
+        {
+            "id": "2",
+            "firstname": "Maks",
+            "lastname": "Absus",
+            "age": "23",
+            "currency": "USD",
+            "country": "Russia",
+            "city": "Moskow",
+            "username": "user",
+            "avatar": "https://russian7.ru/wp-content/uploads/2022/03/khakery-piksabyey.jpg"
+        }
+    ]
 }

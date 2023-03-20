@@ -9,6 +9,7 @@ import { testAsyncThunk } from "shared/lib/helpers/testAsyncThunk";
 
 describe("updateProfileData", () => {
     const data: Profile = {
+        id: "1",
         firstname: "Bogdan",
         lastname: "Moskalenko",
         age: "21",

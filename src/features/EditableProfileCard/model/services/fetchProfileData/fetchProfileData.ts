@@ -4,14 +4,14 @@ import { ThunkConfig } from "app/providers/Store";
 import { Profile } from "entities/Profile";
 import { StatusCodes, ServerEndpoints } from "shared/lib/types/serverTypes";
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig>(
     "profile/fetchProfileData",
-    async (_, thunkAPI) => {
+    async (profileId, thunkAPI) => {
         const { extra, rejectWithValue } = thunkAPI;
         const { api } = extra;
 
         try {
-            const response = await api.get<Profile>(ServerEndpoints.PROFILE);
+            const response = await api.get<Profile>(`${ServerEndpoints.PROFILE}/${profileId}`);
             const data = response.data;
             if (!data) {
                 throw new Error(StatusCodes.NO_DATA);

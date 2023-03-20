@@ -23,7 +23,7 @@ describe("fetchProfileData", () => {
 
         api.get.mockReturnValue(Promise.resolve<Partial<AxiosResponse<Profile>>>({ data }));
 
-        const result = await callThunk();
+        const result = await callThunk("1");
 
         expect(api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe("fulfilled");
@@ -35,7 +35,7 @@ describe("fetchProfileData", () => {
 
         api.get.mockReturnValue(Promise.resolve<Partial<AxiosResponse<User>>>({ status: 404 }));
 
-        const result = await callThunk();
+        const result = await callThunk("1");
 
         expect(result.meta.requestStatus).toBe("rejected");
         expect(result.payload).toBe("404");
@@ -46,7 +46,7 @@ describe("fetchProfileData", () => {
 
         api.get.mockRejectedValue(new Error("unknown status code"));
 
-        const result = await callThunk();
+        const result = await callThunk("1");
 
         expect(result.meta.requestStatus).toBe("rejected");
         expect(result.payload).toBe("500");

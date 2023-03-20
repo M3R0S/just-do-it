@@ -1,23 +1,21 @@
 import { FC, memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import cl from "./ArticleDetailsCommentsList.module.scss";
-import { ArticleDetailsCommentsListProps } from "./ArticleDetailsCommentsList.types";
-import { articleDetailsCommentsReducer } from "../../model/slice/articleDetailsCommentsSlice";
 import {
     getArticleDetailsCommentsData,
     getArticleDetailsCommentsError,
     getArticleDetailsCommentsIsLoading,
 } from "../../model/selectors/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { articleDetailsCommentsReducer } from "../../model/slice/articleDetailsCommentsSlice";
+import { ArticleDetailsCommentsListProps } from "./ArticleDetailsCommentsList.types";
 
 import { CommentList } from "entities/Comment";
 import { cln } from "shared/lib/helpers/classNames";
-import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
-import { Text } from "shared/ui/Text";
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -27,7 +25,6 @@ export const ArticleDetailsCommentsList: FC<ArticleDetailsCommentsListProps> = m
     const { className, id } = props;
 
     useDynamicReducerLoader({ reducers });
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     const comments = useSelector(getArticleDetailsCommentsData.selectAll);
@@ -41,19 +38,10 @@ export const ArticleDetailsCommentsList: FC<ArticleDetailsCommentsListProps> = m
     useInitialEffect(initialFetchCommentsByArticleId);
 
     return (
-        <div className={cln(cl.article_details_comments_list, [className])}>
-            <Text
-                className={cl.comments_title}
-                isTitle
-                tag="h1"
-            >
-                {t("Comments")}
-            </Text>
-            <CommentList
-                isLoading={isLoading}
-                className={cl.comments_list}
-                comments={comments}
-            />
-        </div>
+        <CommentList
+            isLoading={isLoading}
+            className={cln(cl.comments_list, [className])}
+            comments={comments}
+        />
     );
 });

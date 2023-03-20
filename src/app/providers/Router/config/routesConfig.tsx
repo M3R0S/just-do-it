@@ -21,7 +21,7 @@ export const routesConfig: RoutesConfig = {
     },
     profile: {
         id: 3,
-        path: PathRoutes.PROFILE,
+        path: `${PathRoutes.PROFILE}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },
@@ -33,7 +33,7 @@ export const routesConfig: RoutesConfig = {
     },
     article_details: {
         id: 5,
-        path: PathRoutes.ARTICLE_DETAILS + ":id",
+        path: `${PathRoutes.ARTICLE_DETAILS}:id`,
         element: <ArticleDetailsPage />,
         authOnly: true,
     },

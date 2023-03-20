@@ -24,7 +24,10 @@ export const updateProfileData = createAsyncThunk<
     }
 
     try {
-        const response = await api.put<Profile>(ServerEndpoints.PROFILE, formData);
+        const response = await api.put<Profile>(
+            `${ServerEndpoints.PROFILE}/${formData?.id}`,
+            formData
+        );
         const data = response.data;
         if (!data) {
             throw new Error(ValidateProfileError.NO_DATA);

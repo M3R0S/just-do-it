@@ -7,7 +7,7 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    title: "features/ArticleDetailsCommentsList",
+    title: "widgets/CommentsForArticle/ArticleDetailsCommentsList",
     component: ArticleDetailsCommentsList,
 } as ComponentMeta<typeof ArticleDetailsCommentsList>;
 

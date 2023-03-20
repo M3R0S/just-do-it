@@ -9,6 +9,20 @@ import { Theme } from "shared/lib/context/ThemeContext";
 export default {
     title: "entities/Comment/CommentList",
     component: CommentList,
+    args: {
+        comments: [
+            {
+                id: "1",
+                text: "Comment",
+                user: { id: "1", username: "username" },
+            },
+            {
+                id: "2",
+                text: "Comment 2",
+                user: { id: "1", username: "username" },
+            },
+        ],
+    },
 } as ComponentMeta<typeof CommentList>;
 
 const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
