@@ -1,9 +1,9 @@
 import { RouteProps } from "react-router-dom";
 
-export interface AppRouteProps extends RouteProps {
-    readonly id: number;
+export type AppRouteProps = RouteProps & {
+    readonly routeId: number;
     authOnly?: boolean;
-}
+};
 
 export type AppRoutes = "main" | "about" | "profile" | "articles" | "article_details" | "not_found";
 

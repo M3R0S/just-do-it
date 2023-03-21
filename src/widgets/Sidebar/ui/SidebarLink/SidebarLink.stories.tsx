@@ -2,8 +2,8 @@ import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
 import { SidebarLinkProps } from "./SidebarLink.types";
 import { SidebarLink } from "./SidebarLink";
-import { SidebarLinkItem } from "../Sidebar/Sidebar.types";
 
+import { SidebarLinkItem } from "widgets/Sidebar/model/types/sidebar";
 import LinkHomeSvg from "shared/assets/svg/link_home.svg";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";

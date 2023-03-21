@@ -10,36 +10,36 @@ import { PathRoutes } from "shared/config/router/pathRoutes";
 
 export const routesConfig: RoutesConfig = {
     main: {
-        id: 1,
+        routeId: 1,
         path: PathRoutes.MAIN,
         element: <MainPage />,
     },
     about: {
-        id: 2,
+        routeId: 2,
         path: PathRoutes.ABOUT,
         element: <AboutPage />,
     },
     profile: {
-        id: 3,
+        routeId: 3,
         path: `${PathRoutes.PROFILE}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },
     articles: {
-        id: 4,
+        routeId: 4,
         path: PathRoutes.ARTICLES,
         element: <ArticlesPage />,
         authOnly: true,
     },
     article_details: {
-        id: 5,
+        routeId: 5,
         path: `${PathRoutes.ARTICLE_DETAILS}:id`,
         element: <ArticleDetailsPage />,
         authOnly: true,
     },
     // last
     not_found: {
-        id: 0,
+        routeId: 0,
         path: PathRoutes.NOT_FOUND,
         element: <NotFoundPage />,
     },

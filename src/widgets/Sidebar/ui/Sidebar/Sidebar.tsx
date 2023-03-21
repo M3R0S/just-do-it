@@ -1,8 +1,9 @@
-import { FC, memo, useState } from "react";
+import { FC, memo, useMemo, useState } from "react";
+import { useSelector } from "react-redux";
 
 import cl from "./Sidebar.module.scss";
 import { SidebarProps } from "./Sidebar.types";
-import { sidebarLinksList } from "./Sidebar.constants";
+import { getSidebarItems } from "../../model/selectors/sidebarSelectors";
 import { SidebarLink } from "../SidebarLink/SidebarLink";
 
 import { ThemeSwitcher } from "features/ThemeSwitcher";
@@ -14,6 +15,19 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
     const { className } = props;
 
     const [collapsed, setCollapsed] = useState<boolean>(false);
+    const sidebarLinksList = useSelector(getSidebarItems);
+
+    const linksList = useMemo(
+        () =>
+            sidebarLinksList.map((item) => (
+                <SidebarLink
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.id}
+                />
+            )),
+        [collapsed, sidebarLinksList]
+    );
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -42,15 +56,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
                     {"<"}
                 </span>
             </Button>
-            <nav className={cl.links}>
-                {sidebarLinksList.map((item) => (
-                    <SidebarLink
-                        item={item}
-                        collapsed={collapsed}
-                        key={item.id}
-                    />
-                ))}
-            </nav>
+            <nav className={cl.links}>{linksList}</nav>
             <div className={cl.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} />
