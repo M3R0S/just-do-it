@@ -1,0 +1,13 @@
+.article_list {
+    &.tile {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &.list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+}

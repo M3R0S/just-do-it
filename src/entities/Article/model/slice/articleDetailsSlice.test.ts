@@ -11,6 +11,11 @@ describe("articleDetailsSlice", () => {
         img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
         views: "1022",
         createdAt: "16.03.2022",
+        user: {
+            id: "1",
+            username: "admin",
+            avatar: "https://anekdo.net/pic/photo/221026-233029vwf.jpg",
+        },
         type: ["IT"],
         blocks: [
             {

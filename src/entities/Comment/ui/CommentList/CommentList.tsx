@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from "react";
+import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import cl from "./CommentList.module.scss";
@@ -14,18 +14,14 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
     const { className, comments, isLoading } = props;
     const { t } = useTranslation();
 
-    const renderCommentsList = useCallback(
-        (comment: Comment) => (
-            <CommentCard
-                key={comment.id}
-                comment={comment}
-            />
-        ),
-        []
+    const renderCommentsList = (comment: Comment) => (
+        <CommentCard
+            key={comment.id}
+            comment={comment}
+        />
     );
-    const renderCommentsSkeletonList = useCallback(
-        (comment: Comment) => <CommentCardSkeleton key={comment.id} />,
-        []
+    const renderCommentsSkeletonList = (comment: Comment) => (
+        <CommentCardSkeleton key={comment.id} />
     );
 
     if (isLoading) {

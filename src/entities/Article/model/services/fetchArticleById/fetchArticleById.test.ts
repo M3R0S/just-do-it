@@ -14,6 +14,11 @@ describe("fetchArticleById", () => {
         views: "1022",
         createdAt: "16.03.2022",
         type: ["IT"],
+        user: {
+            id: "1",
+            username: "admin",
+            avatar: "https://anekdo.net/pic/photo/221026-233029vwf.jpg",
+        },
         blocks: [
             {
                 id: "1",

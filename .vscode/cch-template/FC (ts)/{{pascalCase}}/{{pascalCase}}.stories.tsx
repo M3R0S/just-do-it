@@ -7,7 +7,7 @@ import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
-    *title: "/{{pascalCase}}",
+    title: "/{{pascalCase}}",
     component: {{pascalCase}},
 } as ComponentMeta<typeof {{pascalCase}}>;
 
