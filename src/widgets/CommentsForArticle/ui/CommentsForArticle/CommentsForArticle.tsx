@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from "react";
+import { FC, memo, Suspense, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import cl from "./CommentsForArticle.module.scss";
@@ -25,15 +25,17 @@ export const CommentsForArticle: FC<CommentsForArticleProps> = memo((props) => {
     );
 
     return (
-        <div className={cln(cl.comments_for_article, [className])}>
-            <Text
-                isTitle
-                tag="h1"
-            >
-                {t("Comments")}
-            </Text>
-            <AddNewComment onSendComment={onSendComment} />
-            <ArticleDetailsCommentsList id={id} />
-        </div>
+        <Suspense fallback="">
+            <div className={cln(cl.comments_for_article, [className])}>
+                <Text
+                    isTitle
+                    tag="h1"
+                >
+                    {t("Comments")}
+                </Text>
+                <AddNewComment onSendComment={onSendComment} />
+                <ArticleDetailsCommentsList id={id} />
+            </div>
+        </Suspense>
     );
 });

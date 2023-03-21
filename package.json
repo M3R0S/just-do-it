@@ -85,6 +85,7 @@
         "regenerator-runtime": "^0.13.11",
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0",
+        "storybook-addon-react-router-v6": "^0.3.4",
         "style-loader": "^3.3.1",
         "stylelint": "^14.16.1",
         "stylelint-config-prettier-scss": "^0.0.1",
