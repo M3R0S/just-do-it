@@ -9,6 +9,12 @@
             width: 200px;
             height: 200px;
 
+            .img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+            }
+
             .created_at {
                 position: absolute;
                 right: 0;
@@ -58,7 +64,45 @@
         }
     }
 
-    // &.list {
+    &.list {
+        .card {
+            display: flex;
+            flex-direction: column;
 
-    // }
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .user {
+                    display: flex;
+                    column-gap: 1rem;
+                }
+            }
+
+            .title {
+                margin-top: 1rem;
+            }
+
+            .img {
+                margin-top: 1.6rem;
+                width: 100%;
+                max-height: 250px;
+                object-fit: cover;
+            }
+
+            .footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 2rem;
+
+                .views_wrapper {
+                    display: flex;
+                    column-gap: 0.6rem;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }

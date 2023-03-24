@@ -1,23 +1,30 @@
 import { FC, memo } from "react";
+import { useTranslation } from "react-i18next";
 
 import cl from "./ArticleListItem.module.scss";
 import { ArticleListItemProps } from "./ArticleListItem.types";
+import { ArticleBlockText } from "../ArticleBlockText/ArticleBlockText";
 
+import { ArticleBlockText as ArticleBlockTextType } from "entities/Article/model/types/article";
 import ViewSvg from "shared/assets/svg/eye.svg";
 import { cln } from "shared/lib/helpers/classNames";
-import { useHover } from "shared/lib/hooks/useHover";
 import { Text } from "shared/ui/Text";
 import { Svg } from "shared/ui/Svg";
 import { Card } from "shared/ui/Card";
 import { Avatar } from "shared/ui/Avatar";
+import { Button } from "shared/ui/Button";
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     const { className, article, view } = props;
 
-    const [isHovered, bindHover] = useHover();
+    const { t } = useTranslation("articlePage");
 
-    const types = <Text className={cl.types}>{article.type.join(", ")}</Text>;
-    const title = (
+    const textBlockNull = t("A short description is not available");
+    const textBlock =
+        (article.blocks.find((block) => block.type === "TEXT") as ArticleBlockTextType) ??
+        textBlockNull;
+    const Types = <Text className={cl.types}>{article.type.join(", ")}</Text>;
+    const Title = (
         <Text
             isTitle
             tag="h1"
@@ -26,13 +33,13 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             {article.title}
         </Text>
     );
-    const views = (
+    const Views = (
         <div className={cl.views_wrapper}>
             <Text>{article.views}</Text>
             <Svg Svg={ViewSvg} />
         </div>
     );
-    const mainImg = (
+    const MainImg = (
         <img
             width={200}
             height={200}
@@ -45,7 +52,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     if (view === "list") {
         return (
             <div className={cln(cl.article_list_item, [className, cl[view]])}>
-                <Card>
+                <Card className={cl.card}>
                     <div className={cl.header}>
                         <div className={cl.user}>
                             <Avatar
@@ -57,29 +64,35 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                         </div>
                         <Text tag="p">{article.createdAt}</Text>
                     </div>
-                    {title}
-                    {types}
-                    {mainImg}
+                    {Title}
+                    {Types}
+                    {MainImg}
+                    {typeof textBlock === "string" ? (
+                        textBlock
+                    ) : (
+                        <ArticleBlockText block={textBlock} />
+                    )}
+                    <div className={cl.footer}>
+                        <Button theme="outline">{t("Read more") + "..."}</Button>
+                        {Views}
+                    </div>
                 </Card>
             </div>
         );
     }
 
     return (
-        <div
-            {...bindHover}
-            className={cln(cl.article_list_item, [className, cl[view]])}
-        >
+        <div className={cln(cl.article_list_item, [className, cl[view]])}>
             <Card>
                 <div className={cl.image_wrapper}>
-                    {mainImg}
+                    {MainImg}
                     <Text className={cl.created_at}>{article.createdAt}</Text>
                 </div>
                 <div className={cl.info_wrapper}>
-                    {types}
-                    {views}
+                    {Types}
+                    {Views}
                 </div>
-                {title}
+                {Title}
             </Card>
         </div>
     );
