@@ -10,7 +10,7 @@ import { Loader } from "shared/ui/Loader";
 
 export const AppRouter: FC = memo(() => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
-        const { path, id, element, authOnly } = route;
+        const { path, routeId, element, authOnly } = route;
 
         const component = (
             <Suspense fallback={<Loader className={cl.loader} />}>
@@ -22,7 +22,7 @@ export const AppRouter: FC = memo(() => {
             <Route
                 element={authOnly ? <RequireAuth>{component}</RequireAuth> : component}
                 path={path}
-                key={id}
+                key={routeId}
             />
         );
     }, []);

@@ -1,5 +1,6 @@
-import { FC, memo } from "react";
+import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import cl from "./ArticleListItem.module.scss";
 import { ArticleListItemProps } from "./ArticleListItem.types";
@@ -7,6 +8,7 @@ import { ArticleBlockText } from "../ArticleBlockText/ArticleBlockText";
 
 import { ArticleBlockText as ArticleBlockTextType } from "entities/Article/model/types/article";
 import ViewSvg from "shared/assets/svg/eye.svg";
+import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers/classNames";
 import { Text } from "shared/ui/Text";
 import { Svg } from "shared/ui/Svg";
@@ -18,11 +20,17 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     const { className, article, view } = props;
 
     const { t } = useTranslation("articlePage");
+    const navigate = useNavigate();
+
+    const onOpenArticle = useCallback(() => {
+        navigate(PathRoutes.ARTICLE_DETAILS + article.id);
+    }, [article.id, navigate]);
 
     const textBlockNull = t("A short description is not available");
     const textBlock =
-        (article.blocks.find((block) => block.type === "TEXT") as ArticleBlockTextType) ??
-        textBlockNull;
+        (article.blocks.find((block) => block.type === "TEXT") as
+            | ArticleBlockTextType
+            | undefined) ?? textBlockNull;
     const Types = <Text className={cl.types}>{article.type.join(", ")}</Text>;
     const Title = (
         <Text
@@ -41,8 +49,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     );
     const MainImg = (
         <img
-            width={200}
-            height={200}
             src={article.img}
             alt={article.title}
             className={cl.img}
@@ -68,12 +74,20 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                     {Types}
                     {MainImg}
                     {typeof textBlock === "string" ? (
-                        textBlock
+                        textBlockNull
                     ) : (
-                        <ArticleBlockText block={textBlock} />
+                        <ArticleBlockText
+                            block={textBlock}
+                            className={cl.block_text}
+                        />
                     )}
                     <div className={cl.footer}>
-                        <Button theme="outline">{t("Read more") + "..."}</Button>
+                        <Button
+                            onClick={onOpenArticle}
+                            theme="outline"
+                        >
+                            {t("Read more") + "..."}
+                        </Button>
                         {Views}
                     </div>
                 </Card>
@@ -83,7 +97,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
 
     return (
         <div className={cln(cl.article_list_item, [className, cl[view]])}>
-            <Card>
+            <Card onClick={onOpenArticle}>
                 <div className={cl.image_wrapper}>
                     {MainImg}
                     <Text className={cl.created_at}>{article.createdAt}</Text>
