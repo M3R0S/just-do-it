@@ -7,7 +7,8 @@
     "editor.tabSize": 4,
     "editor.codeActionsOnSave": {
         "source.fixAll.stylelint": true,
-        "source.fixAll.eslint": true 
+        "source.fixAll.eslint": true,
+        "source.removeUnusedImports": true,
     },
     "files.eol": "\n",
     "yaml.schemas": {

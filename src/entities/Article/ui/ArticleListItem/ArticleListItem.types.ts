@@ -5,3 +5,8 @@ export interface ArticleListItemProps {
     article: Article;
     view: ArticleView;
 }
+
+export interface ArticleListItemSkeletonProps {
+    className?: string;
+    view: ArticleView;
+}
