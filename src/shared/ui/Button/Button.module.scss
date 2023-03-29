@@ -20,6 +20,12 @@
         opacity: 0.5;
     }
 
+    &.clear {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+    }
+
     &.clear_inverted {
         color: var(--color-primary-inverted);
     }

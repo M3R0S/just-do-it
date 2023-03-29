@@ -8,6 +8,7 @@ import {
 import { AxiosInstance } from "axios";
 
 import { CommentsForArticleSchema } from "widgets/CommentsForArticle";
+import { ArticlesDisplaySchema } from "widgets/ArticlesDisplay";
 import { LoginSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "features/EditableProfileCard";
 import { AddNewCommentSchema } from "features/AddNewComment";
@@ -23,6 +24,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: CommentsForArticleSchema;
     addNewComment?: AddNewCommentSchema;
+    articlesDisplay?: ArticlesDisplaySchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

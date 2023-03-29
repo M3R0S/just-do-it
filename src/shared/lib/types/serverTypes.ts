@@ -4,6 +4,7 @@ export const ServerEndpoints = {
     PROFILE: "/profile",
     LOGIN: "/login",
     COMMENTS: "/comments",
+    ARTICLES: "/articles",
 } as const;
 
 export const StatusCodes = {
