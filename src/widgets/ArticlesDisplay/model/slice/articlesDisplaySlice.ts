@@ -16,6 +16,9 @@ const initialState = articlesAdapter.getInitialState<ArticlesDisplaySchema>({
     isLoading: false,
     view: "list",
     error: undefined,
+    page: 1,
+    limit: 9,
+    hasMore: true,
 });
 
 export const articlesDisplaySlice = createSlice({
@@ -27,7 +30,12 @@ export const articlesDisplaySlice = createSlice({
             localStorage.setItem(LOCALSTORAGE_ARTICLES_VIEW_KEY, action.payload);
         },
         initState: (state) => {
-            state.view = localStorage.getItem(LOCALSTORAGE_ARTICLES_VIEW_KEY) as ArticleView;
+            const view = localStorage.getItem(LOCALSTORAGE_ARTICLES_VIEW_KEY) as ArticleView;
+            state.view = view;
+            state.limit = view === "list" ? 4 : 9;
+        },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
         },
     },
     extraReducers: (builder) => {

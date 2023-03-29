@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import cl from "./ArticlesDisplay.module.scss";
@@ -34,7 +34,7 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = (props) => {
 
     useInitialEffect(
         useCallback(() => {
-            dispatch(fetchArticlesList());
+            dispatch(fetchArticlesList({ page: 1 }));
             dispatch(articlesDisplayActions.initState());
         }, [dispatch])
     );

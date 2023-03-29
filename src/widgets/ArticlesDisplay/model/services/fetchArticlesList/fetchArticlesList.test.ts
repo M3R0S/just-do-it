@@ -90,7 +90,7 @@ describe("fetchArticlesList", () => {
             Promise.resolve<Partial<AxiosResponse<Article[]>>>({ data: articles })
         );
 
-        const result = await callThunk();
+        const result = await callThunk({ page: 1 });
 
         expect(api.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe("fulfilled");
@@ -104,7 +104,7 @@ describe("fetchArticlesList", () => {
             Promise.resolve<Partial<AxiosResponse<Article[]>>>({ status: 404 })
         );
 
-        const result = await callThunk();
+        const result = await callThunk({ page: 1 });
 
         expect(result.meta.requestStatus).toBe("rejected");
         expect(result.payload).toBe("404");
@@ -115,7 +115,7 @@ describe("fetchArticlesList", () => {
 
         api.get.mockRejectedValue(new Error("unknown status code"));
 
-        const result = await callThunk();
+        const result = await callThunk({ page: 1 });
 
         expect(result.meta.requestStatus).toBe("rejected");
         expect(result.payload).toBe("500");
