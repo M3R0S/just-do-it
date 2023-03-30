@@ -9,6 +9,7 @@ import { AxiosInstance } from "axios";
 
 import { CommentsForArticleSchema } from "widgets/CommentsForArticle";
 import { ArticlesDisplaySchema } from "widgets/ArticlesDisplay";
+import { ScrollSchema } from "widgets/Page";
 import { LoginSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "features/EditableProfileCard";
 import { AddNewCommentSchema } from "features/AddNewComment";
@@ -17,6 +18,7 @@ import { ArticleDetailsSchema } from "entities/Article";
 
 export interface StateSchema {
     user: UserSchema;
+    scroll: ScrollSchema;
 
     //? async reducers
     login?: LoginSchema;

@@ -2,6 +2,7 @@ import { ReducersMapObject } from "@reduxjs/toolkit";
 
 import { StateSchema } from "./StateSchema";
 
+import { scrollReducer } from "widgets/Page";
 import { userReducer } from "entities/User";
 
 export const rootReducer = (
@@ -10,5 +11,6 @@ export const rootReducer = (
     return {
         ...asyncReducers,
         user: userReducer,
+        scroll: scrollReducer,
     };
 };

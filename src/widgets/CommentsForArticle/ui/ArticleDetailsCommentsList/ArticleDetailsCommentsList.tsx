@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 
 import cl from "./ArticleDetailsCommentsList.module.scss";
 import {
-    getArticleDetailsCommentsData,
     getArticleDetailsCommentsError,
     getArticleDetailsCommentsIsLoading,
 } from "../../model/selectors/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { articleDetailsCommentsReducer } from "../../model/slice/articleDetailsCommentsSlice";
+import {
+    articleDetailsCommentsReducer,
+    getArticleDetailsCommentsData,
+} from "../../model/slice/articleDetailsCommentsSlice";
 import { ArticleDetailsCommentsListProps } from "./ArticleDetailsCommentsList.types";
 
 import { CommentList } from "entities/Comment";

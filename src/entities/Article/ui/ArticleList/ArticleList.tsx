@@ -36,15 +36,14 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
 
     const articlesList = useMemo(() => articles.map(renderArticle), [articles, renderArticle]);
 
-    if (isLoading) {
-        return (
-            <div className={cln(cl.article_list, [className, cl[view]])}>{getSkeletons(view)}</div>
-        );
-    }
-
-    if (!articles.length) {
+    if (!articles.length && !isLoading) {
         return <div className={cln(cl.article_list, [className])}>{t("Статей нет")}</div>;
     }
 
-    return <div className={cln(cl.article_list, [className, cl[view]])}>{articlesList}</div>;
+    return (
+        <div className={cln(cl.article_list, [className, cl[view]])}>
+            {articlesList}
+            {isLoading && getSkeletons(view)}
+        </div>
+    );
 });

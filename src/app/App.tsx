@@ -2,10 +2,10 @@ import { FC, memo, Suspense, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import { AppRouter } from "./providers/Router";
+import "./App.scss";
 
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
-import { Main } from "widgets/Main";
 import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
 import { getUserIsInited, userActions } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
@@ -25,10 +25,10 @@ export const App: FC = memo(() => {
             <Suspense fallback={<Loader theme={LoaderTheme.APP} />}>
                 <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
                     <Navbar />
-                    <Main>
+                    <div className="content">
                         <Sidebar />
                         {isInited && <AppRouter />}
-                    </Main>
+                    </div>
                 </ErrorBoundary>
             </Suspense>
         </div>

@@ -13,9 +13,14 @@ export const useDynamicReducerLoader: UseDynamicReducerLoader = (props) => {
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getReducerMap();
         Object.entries(reducers).forEach(([reducerKey, reducer]) => {
-            store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${reducerKey} reducer` });
+            const isMounted = mountedReducers[reducerKey as StateSchemaKey];
+
+            if (!isMounted) {
+                store.reducerManager.add(reducerKey as StateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${reducerKey} reducer` });
+            }
         });
 
         return () => {

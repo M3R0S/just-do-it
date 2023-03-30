@@ -13,9 +13,7 @@ export const AppRouter: FC = memo(() => {
         const { path, routeId, element, authOnly } = route;
 
         const component = (
-            <Suspense fallback={<Loader className={cl.loader} />}>
-                <main className={cl.page_wrapper}>{element}</main>
-            </Suspense>
+            <Suspense fallback={<Loader className={cl.loader} />}>{element}</Suspense>
         );
 
         return (

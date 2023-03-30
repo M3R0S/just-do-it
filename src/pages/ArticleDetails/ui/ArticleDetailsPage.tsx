@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import cl from "./ArticleDetailsPage.module.scss";
 
 import { CommentsForArticle } from "widgets/CommentsForArticle";
+import { Page } from "widgets/Page";
 import { ArticleDetails } from "entities/Article";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { Button } from "shared/ui/Button";
@@ -23,7 +24,7 @@ const ArticleDetailsPage: FC = () => {
     }
 
     return (
-        <div className={cl.article_details_page}>
+        <Page className={cl.article_details_page}>
             <Button
                 onClick={onBackToList}
                 theme="outline"
@@ -32,7 +33,7 @@ const ArticleDetailsPage: FC = () => {
             </Button>
             <ArticleDetails id={id} />
             <CommentsForArticle id={id} />
-        </div>
+        </Page>
     );
 };
 

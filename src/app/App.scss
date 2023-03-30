@@ -11,3 +11,7 @@ body {
     background: var(--bg-color);
     transition: background var(--transition-switch-theme-timeout);
 }
+
+.content {
+    display: flex;
+}

@@ -1,20 +1,21 @@
-import { FC, useCallback, useEffect } from "react";
+import { FC, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import cl from "./ArticlesDisplay.module.scss";
 import { ArticlesDisplayProps } from "./ArticlesDisplay.types";
 import {
     articlesDisplayActions,
     articlesDisplayReducer,
-} from "../../model/slice/articlesDisplaySlice";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
-import {
     getArticlesData,
+} from "../../model/slice/articlesDisplaySlice";
+import {
     getArticlesIsLoading,
     getArticlesError,
     getArticlesView,
 } from "../../model/selectors/articlesDisplaySelectors";
 
+import { initArticleList } from "widgets/ArticlesDisplay/model/services/initArticleList/initArticleList";
 import { ArticleViewSwitcher } from "features/ArticleViewSwitcher";
 import { ArticleList, ArticleView } from "entities/Article";
 import { cln } from "shared/lib/helpers/classNames";
@@ -26,23 +27,23 @@ const reducers: ReducersList = {
     articlesDisplay: articlesDisplayReducer,
 };
 
-export const ArticlesDisplay: FC<ArticlesDisplayProps> = (props) => {
+export const ArticlesDisplay: FC<ArticlesDisplayProps> = memo((props) => {
     const { className } = props;
 
-    useDynamicReducerLoader({ reducers: reducers });
+    useDynamicReducerLoader({ reducers: reducers, removeAfterUnmount: false });
     const dispatch = useAppDispatch();
-
-    useInitialEffect(
-        useCallback(() => {
-            dispatch(fetchArticlesList({ page: 1 }));
-            dispatch(articlesDisplayActions.initState());
-        }, [dispatch])
-    );
+    const { t } = useTranslation();
 
     const articles = useSelector(getArticlesData.selectAll);
     const isLoading = useSelector(getArticlesIsLoading);
     const error = useSelector(getArticlesError);
     const view = useSelector(getArticlesView);
+
+    useInitialEffect(
+        useCallback(() => {
+            dispatch(initArticleList());
+        }, [dispatch])
+    );
 
     const onViewClick = useCallback(
         (view: ArticleView) => {
@@ -50,6 +51,10 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = (props) => {
         },
         [dispatch]
     );
+
+    if (error) {
+        return <h1>{t("Unexpected error")}</h1>;
+    }
 
     return (
         <div className={cln(cl.articles_display, [className])}>
@@ -64,4 +69,4 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = (props) => {
             />
         </div>
     );
-};
+});

@@ -1,14 +1,26 @@
-import { FC, memo } from "react";
+import { FC, memo, useCallback } from "react";
 
 import cl from "./ArticlesPage.module.scss";
 
 import { ArticlesDisplay } from "widgets/ArticlesDisplay";
+import { Page } from "widgets/Page";
+import { fetchNextArticlePage } from "widgets/ArticlesDisplay/model/services/fetchNextArticlePage/fetchNextArticlePage";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 
 const ArticlesPage: FC = () => {
+    const dispatch = useAppDispatch();
+
+    const onLoadNextPage = useCallback(() => {
+        dispatch(fetchNextArticlePage());
+    }, [dispatch]);
+
     return (
-        <div className={cl.articles_page}>
+        <Page
+            onScrollEnd={onLoadNextPage}
+            className={cl.articles_page}
+        >
             <ArticlesDisplay />
-        </div>
+        </Page>
     );
 };
 

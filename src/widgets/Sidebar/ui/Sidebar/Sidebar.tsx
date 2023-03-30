@@ -34,7 +34,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
     };
 
     return (
-        <div
+        <menu
             className={cln(cl.sidebar, [className], {
                 [cl.collapsed]: collapsed,
             })}
@@ -61,6 +61,6 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} />
             </div>
-        </div>
+        </menu>
     );
 });

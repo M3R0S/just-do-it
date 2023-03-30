@@ -1,14 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-import { articlesAdapter } from "../slice/articlesDisplaySlice";
-
 import { StateSchema } from "app/providers/Store";
 
 export const getArticles = (state: StateSchema) => state.articlesDisplay;
-
-export const getArticlesData = articlesAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesDisplay ?? articlesAdapter.getInitialState()
-);
 
 export const getArticlesIsLoading = createSelector(
     getArticles,
@@ -19,3 +13,4 @@ export const getArticlesView = createSelector(getArticles, (article) => article?
 export const getArticlesPageNumber = createSelector(getArticles, (article) => article?.page ?? 1);
 export const getArticlesLimit = createSelector(getArticles, (article) => article?.limit ?? 9);
 export const getArticlesHasMore = createSelector(getArticles, (article) => article?.hasMore);
+export const getArticlesInited = createSelector(getArticles, (article) => article?._inited);
