@@ -1,4 +1,4 @@
-import { ViewTypes } from "./ArticleViewSwitcher.types";
+import { ViewTypes } from "./ArticlesViewSwitcher.types";
 
 import TileSvg from "shared/assets/svg/tile.svg";
 import ListSvg from "shared/assets/svg/list.svg";

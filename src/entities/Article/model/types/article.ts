@@ -1,5 +1,7 @@
 import { User } from "entities/User";
 
+export type ArticleSortField = "views" | "title" | "createdAt";
+
 export type ArticleBlockType = "IMAGE" | "TEXT" | "CODE";
 
 export interface ArticleBlockBase {

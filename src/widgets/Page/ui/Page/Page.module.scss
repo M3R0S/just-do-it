@@ -4,4 +4,9 @@
     padding: 2rem 2rem 2rem 4.5rem;
     width: 100%;
     height: calc(100vh - var(--height-navbar));
+
+    .trigger {
+        margin: 1rem;
+        height: 20px;
+    }
 }

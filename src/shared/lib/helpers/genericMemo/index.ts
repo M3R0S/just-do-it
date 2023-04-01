@@ -1,0 +1,1 @@
+export { genericMemo } from "./genericMemo";

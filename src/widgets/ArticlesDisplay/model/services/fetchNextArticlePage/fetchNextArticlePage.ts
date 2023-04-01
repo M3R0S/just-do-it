@@ -23,7 +23,7 @@ export const fetchNextArticlePage = createAsyncThunk<void, void, ThunkConfig>(
             const nextPage = page + 1;
 
             dispatch(articlesDisplayActions.setPage(nextPage));
-            dispatch(fetchArticlesList({ page: nextPage }));
+            dispatch(fetchArticlesList({}));
         }
     }
 );

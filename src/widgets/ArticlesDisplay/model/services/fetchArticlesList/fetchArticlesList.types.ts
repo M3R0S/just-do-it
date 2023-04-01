@@ -1,3 +1,3 @@
-export interface FetchArticlesList {
-    page?: number;
+export interface FetchArticlesListParams {
+    replace?: boolean;
 }

@@ -15,3 +15,5 @@ export const StatusCodes = {
 
 export type ServerEndpoints = ValueOf<typeof ServerEndpoints>;
 export type StatusCodes = ValueOf<typeof StatusCodes>;
+
+export type SortOrder = "asc" | "desc";

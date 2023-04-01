@@ -5,16 +5,41 @@ import { articlesDisplayActions } from "../../slice/articlesDisplaySlice";
 import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 
 import { ThunkConfig } from "app/providers/Store";
+import { getArticlesSortedView } from "features/ArticlesSorted";
+import { articlesSortedActions } from "features/ArticlesSorted/model/slice/articlesSortedSlice";
+import { ArticleSortField } from "entities/Article";
+import { SortOrder } from "shared/lib/types/serverTypes";
 
-export const initArticleList = createAsyncThunk<void, void, ThunkConfig>(
+export const initArticleList = createAsyncThunk<void, URLSearchParams, ThunkConfig>(
     "articlesDisplaySlice/initArticleList",
-    async (_, thunkAPI) => {
+    async (searchParams, thunkAPI) => {
         const { dispatch, getState } = thunkAPI;
         const isInited = getArticlesInited(getState());
+        const view = getArticlesSortedView(getState());
 
         if (!isInited) {
-            dispatch(articlesDisplayActions.initState());
-            dispatch(fetchArticlesList({ page: 1 }));
+            const params: Record<string, (param: any) => void> = {
+                order: (param: SortOrder) => {
+                    dispatch(articlesSortedActions.setOrder(param));
+                },
+                sort: (param: ArticleSortField) => {
+                    dispatch(articlesSortedActions.setSort(param));
+                },
+                search: (param: string) => {
+                    dispatch(articlesSortedActions.setSearch(param));
+                },
+            };
+
+            Object.entries(params).forEach(([param, action]) => {
+                const urlParam = searchParams.get(param);
+
+                if (urlParam) {
+                    action(urlParam);
+                }
+            });
+
+            dispatch(articlesDisplayActions.initState(view));
+            dispatch(fetchArticlesList({}));
         }
     }
 );

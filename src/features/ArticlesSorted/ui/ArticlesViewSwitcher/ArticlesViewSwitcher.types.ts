@@ -2,10 +2,8 @@ import { FC, SVGProps } from "react";
 
 import { ArticleView } from "entities/Article";
 
-export interface ArticleViewSwitcherProps {
+export interface ArticlesViewSwitcherProps {
     className?: string;
-    view: ArticleView;
-    onViewClick: (view: ArticleView) => void;
 }
 
 export interface ViewTypes {
