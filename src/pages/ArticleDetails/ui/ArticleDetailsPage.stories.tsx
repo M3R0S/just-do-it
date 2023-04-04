@@ -23,6 +23,11 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
 );
 
 const state: DeepPartial<StateSchema> = {
+    scroll: {
+        scroll: {
+            page: 0,
+        },
+    },
     articleDetails: {
         data: {
             id: "1",

@@ -14,10 +14,11 @@ import {
     getArticlesIsLoading,
     getArticlesError,
 } from "../../model/selectors/articlesDisplaySelectors";
+import { initArticleList } from "../../model/services/initArticleList/initArticleList";
+import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 
-import { initArticleList } from "widgets/ArticlesDisplay/model/services/initArticleList/initArticleList";
-import { fetchArticlesList } from "widgets/ArticlesDisplay/model/services/fetchArticlesList/fetchArticlesList";
-import { ArticlesSorted } from "features/ArticlesSorted";
+import { ArticlesSorted, getArticlesSortedView } from "features/ArticlesSorted";
+import { ArticleList } from "entities/Article";
 import { cln } from "shared/lib/helpers/classNames";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
@@ -38,6 +39,7 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = memo((props) => {
     const articles = useSelector(getArticlesData.selectAll);
     const isLoading = useSelector(getArticlesIsLoading);
     const error = useSelector(getArticlesError);
+    const view = useSelector(getArticlesSortedView);
 
     useInitialEffect(
         useCallback(() => {
@@ -60,10 +62,14 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = memo((props) => {
     return (
         <div className={cln(cl.articles_display, [className])}>
             <ArticlesSorted
-                articles={articles}
-                isLoading={isLoading}
                 requestUpdate={requestUpdate}
                 returnToFirstPage={returnToFirstPage}
+            />
+            <ArticleList
+                view={view}
+                articles={articles}
+                isLoading={isLoading}
+                className={cl.list}
             />
         </div>
     );

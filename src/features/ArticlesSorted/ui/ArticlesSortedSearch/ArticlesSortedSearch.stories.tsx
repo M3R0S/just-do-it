@@ -4,6 +4,7 @@ import { ArticlesSortedSearchProps } from "./ArticlesSortedSearch.types";
 import { ArticlesSortedSearch } from "./ArticlesSortedSearch";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
+import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
@@ -16,6 +17,20 @@ const Template: ComponentStory<typeof ArticlesSortedSearch> = (args) => (
 );
 
 export const Light: Story<ArticlesSortedSearchProps> = Template.bind({});
+Light.decorators = [
+    StoreDecorator({
+        articlesSorted: {
+            search: "search",
+        },
+    }),
+];
 
 export const Dark: Story<ArticlesSortedSearchProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articlesSorted: {
+            search: "search",
+        },
+    }),
+];

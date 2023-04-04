@@ -4,6 +4,7 @@ import { ArticlesViewSwitcherProps } from "./ArticlesViewSwitcher.types";
 import { ArticlesViewSwitcher } from "./ArticlesViewSwitcher";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
+import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
@@ -16,6 +17,20 @@ const Template: ComponentStory<typeof ArticlesViewSwitcher> = (args) => (
 );
 
 export const Light: Story<ArticlesViewSwitcherProps> = Template.bind({});
+Light.decorators = [
+    StoreDecorator({
+        articlesSorted: {
+            view: "tile",
+        },
+    }),
+];
 
 export const Dark: Story<ArticlesViewSwitcherProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articlesSorted: {
+            view: "tile",
+        },
+    }),
+];
