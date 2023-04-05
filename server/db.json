@@ -379,12 +379,12 @@
         {
             "id": "11",
             "userId": "1",
-            "title": "Кто я?",
+            "title": "Экономика",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://sun9-71.userapi.com/impf/c845021/v845021812/105e6a/w1OjOQ5sDmg.jpg?size=1280x720&quality=96&sign=0f38cbb4feb224a83de26a61a61bfbe0&c_uniq_tag=2QRkIleKplOzUzH5mtqB7XFQmv3TBXsVqpC_6aZ0jZk&type=album",
             "views": "1022",
             "createdAt": "16.03.2022",
-            "type": ["IT"],
+            "type": ["ECONOMICS"],
             "blocks": [
                 {
                     "id": "1",
@@ -406,7 +406,7 @@
             "img": "https://sun9-71.userapi.com/impf/c845021/v845021812/105e6a/w1OjOQ5sDmg.jpg?size=1280x720&quality=96&sign=0f38cbb4feb224a83de26a61a61bfbe0&c_uniq_tag=2QRkIleKplOzUzH5mtqB7XFQmv3TBXsVqpC_6aZ0jZk&type=album",
             "views": "1022",
             "createdAt": "16.03.2022",
-            "type": ["IT"],
+            "type": ["ECONOMICS"],
             "blocks": [
                 {
                     "id": "1",
@@ -423,12 +423,12 @@
         {
             "id": "13",
             "userId": "1",
-            "title": "Добро пожаловать",
+            "title": "Наука",
             "subtitle": "Что нового в JS за 2023 год?",
             "img": "https://sun9-71.userapi.com/impf/c845021/v845021812/105e6a/w1OjOQ5sDmg.jpg?size=1280x720&quality=96&sign=0f38cbb4feb224a83de26a61a61bfbe0&c_uniq_tag=2QRkIleKplOzUzH5mtqB7XFQmv3TBXsVqpC_6aZ0jZk&type=album",
             "views": "1022",
             "createdAt": "16.03.2022",
-            "type": ["IT"],
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -450,7 +450,7 @@
             "img": "https://sun9-71.userapi.com/impf/c845021/v845021812/105e6a/w1OjOQ5sDmg.jpg?size=1280x720&quality=96&sign=0f38cbb4feb224a83de26a61a61bfbe0&c_uniq_tag=2QRkIleKplOzUzH5mtqB7XFQmv3TBXsVqpC_6aZ0jZk&type=album",
             "views": "1022",
             "createdAt": "16.03.2022",
-            "type": ["IT"],
+            "type": ["SCIENCE", "IT"],
             "blocks": [
                 {
                     "id": "1",
@@ -472,7 +472,7 @@
             "img": "https://sun9-71.userapi.com/impf/c845021/v845021812/105e6a/w1OjOQ5sDmg.jpg?size=1280x720&quality=96&sign=0f38cbb4feb224a83de26a61a61bfbe0&c_uniq_tag=2QRkIleKplOzUzH5mtqB7XFQmv3TBXsVqpC_6aZ0jZk&type=album",
             "views": "1022",
             "createdAt": "16.03.2022",
-            "type": ["IT"],
+            "type": ["ECONOMICS", "IT", "SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -494,7 +494,7 @@
             "img": "https://sun9-71.userapi.com/impf/c845021/v845021812/105e6a/w1OjOQ5sDmg.jpg?size=1280x720&quality=96&sign=0f38cbb4feb224a83de26a61a61bfbe0&c_uniq_tag=2QRkIleKplOzUzH5mtqB7XFQmv3TBXsVqpC_6aZ0jZk&type=album",
             "views": "1022",
             "createdAt": "16.03.2022",
-            "type": ["IT"],
+            "type": ["IT", "ECONOMICS"],
             "blocks": [
                 {
                     "id": "1",

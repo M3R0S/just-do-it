@@ -10,7 +10,7 @@ import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkele
 import { cln } from "shared/lib/helpers/classNames";
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
-    const { className, articles, isLoading, view = "tile" } = props;
+    const { className, articles, isLoading, view = "tile", target } = props;
 
     const { t } = useTranslation("articlePage");
 
@@ -29,9 +29,10 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
                 key={article.id}
                 article={article}
                 view={view}
+                target={target}
             />
         ),
-        [view]
+        [view, target]
     );
 
     const articlesList = useMemo(() => articles.map(renderArticle), [articles, renderArticle]);

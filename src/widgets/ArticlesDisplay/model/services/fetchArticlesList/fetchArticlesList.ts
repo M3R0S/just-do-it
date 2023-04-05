@@ -8,6 +8,7 @@ import {
     getArticlesSortedOrder,
     getArticlesSortedSearch,
     getArticlesSortedSort,
+    getArticlesSortedType,
 } from "features/ArticlesSorted";
 import { Article } from "entities/Article";
 import { ServerEndpoints, StatusCodes } from "shared/lib/types/serverTypes";
@@ -24,12 +25,14 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPa
         const sort = getArticlesSortedSort(getState());
         const order = getArticlesSortedOrder(getState());
         const search = getArticlesSortedSearch(getState());
+        const type = getArticlesSortedType(getState());
 
         try {
             addQueryParams({
                 sort,
                 order,
                 search,
+                type,
             });
 
             const response = await api.get<Article[]>(ServerEndpoints.ARTICLES, {
@@ -40,6 +43,7 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPa
                     _sort: sort,
                     _order: order,
                     q: search,
+                    type_like: type === "ALL" ? undefined : type,
                 },
             });
             const data = response.data;

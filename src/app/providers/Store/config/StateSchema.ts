@@ -10,6 +10,7 @@ import { AxiosInstance } from "axios";
 import { CommentsForArticleSchema } from "widgets/CommentsForArticle";
 import { ArticlesDisplaySchema } from "widgets/ArticlesDisplay";
 import { ScrollSchema } from "widgets/Page";
+import { ArticleRecommendationsListSchema } from "widgets/ArticleRecomendationsList";
 import { LoginSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "features/EditableProfileCard";
 import { AddNewCommentSchema } from "features/AddNewComment";
@@ -26,6 +27,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: CommentsForArticleSchema;
+    articleRecommendationsList?: ArticleRecommendationsListSchema;
     addNewComment?: AddNewCommentSchema;
     articlesDisplay?: ArticlesDisplaySchema;
     articlesSorted?: ArticlesSortedSchema;

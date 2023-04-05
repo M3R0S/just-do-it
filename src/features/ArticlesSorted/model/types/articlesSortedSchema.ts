@@ -1,4 +1,4 @@
-import { ArticleSortField, ArticleView } from "entities/Article";
+import { ArticleSortField, ArticleView, ArticleType } from "entities/Article";
 import { SortOrder } from "shared/lib/types/serverTypes";
 
 export interface ArticlesSortedSchema {
@@ -6,4 +6,5 @@ export interface ArticlesSortedSchema {
     order: SortOrder;
     sort: ArticleSortField;
     search: string;
+    type: ArticleType;
 }

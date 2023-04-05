@@ -6,6 +6,7 @@ import cl from "./ArticleDetailsPage.module.scss";
 
 import { CommentsForArticle } from "widgets/CommentsForArticle";
 import { Page } from "widgets/Page";
+import { ArticleRecommendationsList } from "widgets/ArticleRecomendationsList";
 import { ArticleDetails } from "entities/Article";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { Button } from "shared/ui/Button";
@@ -32,6 +33,7 @@ const ArticleDetailsPage: FC = () => {
                 {t("Back to the list")}
             </Button>
             <ArticleDetails id={id} />
+            <ArticleRecommendationsList />
             <CommentsForArticle id={id} />
         </Page>
     );

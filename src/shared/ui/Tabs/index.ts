@@ -1,1 +1,1 @@
-export { Tabs } from "./Tabs"
+export { MemoTabs as Tabs } from "./Tabs"

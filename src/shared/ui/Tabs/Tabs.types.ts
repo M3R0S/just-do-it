@@ -1,13 +1,13 @@
 import { ReactNode } from "react"
 
-export interface TabItem {
-    value: string
+export interface TabItem<T = string> {
+    value: T
     content: ReactNode
 }
 
-export interface TabsProps {
+export interface TabsProps<T = string> {
     className?: string;
-    tabs: TabItem[]
-    value: string
-    onTabClick: (tab: TabItem) => void
+    tabs: TabItem<T>[]
+    value: T
+    onTabClick: (tab: TabItem<T>) => void
 }

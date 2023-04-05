@@ -1,0 +1,11 @@
+.article_recomendations_list {
+    margin-top: 2rem;
+
+    .list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-top: 1.5rem;
+        padding-bottom: 1rem;
+    }
+}

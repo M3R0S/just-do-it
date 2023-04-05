@@ -7,7 +7,7 @@ import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
 import { ThunkConfig } from "app/providers/Store";
 import { getArticlesSortedView } from "features/ArticlesSorted";
 import { articlesSortedActions } from "features/ArticlesSorted/model/slice/articlesSortedSlice";
-import { ArticleSortField } from "entities/Article";
+import { ArticleSortField, ArticleType } from "entities/Article";
 import { SortOrder } from "shared/lib/types/serverTypes";
 
 export const initArticleList = createAsyncThunk<void, URLSearchParams, ThunkConfig>(
@@ -27,6 +27,9 @@ export const initArticleList = createAsyncThunk<void, URLSearchParams, ThunkConf
                 },
                 search: (param: string) => {
                     dispatch(articlesSortedActions.setSearch(param));
+                },
+                type: (param: ArticleType) => {
+                    dispatch(articlesSortedActions.setType(param));
                 },
             };
 

@@ -9,6 +9,7 @@ import {
 import { ArticlesSortedSelect } from "../ArticlesSortedSelect/ArticlesSortedSelect";
 import { ArticlesViewSwitcher } from "../ArticlesViewSwitcher/ArticlesViewSwitcher";
 import { ArticlesSortedSearch } from "../ArticlesSortedSearch/ArticlesSortedSearch";
+import { ArticlesSortedTabs } from "../ArticlesSortedTabs/ArticlesSortedTabs";
 
 import { cln } from "shared/lib/helpers/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
@@ -43,6 +44,10 @@ export const ArticlesSorted: FC<ArticlesSortedProps> = memo((props) => {
             <ArticlesSortedSearch
                 returnToFirstPage={returnToFirstPage}
                 requestUpdate={requestUpdate}
+            />
+            <ArticlesSortedTabs
+                requestUpdate={requestUpdate}
+                returnToFirstPage={returnToFirstPage}
             />
         </div>
     );

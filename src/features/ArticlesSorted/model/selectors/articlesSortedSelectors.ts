@@ -20,3 +20,7 @@ export const getArticlesSortedSearch = createSelector(
     getArticlesSorted,
     (articles) => articles?.search ?? ""
 );
+export const getArticlesSortedType = createSelector(
+    getArticlesSorted,
+    (articles) => articles?.type ?? "ALL"
+);

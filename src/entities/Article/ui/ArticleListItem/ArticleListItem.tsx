@@ -1,6 +1,5 @@
-import { FC, memo, useCallback } from "react";
+import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import cl from "./ArticleListItem.module.scss";
 import { ArticleListItemProps } from "./ArticleListItem.types";
@@ -15,16 +14,12 @@ import { Svg } from "shared/ui/Svg";
 import { Card } from "shared/ui/Card";
 import { Avatar } from "shared/ui/Avatar";
 import { Button } from "shared/ui/Button";
+import { AppLink } from "shared/ui/AppLink";
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
-    const { className, article, view } = props;
+    const { className, article, view, target } = props;
 
     const { t } = useTranslation("articlePage");
-    const navigate = useNavigate();
-
-    const onOpenArticle = useCallback(() => {
-        navigate(PathRoutes.ARTICLE_DETAILS + article.id);
-    }, [article.id, navigate]);
 
     const textBlockNull = t("A short description is not available");
     const textBlock =
@@ -82,12 +77,9 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                         />
                     )}
                     <div className={cl.footer}>
-                        <Button
-                            onClick={onOpenArticle}
-                            theme="outline"
-                        >
-                            {t("Read more") + "..."}
-                        </Button>
+                        <AppLink to={PathRoutes.ARTICLE_DETAILS + article.id}>
+                            <Button theme="outline">{t("Read more") + "..."}</Button>
+                        </AppLink>
                         {Views}
                     </div>
                 </Card>
@@ -96,8 +88,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     }
 
     return (
-        <div className={cln(cl.article_list_item, [className, cl[view]])}>
-            <Card onClick={onOpenArticle}>
+        <AppLink
+            target={target}
+            to={PathRoutes.ARTICLE_DETAILS + article.id}
+            className={cln(cl.article_list_item, [className, cl[view]])}
+        >
+            <Card>
                 <div className={cl.image_wrapper}>
                     {MainImg}
                     <Text className={cl.created_at}>{article.createdAt}</Text>
@@ -108,6 +104,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                 </div>
                 {Title}
             </Card>
-        </div>
+        </AppLink>
     );
 });

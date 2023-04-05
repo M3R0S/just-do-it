@@ -1,9 +1,9 @@
 import { Reducer } from "@reduxjs/toolkit";
 
-import { StateSchemaKey } from "app/providers/Store";
+import { StateSchema, StateSchemaKey } from "app/providers/Store";
 
 export type ReducersList = {
-    [key in StateSchemaKey]?: Reducer;
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
 export interface UseDynamicReducerLoaderParams {

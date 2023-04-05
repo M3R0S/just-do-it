@@ -1,17 +1,18 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
 import { TabItem, TabsProps } from "./Tabs.types";
-import { Tabs } from "./Tabs";
+import { MemoTabs } from "./Tabs";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Tabs",
-    component: Tabs,
-} as ComponentMeta<typeof Tabs>;
+    component: MemoTabs,
+} as ComponentMeta<typeof MemoTabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
+const Template: ComponentStory<typeof MemoTabs> = (args) => <MemoTabs {...args} />;
 
 const tabs: TabItem[] = [
     {
@@ -32,11 +33,13 @@ export const Light: Story<TabsProps> = Template.bind({});
 Light.args = {
     tabs,
     value: "tab 2",
+    onTabClick: action("onTabClick"),
 };
 
 export const Dark: Story<TabsProps> = Template.bind({});
 Dark.args = {
     tabs,
     value: "tab 2",
+    onTabClick: action("onTabClick"),
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
