@@ -1,0 +1,1 @@
+export { ArticleDetailsDisplay } from "./ui/ArticleDetailsDisplay/ArticleDetailsDisplay"

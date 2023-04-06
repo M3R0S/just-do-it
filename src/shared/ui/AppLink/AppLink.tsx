@@ -2,12 +2,12 @@ import { FC, memo } from "react";
 import { Link } from "react-router-dom";
 
 import cl from "./AppLink.module.scss";
-import { AppLinkProps, AppLinkTheme } from "./AppLink.types";
+import { AppLinkProps } from "./AppLink.types";
 
 import { cln } from "shared/lib/helpers/classNames";
 
 export const AppLink: FC<AppLinkProps> = memo((props) => {
-    const { to, className, children, theme = AppLinkTheme.PRIMARY, ...otherProps } = props;
+    const { to, className, children, theme = "primary", ...otherProps } = props;
 
     return (
         <Link

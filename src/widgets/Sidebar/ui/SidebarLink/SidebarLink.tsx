@@ -7,7 +7,7 @@ import { SidebarLinkProps } from "./SidebarLink.types";
 
 import { getUserAuthData } from "entities/User";
 import { cln } from "shared/lib/helpers/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
+import { AppLink } from "shared/ui/AppLink";
 
 export const SidebarLink: FC<SidebarLinkProps> = memo((props) => {
     const { item, collapsed } = props;
@@ -22,7 +22,7 @@ export const SidebarLink: FC<SidebarLinkProps> = memo((props) => {
 
     return (
         <AppLink
-            theme={AppLinkTheme.PRIMARY_INVERTED}
+            theme={"primary_inverted"}
             to={item.path}
             className={cln(cl.link, [], { [cl.collapsed]: collapsed })}
         >

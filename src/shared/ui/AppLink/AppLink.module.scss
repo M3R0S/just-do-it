@@ -21,4 +21,10 @@
     &.secondary_inverted {
         color: var(--color-secondary-inverted);
     }
+
+    &.outline {
+        border: 0.1rem solid var(--color-primary);
+        padding: 0.6rem 1.5rem;
+        color: var(--color-primary);
+    }
 }
