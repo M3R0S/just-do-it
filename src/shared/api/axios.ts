@@ -8,3 +8,11 @@ export const $axios = axios.create({
         authorization: localStorage.getItem(LOCALSTORAGE_USER_KEY) ?? "",
     },
 });
+
+$axios.interceptors.request.use((config) => {
+    if (config.headers) {
+        config.headers.authorization = localStorage.getItem(LOCALSTORAGE_USER_KEY) ?? "";
+    }
+
+    return config
+});
