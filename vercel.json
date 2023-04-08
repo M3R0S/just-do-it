@@ -1,0 +1,10 @@
+{
+    "framework": "react",
+
+    "redirects": [
+        {
+            "source": "/*",
+            "destination": "/index.html"
+        }
+    ]
+}
