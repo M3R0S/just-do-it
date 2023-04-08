@@ -8,7 +8,7 @@
         "start:dev": "webpack serve --env PORT=3000",
         "start:server": "node ./server/index.js",
         "build:dev": "webpack --env MODE=development",
-        "build:prod": "webpack --env MODE=production apiUrl=https://just-do-it-server.vercel.app/",
+        "build:prod": "webpack --env MODE=production API_URL=https://just-do-it-server.vercel.app/",
         "analyze:dev": "webpack --env MODE=development ANALYZE=true",
         "analyze:prod": "webpack --env MODE=production ANALYZE=true",
         "lint:ts": "eslint \"**/*.{ts,tsx}\"",
