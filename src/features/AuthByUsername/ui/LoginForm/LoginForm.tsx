@@ -17,7 +17,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useAutoFocus } from "shared/lib/hooks/useAutoFocus";
 import { Input, InputTheme } from "shared/ui/Input";
 import { Button, ButtonTheme } from "shared/ui/Button";
-import { Text, TextTag, TextTheme } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 
 const initialReducers: ReducersList = {
     login: loginReducer,
@@ -80,9 +80,9 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
 
     return (
         <div className={cln(cl.login_form, [className])}>
-            <Text tag={TextTag.H1}>{t("Authorization form")}</Text>
+            <Text tag="h1">{t("Authorization form")}</Text>
             <Text
-                theme={TextTheme.ERROR}
+                theme="error"
                 className={cl.error}
             >
                 {error ? ErrorText() : ""}

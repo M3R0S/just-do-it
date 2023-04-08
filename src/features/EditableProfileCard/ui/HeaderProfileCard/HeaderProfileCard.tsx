@@ -12,7 +12,7 @@ import { HeaderProfileCardProps } from "./HeaderProfileCard.types";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Button, ButtonTheme } from "shared/ui/Button";
-import { Text, TextTag } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 
 export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
     const { className } = props;
@@ -38,7 +38,7 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
     return (
         <div className={cln(cl.header, [className])}>
             <Text
-                tag={TextTag.H1}
+                tag="h1"
                 isTitle
             >
                 {t("User profile")}

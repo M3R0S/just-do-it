@@ -1,32 +1,11 @@
 import { HTMLAttributes, ReactElement } from "react";
 
-import { ValueOf } from "shared/lib/types/helpersTypes";
+export type TextTheme = "clear" | "error" | "inverted";
 
-export const TextTheme = {
-    CLEAR: "clear",
-    ERROR: "error",
-} as const;
+export type TextTag = "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export const TextTag = {
-    SPAN: "span",
-    P: "p",
-    H1: "h1",
-    H2: "h2",
-    H3: "h3",
-    H4: "h4",
-    H5: "h5",
-    H6: "h6",
-} as const;
+export type TextAlign = "left" | "center" | "right";
 
-export const TextAlign = {
-    LEFT: "left",
-    CENTER: "center",
-    RIGHT: "right",
-} as const;
-
-export type TextTag = ValueOf<typeof TextTag>;
-export type TextTheme = ValueOf<typeof TextTheme>;
-export type TextAlign = ValueOf<typeof TextAlign>;
 export type TextSize = "size_m" | "size_l" | "size_xl";
 
 export type TextTagRecord = Record<

@@ -6,7 +6,7 @@ import { ProfileCardProps } from "./ProfileCard.types";
 import { ProfileCardList } from "../ProfileCardList/ProfileCardList";
 
 import { cln, Mods } from "shared/lib/helpers/classNames";
-import { Text, TextTag, TextTheme } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 import { Loader } from "shared/ui/Loader";
 import { Avatar } from "shared/ui/Avatar";
 
@@ -42,14 +42,14 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
             <div className={cln(cl.profile_card, [className, cl.error])}>
                 <Text
                     isTitle
-                    tag={TextTag.H1}
-                    theme={TextTheme.ERROR}
+                    tag="h1"
+                    theme="error"
                 >
                     {t("There was an error loading the profile")}
                 </Text>
                 <Text
-                    tag={TextTag.P}
-                    theme={TextTheme.ERROR}
+                    tag="p"
+                    theme="error"
                 >
                     {t("Try to reload the page")}
                 </Text>

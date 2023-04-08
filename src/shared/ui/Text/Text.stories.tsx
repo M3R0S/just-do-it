@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
-import { TextProps, TextTheme } from "./Text.types";
+import { TextProps } from "./Text.types";
 import { Text } from "./Text";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";

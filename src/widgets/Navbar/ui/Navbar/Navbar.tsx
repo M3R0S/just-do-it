@@ -7,10 +7,12 @@ import { NavbarProps } from "./Navbar.types";
 
 import { LoginModal } from "features/AuthByUsername";
 import { getUserAuthData, userActions } from "entities/User";
+import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Button, ButtonTheme } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
+import { AppLink } from "shared/ui/AppLink";
 
 export const Navbar: FC<NavbarProps> = memo((props) => {
     const { className } = props;
@@ -36,8 +38,20 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
     if (authData) {
         return (
             <header className={cln(cl.navbar, [className])}>
-                <Text isTitle tag="h1">{t("Habr")}</Text>
+                <Text
+                    isTitle
+                    tag="h1"
+                    theme="inverted"
+                >
+                    {t("Habr")}
+                </Text>
                 <div className={cl.links}>
+                    <AppLink
+                        theme="primary_inverted"
+                        to={PathRoutes.ARTICLE_CREATE}
+                    >
+                        {t("Create an article")}
+                    </AppLink>
                     <Button
                         theme={ButtonTheme.CLEAR_INVERTED}
                         onClick={onLogout}

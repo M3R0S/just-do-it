@@ -4,7 +4,7 @@ import cl from "./ProfileCardItem.module.scss";
 import { ProfileCardItemProps } from "./ProfileCardItem.types";
 
 import { cln } from "shared/lib/helpers/classNames";
-import { Text, TextTag } from "shared/ui/Text";
+import { Text } from "shared/ui/Text";
 import { Input } from "shared/ui/Input";
 
 export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
@@ -12,7 +12,7 @@ export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
 
     return (
         <div className={cln(cl.row, [className])}>
-            <Text tag={TextTag.P}>{`${placeholder} :`}</Text>
+            <Text tag="p">{`${placeholder} :`}</Text>
             <Input
                 type={type}
                 className={cl.input}

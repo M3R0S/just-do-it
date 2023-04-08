@@ -1,1 +1,1 @@
-export { ArticleDetailsPageLazy as ArticleDetailsPage } from "./ui/ArticleDetailsPage.lazy";
+export { ArticleDetailsPageLazy as ArticleDetailsPage } from "./ui/ArticleDetails/ArticleDetailsPage.lazy";

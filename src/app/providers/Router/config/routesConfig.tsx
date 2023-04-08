@@ -6,7 +6,7 @@ import { NotFoundPage } from "pages/NotFound";
 import { ProfilePage } from "pages/Profile";
 import { ArticlesPage } from "pages/Articles";
 import { ArticleDetailsPage } from "pages/ArticleDetails";
-import ArticleEditPage from "pages/ArticleEdit/ui/ArticleEditPage/ArticleEditPage";
+import ArticleEditPage from "pages/ArticleEdit/ui/ArticleEdit/ArticleEditPage";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 
 export const routesConfig: RoutesConfig = {
