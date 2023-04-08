@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Article } from "../../types/article";
 
 import { ThunkConfig } from "app/providers/Store";
-import { StatusCodes } from "shared/lib/types/serverTypes";
+import { ServerEndpoints, StatusCodes } from "shared/lib/types/serverTypes";
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig>(
     "articleDetails/fetchArticleById",
@@ -12,7 +12,11 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig>(
         const { api } = extra;
 
         try {
-            const response = await api.get<Article>(`/articles/${articleId}`);
+            const response = await api.get<Article>(`${ServerEndpoints.ARTICLES}/${articleId}`, {
+                params: {
+                    _expand: "user",
+                },
+            });
             const data = response.data;
             if (!data) {
                 throw new Error(StatusCodes.NO_DATA);
