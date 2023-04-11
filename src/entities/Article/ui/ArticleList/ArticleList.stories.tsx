@@ -2,10 +2,9 @@ import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
 import { ArticleListProps } from "./ArticleList.types";
 import { ArticleList } from "./ArticleList";
+import { Article } from "../../model/types/article";
 
-import { Article } from "entities/Article/model/types/article";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 const article = {
     id: "1",
@@ -102,7 +101,7 @@ TileDark.args = {
     articles: articles,
     view: "tile",
 };
-TileDark.decorators = [ThemeDecorator(Theme.DARK)];
+TileDark.decorators = [ThemeDecorator("dark")];
 
 export const ListLight: Story<ArticleListProps> = Template.bind({});
 ListLight.args = {
@@ -115,7 +114,7 @@ ListDark.args = {
     articles: articles,
     view: "list",
 };
-ListDark.decorators = [ThemeDecorator(Theme.DARK)];
+ListDark.decorators = [ThemeDecorator("dark")];
 
 export const IsLoadingTileLight: Story<ArticleListProps> = Template.bind({});
 IsLoadingTileLight.args = {
@@ -130,7 +129,7 @@ IsLoadingTileDark.args = {
     articles: [],
     view: "tile",
 };
-IsLoadingTileDark.decorators = [ThemeDecorator(Theme.DARK)];
+IsLoadingTileDark.decorators = [ThemeDecorator("dark")];
 
 export const IsLoadingListLight: Story<ArticleListProps> = Template.bind({});
 IsLoadingListLight.args = {
@@ -145,4 +144,4 @@ IsLoadingListDark.args = {
     articles: [],
     view: "list",
 };
-IsLoadingListDark.decorators = [ThemeDecorator(Theme.DARK)];
+IsLoadingListDark.decorators = [ThemeDecorator("dark")];

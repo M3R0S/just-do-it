@@ -5,13 +5,13 @@ import cl from "./ArticlesViewSwitcher.module.scss";
 import { ArticlesViewSwitcherProps } from "./ArticlesViewSwitcher.types";
 import { viewTypes } from "./ArticlesViewSwitcher.const";
 import { articlesSortedActions } from "../../model/slice/articlesSortedSlice";
+import { getArticlesSortedView } from "../../model/selectors/articlesSortedSelectors";
 
-import { getArticlesSortedView } from "features/ArticlesSorted/model/selectors/articlesSortedSelectors";
 import { ArticleView } from "entities/Article";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Svg } from "shared/ui/Svg";
-import { Button } from "shared/ui/Button";
+import { ButtonWrapper } from "shared/ui/Button";
 
 export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) => {
     const { className } = props;
@@ -30,7 +30,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
     return (
         <div className={cln(cl.articles_view_switcher, [className])}>
             {viewTypes.map((viewTypes) => (
-                <Button
+                <ButtonWrapper
                     theme="clear"
                     key={viewTypes.id}
                     onClick={onClick(viewTypes.view)}
@@ -39,7 +39,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
                         Svg={viewTypes.svg}
                         className={cln("", [], { [cl.selected]: viewTypes.view === view })}
                     />
-                </Button>
+                </ButtonWrapper>
             ))}
         </div>
     );

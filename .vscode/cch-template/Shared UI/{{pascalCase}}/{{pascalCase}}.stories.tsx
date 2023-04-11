@@ -22,4 +22,4 @@ export const Dark: Story<{{pascalCase}}Props> = Template.bind({});
 Dark.args = {
     children: "Text",
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

@@ -15,4 +15,4 @@ const Template: ComponentStory<typeof {{pascalCase}}Page> = (args) => <{{pascalC
 export const Light: Story = Template.bind({});
 
 export const Dark: Story = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

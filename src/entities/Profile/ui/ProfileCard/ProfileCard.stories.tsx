@@ -5,7 +5,6 @@ import { ProfileCard } from "./ProfileCard";
 import { Profile } from "../../model/types/Profile";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "entities/Profile/ProfileCard",
@@ -34,7 +33,7 @@ export const Dark: Story<ProfileCardProps> = Template.bind({});
 Dark.args = {
     data,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];
 
 export const WithErrorLight: Story<ProfileCardProps> = Template.bind({});
 WithErrorLight.args = {
@@ -45,7 +44,7 @@ export const WithErrorDark: Story<ProfileCardProps> = Template.bind({});
 WithErrorDark.args = {
     error: "error",
 };
-WithErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+WithErrorDark.decorators = [ThemeDecorator("dark")];
 
 export const WithIsLoadingLight: Story<ProfileCardProps> = Template.bind({});
 WithIsLoadingLight.args = {
@@ -61,7 +60,7 @@ export const WithIsLoadingDark: Story<ProfileCardProps> = Template.bind({});
 WithIsLoadingDark.args = {
     isLoading: true,
 };
-WithIsLoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+WithIsLoadingDark.decorators = [ThemeDecorator("dark")];
 WithIsLoadingDark.parameters = {
     loki: {
         skip: true,

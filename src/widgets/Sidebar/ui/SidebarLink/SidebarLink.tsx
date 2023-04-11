@@ -7,7 +7,7 @@ import { SidebarLinkProps } from "./SidebarLink.types";
 
 import { getUserAuthData } from "entities/User";
 import { cln } from "shared/lib/helpers/classNames";
-import { AppLink } from "shared/ui/AppLink";
+import { AppLinkWrapper } from "shared/ui/AppLink";
 
 export const SidebarLink: FC<SidebarLinkProps> = memo((props) => {
     const { item, collapsed } = props;
@@ -21,13 +21,13 @@ export const SidebarLink: FC<SidebarLinkProps> = memo((props) => {
     }
 
     return (
-        <AppLink
+        <AppLinkWrapper
             theme={"primary_inverted"}
             to={item.path}
             className={cln(cl.link, [], { [cl.collapsed]: collapsed })}
         >
             <item.Icon className={cl.link_svg} />
             <span className={cl.link_text}>{t(item.text)}</span>
-        </AppLink>
+        </AppLinkWrapper>
     );
 });

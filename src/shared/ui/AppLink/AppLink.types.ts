@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { LinkProps } from "react-router-dom";
 
 export type AppLinkTheme =
@@ -7,6 +8,14 @@ export type AppLinkTheme =
     | "secondary_inverted"
     | "outline";
 
-export interface AppLinkProps extends LinkProps {
+interface AppLinkSharedProps extends LinkProps {
     theme?: AppLinkTheme;
+}
+
+export interface AppLinkProps extends Omit<AppLinkSharedProps, "children"> {
+    text: string;
+}
+
+export interface AppLinkWrapperProps extends AppLinkSharedProps {
+    children?: ReactNode;
 }

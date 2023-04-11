@@ -4,7 +4,6 @@ import { SelectProps } from "./Select.types";
 import { MemoSelect } from "./Select";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Select",
@@ -42,4 +41,4 @@ Dark.args = {
         },
     ],
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

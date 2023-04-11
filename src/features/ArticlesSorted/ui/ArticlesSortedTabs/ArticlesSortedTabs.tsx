@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import cl from "./ArticlesSortedTabs.module.scss";
 import { ArticlesSortedTabsProps } from "./ArticlesSortedTabs.types";
 import { getArticlesSortedType } from "../../model/selectors/articlesSortedSelectors";
+import { articlesSortedActions } from "../../model/slice/articlesSortedSlice";
 
-import { articlesSortedActions } from "features/ArticlesSorted/model/slice/articlesSortedSlice";
 import { ArticleType } from "entities/Article";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";

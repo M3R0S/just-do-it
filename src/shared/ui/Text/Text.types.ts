@@ -14,7 +14,8 @@ export type TextTagRecord = Record<
 >;
 export type TextAttributes = HTMLAttributes<HTMLSpanElement | HTMLParagraphElement>;
 
-export interface TextProps extends TextAttributes {
+export interface TextProps extends Omit<TextAttributes, "children"> {
+    text?: string;
     isTitle?: boolean;
     tag?: TextTag;
     theme?: TextTheme;

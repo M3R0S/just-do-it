@@ -5,7 +5,6 @@ import { Card } from "./Card";
 import { Text } from "../Text";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Card",
@@ -20,9 +19,8 @@ Light.args = {
         <Text
             isTitle
             tag="h1"
-        >
-            Text
-        </Text>
+            text="Text"
+        />
     ),
 };
 
@@ -32,9 +30,8 @@ Dark.args = {
         <Text
             isTitle
             tag="h1"
-        >
-            Text
-        </Text>
+            text="Text"
+        />
     ),
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

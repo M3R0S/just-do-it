@@ -7,14 +7,14 @@ import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers/classNames";
 import { Avatar } from "shared/ui/Avatar";
 import { Text } from "shared/ui/Text";
-import { AppLink } from "shared/ui/AppLink";
+import { AppLinkWrapper } from "shared/ui/AppLink";
 
 export const CommentCard: FC<CommentCardProps> = memo((props) => {
     const { className, comment } = props;
 
     return (
         <div className={cln(cl.comment_card, [className])}>
-            <AppLink
+            <AppLinkWrapper
                 to={`${PathRoutes.PROFILE}${comment.user.id}`}
                 className={cl.header}
             >
@@ -26,11 +26,13 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
                 <Text
                     isTitle
                     tag="h3"
-                >
-                    {comment.user.username}
-                </Text>
-            </AppLink>
-            <Text tag="p">{comment.text}</Text>
+                    text={comment.user.username}
+                />
+            </AppLinkWrapper>
+            <Text
+                tag="p"
+                text={comment.text}
+            />
         </div>
     );
 });

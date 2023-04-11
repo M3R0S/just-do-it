@@ -4,7 +4,6 @@ import { ArticleRecommendationsListProps } from "./ArticleRecommendationsList.ty
 import { ArticleRecommendationsList } from "./ArticleRecommendationsList";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "widgets/ArticleRecomendationsList",
@@ -18,4 +17,4 @@ const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
 export const Light: Story<ArticleRecommendationsListProps> = Template.bind({});
 
 export const Dark: Story<ArticleRecommendationsListProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

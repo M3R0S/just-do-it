@@ -15,7 +15,7 @@ render(
         <StoreProvider>
             <BrowserRouter>
                 <ThemeProvider>
-                    <App />
+                    <App />=
                 </ThemeProvider>
             </BrowserRouter>
         </StoreProvider>

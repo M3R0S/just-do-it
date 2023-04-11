@@ -10,7 +10,7 @@ import { getUserAuthData, userActions } from "entities/User";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
 import { AppLink } from "shared/ui/AppLink";
 
@@ -42,22 +42,19 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                     isTitle
                     tag="h1"
                     theme="inverted"
-                >
-                    {t("Habr")}
-                </Text>
+                    text={t("Habr")}
+                />
                 <div className={cl.links}>
                     <AppLink
                         theme="primary_inverted"
                         to={PathRoutes.ARTICLE_CREATE}
-                    >
-                        {t("Create an article")}
-                    </AppLink>
+                        text={t("Create an article")}
+                    />
                     <Button
-                        theme={ButtonTheme.CLEAR_INVERTED}
+                        theme="clear_inverted"
                         onClick={onLogout}
-                    >
-                        {t("Logout")}
-                    </Button>
+                        text={t("Logout")}
+                    />
                 </div>
             </header>
         );
@@ -67,11 +64,10 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
         <header className={cln(cl.navbar, [className])}>
             <div className={cl.links}>
                 <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
+                    theme={"clear_inverted"}
                     onClick={onOpenModal}
-                >
-                    {t("Log in")}
-                </Button>
+                    text={t("Log in")}
+                />
             </div>
             <LoginModal
                 isOpened={isOpenedModal}

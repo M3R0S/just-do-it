@@ -5,7 +5,6 @@ import { HeaderProfileCard } from "./HeaderProfileCard";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/EditableProfileCard/HeaderProfileCard",
@@ -27,7 +26,7 @@ LightReadonlyTrue.decorators = [
 
 export const DarkReadonlyTrue: Story<HeaderProfileCardProps> = Template.bind({});
 DarkReadonlyTrue.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         profile: {
             isReadonly: true,
@@ -46,7 +45,7 @@ LightReadonlyFalse.decorators = [
 
 export const DarkReadonlyFalse: Story<HeaderProfileCardProps> = Template.bind({});
 DarkReadonlyFalse.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         profile: {
             isReadonly: false,

@@ -6,7 +6,6 @@ import { ArticlesDisplay } from "./ArticlesDisplay";
 import { Article } from "entities/Article";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 const article = {
     id: "1",
@@ -122,4 +121,4 @@ Light.decorators = [
 ];
 
 export const Dark: Story<ArticlesDisplayProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator({})];

@@ -6,7 +6,6 @@ import LoginForm from "./LoginForm";
 import { StateSchema } from "app/providers/Store";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/AuthByUsername/LoginForm",
@@ -27,4 +26,4 @@ export const Light: Story<LoginFormProps> = Template.bind({});
 Light.decorators = [StoreDecorator(initStateStoreDecorator)];
 
 export const Dark: Story<LoginFormProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(initStateStoreDecorator)];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator(initStateStoreDecorator)];

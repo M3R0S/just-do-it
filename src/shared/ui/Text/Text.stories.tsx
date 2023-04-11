@@ -4,7 +4,6 @@ import { TextProps } from "./Text.types";
 import { Text } from "./Text";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Text",
@@ -16,72 +15,72 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 export const Light: Story<TextProps> = Template.bind({});
 Light.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
 };
 
 export const Dark: Story<TextProps> = Template.bind({});
 Dark.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];
 
 export const ErrorLight: Story<TextProps> = Template.bind({});
 ErrorLight.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     theme: "error",
 };
 
 export const ErrorDark: Story<TextProps> = Template.bind({});
 ErrorDark.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     theme: "error",
 };
-ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+ErrorDark.decorators = [ThemeDecorator("dark")];
 
 export const SizeMLight: Story<TextProps> = Template.bind({});
 SizeMLight.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     size: "size_m",
 };
 
 export const SizeMDark: Story<TextProps> = Template.bind({});
 SizeMDark.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     size: "size_m",
 };
-SizeMDark.decorators = [ThemeDecorator(Theme.DARK)];
+SizeMDark.decorators = [ThemeDecorator("dark")];
 
 export const SizeLLight: Story<TextProps> = Template.bind({});
 SizeLLight.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     size: "size_l",
 };
 
 export const SizeLDark: Story<TextProps> = Template.bind({});
 SizeLDark.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     size: "size_l",
 };
-SizeLDark.decorators = [ThemeDecorator(Theme.DARK)];
+SizeLDark.decorators = [ThemeDecorator("dark")];
 
 export const SizeXLLight: Story<TextProps> = Template.bind({});
 SizeXLLight.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     size: "size_xl",
 };
 
 export const SizeXLDark: Story<TextProps> = Template.bind({});
 SizeXLDark.args = {
     isTitle: true,
-    children: "Text",
+    text: "Text",
     size: "size_xl",
 };
-SizeXLDark.decorators = [ThemeDecorator(Theme.DARK)];
+SizeXLDark.decorators = [ThemeDecorator("dark")];

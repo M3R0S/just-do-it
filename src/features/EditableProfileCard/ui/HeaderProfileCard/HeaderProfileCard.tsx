@@ -11,7 +11,7 @@ import { HeaderProfileCardProps } from "./HeaderProfileCard.types";
 
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
 
 export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
@@ -40,35 +40,31 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
             <Text
                 tag="h1"
                 isTitle
-            >
-                {t("User profile")}
-            </Text>
+                text={t("User profile")}
+            />
             {isCanEdit && (
                 <div className={cl.wrapper}>
                     {isReadonly ? (
                         <Button
                             className={cl.edit_btn}
-                            theme={ButtonTheme.OUTLINE}
+                            theme="outline"
                             onClick={onEdit}
-                        >
-                            {t("Edit")}
-                        </Button>
+                            text={t("Edit")}
+                        />
                     ) : (
                         <>
                             <Button
                                 className={cl.edit_btn}
-                                theme={ButtonTheme.OUTLINE_RED}
+                                theme="outline_red"
                                 onClick={onCancelEdit}
-                            >
-                                {t("Cancel")}
-                            </Button>
+                                text={t("Cancel")}
+                            />
                             <Button
                                 className={cl.save_btn}
-                                theme={ButtonTheme.OUTLINE}
+                                theme="outline"
                                 onClick={onSave}
-                            >
-                                {t("Save")}
-                            </Button>
+                                text={t("Save")}
+                            />
                         </>
                     )}
                 </div>

@@ -2,10 +2,9 @@ import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
 import { ArticleListItemProps } from "./ArticleListItem.types";
 import { ArticleListItem } from "./ArticleListItem";
+import { Article } from "../../model/types/article";
 
-import { Article } from "entities/Article/model/types/article";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 const article = {
     id: "1",
@@ -100,7 +99,7 @@ TileDark.args = {
     article: article,
     view: "tile",
 };
-TileDark.decorators = [ThemeDecorator(Theme.DARK)];
+TileDark.decorators = [ThemeDecorator("dark")];
 
 export const ListLight: Story<ArticleListItemProps> = Template.bind({});
 ListLight.args = {
@@ -113,4 +112,4 @@ ListDark.args = {
     article: article,
     view: "list",
 };
-ListDark.decorators = [ThemeDecorator(Theme.DARK)];
+ListDark.decorators = [ThemeDecorator("dark")];

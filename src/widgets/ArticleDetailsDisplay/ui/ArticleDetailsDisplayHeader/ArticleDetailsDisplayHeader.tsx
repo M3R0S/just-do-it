@@ -24,16 +24,14 @@ export const ArticleDetailsDisplayHeader: FC<ArticleDetailsDisplayHeaderProps> =
             <AppLink
                 theme="outline"
                 to={PathRoutes.ARTICLES}
-            >
-                {t("Back to the list")}
-            </AppLink>
+                text={t("Back to the list")}
+            />
             {isCanEdit && (
                 <AppLink
                     to={id ? `${PathRoutes.ARTICLE_DETAILS}${id}/edit` : PathRoutes.NOT_FOUND}
                     theme="outline"
-                >
-                    {t("Edit")}
-                </AppLink>
+                    text={t("Edit")}
+                />
             )}
         </div>
     );

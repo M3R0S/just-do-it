@@ -1,10 +1,9 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
-import { LoaderProps, LoaderTheme } from "./Loader.types";
+import { LoaderProps } from "./Loader.types";
 import { Loader } from "./Loader";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Loader",
@@ -20,11 +19,11 @@ const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
 export const StandartLight: Story<LoaderProps> = Template.bind({});
 StandartLight.args = {
-    theme: LoaderTheme.STANDART,
+    theme: "standart",
 };
 
 export const StandartDark: Story<LoaderProps> = Template.bind({});
 StandartDark.args = {
-    theme: LoaderTheme.STANDART,
+    theme: "standart",
 };
-StandartDark.decorators = [ThemeDecorator(Theme.DARK)];
+StandartDark.decorators = [ThemeDecorator("dark")];

@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 
 import cl from "./ArticlesSortedSelect.module.scss";
 import { ArticlesSortedSelectProps } from "./ArticlesSortedSelect.types";
-
-import { articlesSortedActions } from "features/ArticlesSorted/model/slice/articlesSortedSlice";
 import {
     getArticlesSortedOrder,
     getArticlesSortedSort,
-} from "features/ArticlesSorted/model/selectors/articlesSortedSelectors";
+} from "../../model/selectors/articlesSortedSelectors";
+import { articlesSortedActions } from "../../model/slice/articlesSortedSlice";
+
 import { ArticleSortField } from "entities/Article";
 import { cln } from "shared/lib/helpers/classNames";
 import { SortOrder } from "shared/lib/types/serverTypes";

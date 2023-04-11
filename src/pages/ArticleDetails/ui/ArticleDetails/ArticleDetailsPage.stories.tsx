@@ -5,7 +5,6 @@ import ArticleDetailsPage from "./ArticleDetailsPage";
 import { StateSchema } from "app/providers/Store";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "pages/ArticleDetailsPage",
@@ -105,4 +104,4 @@ export const Light: Story = Template.bind({});
 Light.decorators = [StoreDecorator(state)];
 
 export const Dark: Story = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(state)];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator(state)];

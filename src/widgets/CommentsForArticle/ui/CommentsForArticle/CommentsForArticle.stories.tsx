@@ -5,7 +5,6 @@ import { CommentsForArticle } from "./CommentsForArticle";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "widgets/CommentsForArticle/CommentsForArticle",
@@ -41,4 +40,4 @@ Light.args = {
 };
 
 export const Dark: Story<CommentsForArticleProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

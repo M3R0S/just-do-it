@@ -5,7 +5,6 @@ import { LoginModal } from "./LoginModal";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/AuthByUsername/LoginModal",
@@ -38,7 +37,7 @@ Dark.args = {
     isOpened: true,
 };
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         login: {
             username: "admin",
@@ -68,7 +67,7 @@ ErrorDark.args = {
     isOpened: true,
 };
 ErrorDark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         login: {
             username: "admin",
@@ -98,7 +97,7 @@ LoadingDark.args = {
     isOpened: true,
 };
 LoadingDark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         login: {
             username: "admin",

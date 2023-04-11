@@ -7,7 +7,6 @@ import { ValidateProfileError } from "../../model/types/ProfileSchema";
 import { StateSchema } from "app/providers/Store";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/EditableProfileCard/ValidateErrorProfileCard",
@@ -32,4 +31,4 @@ export const Light: Story<ValidateErrorProfileCardProps> = Template.bind({});
 Light.decorators = [StoreDecorator(store)];
 
 export const Dark: Story<ValidateErrorProfileCardProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(store)];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator(store)];

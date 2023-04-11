@@ -4,7 +4,6 @@ import { SkeletonProps } from "./Skeleton.types";
 import { Skeleton } from "./Skeleton";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Skeleton",
@@ -24,7 +23,7 @@ NormalDark.args = {
     width: "100%",
     height: 200,
 };
-NormalDark.decorators = [ThemeDecorator(Theme.DARK)];
+NormalDark.decorators = [ThemeDecorator("dark")];
 
 export const CircleLight: Story<SkeletonProps> = Template.bind({});
 CircleLight.args = {
@@ -39,4 +38,4 @@ CircleDark.args = {
     height: 100,
     borderRadius: "50%",
 };
-CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
+CircleDark.decorators = [ThemeDecorator("dark")];

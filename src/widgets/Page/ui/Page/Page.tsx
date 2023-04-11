@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 
 import cl from "./Page.module.scss";
 import { PageProps } from "./Page.types";
+import { scrollActions } from "../../model/slice/scrollSlice";
+import { getScrollByPath } from "../../model/selectors/getScrollSelectors";
 
 import { StateSchema } from "app/providers/Store";
-import { scrollActions } from "widgets/Page/model/slice/scrollSlice";
-import { getScrollByPath } from "widgets/Page/model/selectors/getScrollSelectors";
 import { cln } from "shared/lib/helpers/classNames";
 import { useInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";

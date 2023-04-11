@@ -30,9 +30,8 @@ export const CommentsForArticle: FC<CommentsForArticleProps> = memo((props) => {
                 <Text
                     isTitle
                     tag="h1"
-                >
-                    {t("Comments")}
-                </Text>
+                    text={t("Comments")}
+                />
                 <AddNewComment onSendComment={onSendComment} />
                 <ArticleDetailsCommentsList id={id} />
             </div>

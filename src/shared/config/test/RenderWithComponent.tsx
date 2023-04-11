@@ -4,9 +4,9 @@ import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import { RenderWithComponentOptions } from "./RenderWithComponent.types";
+import i18nTestConfig from "../i18n/i18nForTest";
 
 import { StateSchema, StoreProvider } from "app/providers/Store";
-import i18nTestConfig from "shared/config/i18n/i18nForTest";
 
 export const RenderWithComponent = (
     component: ReactNode,

@@ -16,4 +16,4 @@ const Template: ComponentStory<typeof {{pascalCase}}> = (args) => <{{pascalCase}
 export const Light: Story<{{pascalCase}}Props> = Template.bind({});
 
 export const Dark: Story<{{pascalCase}}Props> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

@@ -1,2 +1,2 @@
 export { AppLink } from "./AppLink";
-export { AppLinkTheme } from "./AppLink.types";
+export { AppLinkWrapper } from "./AppLinkWrapper";

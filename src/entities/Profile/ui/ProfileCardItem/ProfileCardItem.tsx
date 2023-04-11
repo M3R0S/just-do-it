@@ -12,7 +12,7 @@ export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
 
     return (
         <div className={cln(cl.row, [className])}>
-            <Text tag="p">{`${placeholder} :`}</Text>
+            <Text tag="p" text={`${placeholder} :`} />
             <Input
                 type={type}
                 className={cl.input}

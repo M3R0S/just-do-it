@@ -6,14 +6,17 @@ import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../../context/Them
 export const useTheme: UseTheme = () => {
     const { theme, setTheme } = useContext(ThemeContext);
 
-    const isLightTheme = theme === Theme.LIGHT;
+    const nextTheme: Record<Theme, Theme> = {
+        light: "dark",
+        dark: "light"
+    }
 
     const toggleTheme = () => {
-        const newTheme = isLightTheme ? Theme.DARK : Theme.LIGHT;
+        const newTheme = nextTheme[theme]
         setTheme(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    document.body.className = theme;
-    return { theme, isLightTheme, toggleTheme };
+    document.body.className = `${theme}_theme`;
+    return { theme, toggleTheme };
 };

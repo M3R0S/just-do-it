@@ -106,7 +106,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
             </div>
         );
     } else if (error) {
-        content = <Text align="center">{t("An error occurred while loading the article")}</Text>;
+        content = (
+            <Text
+                align="center"
+                text={t("An error occurred while loading the article")}
+            />
+        );
     } else {
         content = (
             <article className={cl.article}>
@@ -120,22 +125,26 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                     size="size_xl"
                     isTitle
                     tag="h1"
-                >
-                    {data?.title}
-                </Text>
+                    text={data?.title}
+                />
                 <Text
                     size="size_m"
                     tag="p"
-                >
-                    {data?.subtitle}
-                </Text>
+                    text={data?.subtitle}
+                />
                 <div className={cl.article_info}>
                     <Svg Svg={EyeSvg} />
-                    <Text tag="span">{data?.views}</Text>
+                    <Text
+                        tag="span"
+                        text={data?.views}
+                    />
                 </div>
                 <div className={cl.article_info}>
                     <Svg Svg={CalendarSvg} />
-                    <Text tag="span">{data?.createdAt}</Text>
+                    <Text
+                        tag="span"
+                        text={data?.createdAt}
+                    />
                 </div>
                 <section className={cl.article_blocks}>{data?.blocks.map(renderBlock)}</section>
             </article>

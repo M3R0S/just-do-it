@@ -44,15 +44,13 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
                     isTitle
                     tag="h1"
                     theme="error"
-                >
-                    {t("There was an error loading the profile")}
-                </Text>
+                    text={t("There was an error loading the profile")}
+                />
                 <Text
                     tag="p"
                     theme="error"
-                >
-                    {t("Try to reload the page")}
-                </Text>
+                    text={t("Try to reload the page")}
+                />
             </div>
         );
     }

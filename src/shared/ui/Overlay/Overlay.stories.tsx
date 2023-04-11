@@ -4,7 +4,6 @@ import { OverlayProps } from "./Overlay.types";
 import { Overlay } from "./Overlay";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Overlay",
@@ -19,7 +18,7 @@ Light.args = {
 };
 
 export const Dark: Story<OverlayProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];
 Dark.args = {
     isActive: true,
 };

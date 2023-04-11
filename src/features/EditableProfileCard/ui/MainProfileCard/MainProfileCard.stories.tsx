@@ -6,7 +6,6 @@ import { MainProfileCard } from "./MainProfileCard";
 import { StateSchema } from "app/providers/Store";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/EditableProfileCard/MainProfileCard",
@@ -34,4 +33,4 @@ export const Light: Story<MainProfileCardProps> = Template.bind({});
 Light.decorators = [StoreDecorator(store)];
 
 export const Dark: Story<MainProfileCardProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(store)];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator(store)];

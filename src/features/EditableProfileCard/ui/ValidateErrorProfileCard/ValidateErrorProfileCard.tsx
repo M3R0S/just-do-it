@@ -35,9 +35,8 @@ export const ValidateErrorProfileCard: FC<ValidateErrorProfileCardProps> = memo(
                         tag="h1"
                         isTitle
                         theme="error"
-                    >
-                        {ValidateErrorTranslate[error]}
-                    </Text>
+                        text={ValidateErrorTranslate[error]}
+                    />
                 ))}
         </div>
     );

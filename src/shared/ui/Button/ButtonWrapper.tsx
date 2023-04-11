@@ -1,18 +1,18 @@
-import { FC, memo } from "react";
+import { FC } from "react";
 
 import cl from "./Button.module.scss";
-import { ButtonProps } from "./Button.types";
+import { ButtonWrapperProps } from "./Button.types";
 
 import { cln, Mods } from "shared/lib/helpers/classNames";
 
-export const Button: FC<ButtonProps> = memo((props) => {
+export const ButtonWrapper: FC<ButtonWrapperProps> = (props) => {
     const {
         className,
+        children,
         theme = "clear",
         square = false,
         size = "m",
         disabled,
-        text,
         ...otherProps
     } = props;
 
@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
             className={cln(cl.button, [className, cl[theme], cl[size]], mods)}
             disabled={disabled}
         >
-            {text}
+            {children}
         </button>
     );
-});
+};

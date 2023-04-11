@@ -29,7 +29,8 @@
         "i18next",
         "react-hooks",
         // "prettier",
-        "import"
+        "import",
+        "plugin-meros-fsd"
     ],
     "settings": {
         "react": {
@@ -46,6 +47,7 @@
         "__dirname": "readonly"
     },
     "rules": {
+        "plugin-meros-fsd/path-checker": "error",
         // "prettier/prettier": "error",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/ban-ts-comment": "warn",

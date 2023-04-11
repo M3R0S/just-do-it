@@ -9,7 +9,7 @@ import { SidebarLink } from "../SidebarLink/SidebarLink";
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
 import { cln } from "shared/lib/helpers/classNames";
-import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button";
+import { ButtonWrapper } from "shared/ui/Button";
 
 export const Sidebar: FC<SidebarProps> = memo((props) => {
     const { className } = props;
@@ -40,13 +40,13 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
             })}
             data-testid="sidebar"
         >
-            <Button
+            <ButtonWrapper
                 onClick={onToggle}
                 data-testid="sidebar-toggle"
                 className={cl.collapse_btn}
-                theme={ButtonTheme.BACKGROUND_INVERTED}
+                theme="background_inverted"
                 square={true}
-                size={ButtonSize.L}
+                size="l"
             >
                 <span
                     className={cln(cl.collapse_btn_span, [], {
@@ -55,7 +55,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
                 >
                     {"<"}
                 </span>
-            </Button>
+            </ButtonWrapper>
             <nav className={cl.links}>{linksList}</nav>
             <div className={cl.switchers}>
                 <ThemeSwitcher />

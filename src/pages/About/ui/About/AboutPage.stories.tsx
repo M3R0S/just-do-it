@@ -4,7 +4,6 @@ import AboutPage from "./AboutPage";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "pages/AboutPage",
@@ -26,7 +25,7 @@ Light.decorators = [
 
 export const Dark: Story = Template.bind({});
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         scroll: {
             scroll: {

@@ -5,7 +5,6 @@ import { ArticlesSortedSearch } from "./ArticlesSortedSearch";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/ArticlesSorted/ArticlesSortedSearch",
@@ -27,7 +26,7 @@ Light.decorators = [
 
 export const Dark: Story<ArticlesSortedSearchProps> = Template.bind({});
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         articlesSorted: {
             search: "search",

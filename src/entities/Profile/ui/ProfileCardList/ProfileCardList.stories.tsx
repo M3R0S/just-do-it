@@ -4,7 +4,6 @@ import { ProfileCardListProps } from "./ProfileCardList.types";
 import { ProfileCardList } from "./ProfileCardList";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "entities/Profile/ProfileCardList",
@@ -28,4 +27,4 @@ const Template: ComponentStory<typeof ProfileCardList> = (args) => <ProfileCardL
 export const Light: Story<ProfileCardListProps> = Template.bind({});
 
 export const Dark: Story<ProfileCardListProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

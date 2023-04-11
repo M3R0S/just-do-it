@@ -5,7 +5,6 @@ import { ArticlesViewSwitcher } from "./ArticlesViewSwitcher";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/ArticlesSorted/ArticleViewSwitcher",
@@ -27,7 +26,7 @@ Light.decorators = [
 
 export const Dark: Story<ArticlesViewSwitcherProps> = Template.bind({});
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({
         articlesSorted: {
             view: "tile",

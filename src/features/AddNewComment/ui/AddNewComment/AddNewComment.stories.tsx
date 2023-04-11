@@ -6,7 +6,6 @@ import AddNewComment from "./AddNewComment";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "features/AddNewComment",
@@ -25,4 +24,4 @@ export const Dark: Story<AddNewCommentProps> = Template.bind({});
 Dark.args = {
     onSendComment: action("onSendComment"),
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator({})];

@@ -1,4 +1,4 @@
-import { SidebarLinkItem } from "widgets/Sidebar/model/types/sidebar";
+import { SidebarLinkItem } from "../../model/types/sidebar";
 
 export interface SidebarLinkProps {
     item: SidebarLinkItem;

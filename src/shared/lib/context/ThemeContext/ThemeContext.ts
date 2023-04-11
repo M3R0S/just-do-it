@@ -1,12 +1,12 @@
 import { createContext } from "react";
 
-import { Theme, ThemeContextProps } from "./ThemeContext.types";
+import { ThemeContextProps } from "./ThemeContext.types";
 
 export const LOCAL_STORAGE_THEME_KEY = "theme";
 
 export const ThemeContext = createContext<ThemeContextProps>({
-    theme: Theme.LIGHT,
+    theme: "light",
     setTheme: () => ({}),
 });
 
-// //todo Вынести контекст в редакс
+// todo Вынести контекст в редакс

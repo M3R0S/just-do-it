@@ -15,8 +15,8 @@ import { cln } from "shared/lib/helpers/classNames";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useAutoFocus } from "shared/lib/hooks/useAutoFocus";
-import { Input, InputTheme } from "shared/ui/Input";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { Input } from "shared/ui/Input";
+import { Button } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
 
 const initialReducers: ReducersList = {
@@ -80,18 +80,20 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
 
     return (
         <div className={cln(cl.login_form, [className])}>
-            <Text tag="h1">{t("Authorization form")}</Text>
+            <Text
+                tag="h1"
+                text={t("Authorization form")}
+            />
             <Text
                 theme="error"
                 className={cl.error}
-            >
-                {error ? ErrorText() : ""}
-            </Text>
+                text={error ? ErrorText() : ""}
+            />
             <Input
                 onChangeValue={onChangeUsername}
                 value={username}
                 className={cl.input}
-                theme={InputTheme.INVERTED}
+                theme="inverted"
                 placeholder={usernamePlaceholder}
                 inputRef={ref}
             />
@@ -99,17 +101,16 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
                 onChangeValue={onChangePassword}
                 value={password}
                 className={cl.input}
-                theme={InputTheme.INVERTED}
+                theme="inverted"
                 placeholder={passwordPlaceholder}
             />
             <Button
-                theme={ButtonTheme.BACKGROUND_INVERTED}
+                theme={"background_inverted"}
                 className={cl.login_btn}
                 onClick={onLoginClick}
                 disabled={isLoading}
-            >
-                {t("Log in")}
-            </Button>
+                text={t("Log in")}
+            />
         </div>
     );
 });

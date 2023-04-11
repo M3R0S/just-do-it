@@ -6,7 +6,6 @@ import { UserProfile } from "./UserProfile";
 import { StateSchema } from "app/providers/Store";
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "widgets/UserProfile",
@@ -34,4 +33,4 @@ export const Light: Story<UserProfileProps> = Template.bind({});
 Light.decorators = [StoreDecorator(store)];
 
 export const Dark: Story<UserProfileProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator(store)];
+Dark.decorators = [ThemeDecorator("dark"), StoreDecorator(store)];

@@ -4,7 +4,6 @@ import { CodeProps } from "./Code.types";
 import { Code } from "./Code";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Code",
@@ -24,4 +23,4 @@ export const Dark: Story<CodeProps> = Template.bind({});
 Dark.args = {
     text: code,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

@@ -4,7 +4,6 @@ import { ModalProps } from "./Modal.types";
 import { Modal } from "./Modal";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Modal",
@@ -24,4 +23,4 @@ Dark.args = {
     children: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, at!",
     isOpened: true,
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

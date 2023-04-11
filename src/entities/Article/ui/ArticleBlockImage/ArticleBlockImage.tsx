@@ -22,9 +22,8 @@ export const ArticleBlockImage: FC<ArticleBlockImageProps> = memo((props) => {
                     tag="h3"
                     size="size_m"
                     align="center"
-                >
-                    {block.title}
-                </Text>
+                    text={block.title}
+                />
             )}
         </div>
     );

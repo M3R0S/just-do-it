@@ -1,13 +1,6 @@
 import { InputHTMLAttributes, MutableRefObject } from "react";
 
-import { ValueOf } from "shared/lib/types/helpersTypes";
-
-export const InputTheme = {
-    CLEAR: "clear",
-    INVERTED: "inverted",
-} as const;
-
-export type InputTheme = ValueOf<typeof InputTheme>;
+export type InputTheme = "clear" | "inverted";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     theme?: InputTheme;

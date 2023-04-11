@@ -5,7 +5,6 @@ import { TabItem, TabsProps } from "./Tabs.types";
 import { MemoTabs } from "./Tabs";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "shared/Tabs",
@@ -42,4 +41,4 @@ Dark.args = {
     value: "tab 2",
     onTabClick: action("onTabClick"),
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

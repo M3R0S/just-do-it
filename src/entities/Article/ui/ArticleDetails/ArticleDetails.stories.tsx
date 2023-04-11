@@ -6,7 +6,6 @@ import { ArticleDetailsSchema } from "../../model/types/ArticleDetailsSchema";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
 import { StoreDecorator } from "shared/config/storybook/decorators/StoreDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "entities/ArticleDetails",
@@ -91,14 +90,14 @@ export const ArticleLight: Story<ArticleDetailsProps> = Template.bind({});
 ArticleLight.decorators = [StoreDecorator({ articleDetails: article })];
 
 export const ArticleDark: Story<ArticleDetailsProps> = Template.bind({});
-ArticleDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ articleDetails: article })];
+ArticleDark.decorators = [ThemeDecorator("dark"), StoreDecorator({ articleDetails: article })];
 
 export const LoadingLight: Story<ArticleDetailsProps> = Template.bind({});
 LoadingLight.decorators = [StoreDecorator({ articleDetails: { isLoading: true } })];
 
 export const LoadingDark: Story<ArticleDetailsProps> = Template.bind({});
 LoadingDark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({ articleDetails: { isLoading: true } }),
 ];
 
@@ -107,6 +106,6 @@ ErrorLight.decorators = [StoreDecorator({ articleDetails: { error: "Error" } })]
 
 export const ErrorDark: Story<ArticleDetailsProps> = Template.bind({});
 ErrorDark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator("dark"),
     StoreDecorator({ articleDetails: { error: "Error" } }),
 ];

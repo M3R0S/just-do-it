@@ -4,7 +4,6 @@ import { CountrySelectProps } from "./CountrySelect.types";
 import { CountrySelect } from "./CountrySelect";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
-import { Theme } from "shared/lib/context/ThemeContext";
 
 export default {
     title: "entities/Country/CountrySelect",
@@ -16,4 +15,4 @@ const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect 
 export const Light: Story<CountrySelectProps> = Template.bind({});
 
 export const Dark: Story<CountrySelectProps> = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [ThemeDecorator("dark")];

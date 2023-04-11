@@ -9,7 +9,7 @@ import { Sidebar } from "widgets/Sidebar";
 import { AppErrorBoundaryFallback } from "widgets/AppErrorBoundaryFallback";
 import { getUserIsInited, userActions } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
-import { Loader, LoaderTheme } from "shared/ui/Loader";
+import { Loader } from "shared/ui/Loader";
 import { ErrorBoundary } from "shared/ui/ErrorBoundary";
 
 export const App: FC = memo(() => {
@@ -22,7 +22,7 @@ export const App: FC = memo(() => {
 
     return (
         <div className="app">
-            <Suspense fallback={<Loader theme={LoaderTheme.APP} />}>
+            <Suspense fallback={<Loader theme="app" />}>
                 <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
                     <Navbar />
                     <div className="content">

@@ -48,9 +48,8 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = (
                 isTitle
                 tag="h1"
                 size="size_l"
-            >
-                {t("Recommendation")}
-            </Text>
+                text={t("Recommendation")}
+            />
             <ArticleList
                 articles={recommendations}
                 isLoading={isLoading}
