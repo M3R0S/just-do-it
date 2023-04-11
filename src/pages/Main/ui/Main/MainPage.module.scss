@@ -1,5 +1,5 @@
 .main {
     display: flex;
     color: var(--color-primary);
-    transition: color var(--transition-switch-theme-timeout);
+    transition: var(--transition-all-switch-theme)
 }

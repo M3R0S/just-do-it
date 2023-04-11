@@ -17,6 +17,8 @@ const options: WebpackOptions = {
         entry: "",
         html: "",
         src: path.resolve(__dirname, "..", "..", "src"),
+        locales: "",
+        buildLocales: "",
     },
     project: "storybook",
 };

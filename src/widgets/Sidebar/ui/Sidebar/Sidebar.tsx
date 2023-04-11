@@ -10,6 +10,7 @@ import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
 import { cln } from "shared/lib/helpers/classNames";
 import { ButtonWrapper } from "shared/ui/Button";
+import { VStack } from "shared/ui/Stack";
 
 export const Sidebar: FC<SidebarProps> = memo((props) => {
     const { className } = props;
@@ -56,7 +57,12 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
                     {"<"}
                 </span>
             </ButtonWrapper>
-            <nav className={cl.links}>{linksList}</nav>
+            <VStack
+                rowGap="16"
+                className={cl.links}
+            >
+                {linksList}
+            </VStack>
             <div className={cl.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} />

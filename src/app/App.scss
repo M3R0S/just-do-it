@@ -3,13 +3,13 @@
 body {
     font: var(--font-m);
     color: var(--color-primary);
-    transition: color var(--transition-switch-theme-timeout);
 }
 
 .app {
     min-height: 100vh;
     background: var(--bg-color);
-    transition: background var(--transition-switch-theme-timeout);
+
+    // transition: background var(--transition-switch-theme-timeout);
 }
 
 .content {

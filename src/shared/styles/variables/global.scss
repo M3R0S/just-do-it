@@ -38,4 +38,9 @@
     --transition-toggle-overlay-timeout: 0.5s;
     --transition-toggle-modal-timeout: 0.5s;
     --transition-hover-timeout: 0.2s;
+
+    // ? Все анимации для смены темы
+    --transition-all-switch-theme: color var(--transition-switch-theme-timeout),
+        background var(--transition-switch-theme-timeout),
+        fill var(--transition-switch-theme-timeout);
 }
