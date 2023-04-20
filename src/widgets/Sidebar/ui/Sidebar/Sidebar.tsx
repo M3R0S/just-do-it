@@ -35,7 +35,8 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
     };
 
     return (
-        <menu
+        <VStack
+            justifyContent="space_between"
             className={cln(cl.sidebar, [className], {
                 [cl.collapsed]: collapsed,
             })}
@@ -63,10 +64,15 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
             >
                 {linksList}
             </VStack>
-            <div className={cl.switchers}>
+            <VStack
+                className={cl.switchers}
+                alignItems="center"
+                justifyContent="center"
+                rowGap="16"
+            >
                 <ThemeSwitcher />
                 <LangSwitcher short={collapsed} />
-            </div>
-        </menu>
+            </VStack>
+        </VStack>
     );
 });

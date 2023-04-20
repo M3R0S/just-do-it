@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type JustifyContent = "start" | "center" | "end" | "space-between";
+export type JustifyContent = "start" | "center" | "end" | "space_between";
 export type FlexAlignItems = "start" | "center" | "end";
 export type FlexDirection = "column" | "row";
 export type FlexGap = "4" | "8" | "16" | "32";

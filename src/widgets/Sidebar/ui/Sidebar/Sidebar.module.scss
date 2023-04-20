@@ -1,12 +1,9 @@
 .sidebar {
     position: relative;
-    padding-right: 5rem;
     width: var(--width-sidebar);
     height: var(--height-sidebar);
     background: var(--bg-color-inverted);
-    transition: background var(--transition-switch-theme-timeout),
-        width var(--transition-toggle-sidebar-timeout),
-        flex-direction var(--transition-toggle-sidebar-timeout);
+    transition: var(--transition-all-switch-theme), width var(--transition-toggle-sidebar-timeout);
 
     .collapse_btn {
         position: absolute;
@@ -32,12 +29,8 @@
     }
 
     .switchers {
-        position: absolute;
-        bottom: 20px;
-        display: flex;
-        flex-direction: column;
+        margin-bottom: 2rem;
         width: 100%;
-        row-gap: 1rem;
     }
 
     &.collapsed {

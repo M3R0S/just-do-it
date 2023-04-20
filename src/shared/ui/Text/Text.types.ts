@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactElement } from "react";
+import { HTMLAttributes } from "react";
 
 export type TextTheme = "clear" | "error" | "inverted";
 
@@ -8,10 +8,6 @@ export type TextAlign = "left" | "center" | "right";
 
 export type TextSize = "size_m" | "size_l" | "size_xl";
 
-export type TextTagRecord = Record<
-    TextTag,
-    ReactElement<HTMLSpanElement | HTMLParagraphElement | HTMLElement>
->;
 export type TextAttributes = HTMLAttributes<HTMLSpanElement | HTMLParagraphElement>;
 
 export interface TextProps extends Omit<TextAttributes, "children"> {
