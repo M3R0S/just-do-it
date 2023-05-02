@@ -1,6 +1,5 @@
 import { FC, memo, useCallback } from "react";
 
-import cl from "./ArticlesSorted.module.scss";
 import { ArticlesSortedProps } from "./ArticlesSorted.types";
 import {
     articlesSortedActions,
@@ -11,10 +10,10 @@ import { ArticlesViewSwitcher } from "../ArticlesViewSwitcher/ArticlesViewSwitch
 import { ArticlesSortedSearch } from "../ArticlesSortedSearch/ArticlesSortedSearch";
 import { ArticlesSortedTabs } from "../ArticlesSortedTabs/ArticlesSortedTabs";
 
-import { cln } from "shared/lib/helpers/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
+import { HStack, VStack } from "shared/ui/Stack";
 
 const reducers: ReducersList = {
     articlesSorted: articlesSortedReducer,
@@ -33,14 +32,20 @@ export const ArticlesSorted: FC<ArticlesSortedProps> = memo((props) => {
     );
 
     return (
-        <div className={cln(cl.articles_sorted, [className])}>
-            <div className={cl.sorted_wrapper}>
+        <VStack
+            rowGap="16"
+            className={className}
+        >
+            <HStack
+                justifyContent="space_between"
+                alignItems="center"
+            >
                 <ArticlesSortedSelect
                     returnToFirstPage={returnToFirstPage}
                     requestUpdate={requestUpdate}
                 />
                 <ArticlesViewSwitcher />
-            </div>
+            </HStack>
             <ArticlesSortedSearch
                 returnToFirstPage={returnToFirstPage}
                 requestUpdate={requestUpdate}
@@ -49,6 +54,6 @@ export const ArticlesSorted: FC<ArticlesSortedProps> = memo((props) => {
                 requestUpdate={requestUpdate}
                 returnToFirstPage={returnToFirstPage}
             />
-        </div>
+        </VStack>
     );
 });

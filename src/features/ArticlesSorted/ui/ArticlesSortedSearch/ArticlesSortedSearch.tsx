@@ -33,7 +33,7 @@ export const ArticlesSortedSearch: FC<ArticlesSortedSearchProps> = memo((props) 
     );
 
     return (
-        <Card className={cln(cl.articles_sorted_search, [className])}>
+        <Card className={className}>
             <Input
                 placeholder={t("Search")}
                 value={search}

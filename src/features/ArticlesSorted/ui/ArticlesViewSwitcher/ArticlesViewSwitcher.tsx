@@ -12,6 +12,7 @@ import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Svg } from "shared/ui/Svg";
 import { ButtonWrapper } from "shared/ui/Button";
+import { HStack } from "shared/ui/Stack";
 
 export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) => {
     const { className } = props;
@@ -28,7 +29,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
     );
 
     return (
-        <div className={cln(cl.articles_view_switcher, [className])}>
+        <HStack className={className}>
             {viewTypes.map((viewTypes) => (
                 <ButtonWrapper
                     theme="clear"
@@ -41,6 +42,6 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
                     />
                 </ButtonWrapper>
             ))}
-        </div>
+        </HStack>
     );
 });

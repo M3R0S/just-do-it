@@ -42,7 +42,7 @@ export const ArticleDetailsCommentsList: FC<ArticleDetailsCommentsListProps> = m
     return (
         <CommentList
             isLoading={isLoading}
-            className={cln(cl.comments_list, [className])}
+            className={className}
             comments={comments}
         />
     );

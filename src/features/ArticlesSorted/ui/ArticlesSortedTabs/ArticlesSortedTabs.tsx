@@ -2,13 +2,11 @@ import { FC, memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import cl from "./ArticlesSortedTabs.module.scss";
 import { ArticlesSortedTabsProps } from "./ArticlesSortedTabs.types";
 import { getArticlesSortedType } from "../../model/selectors/articlesSortedSelectors";
 import { articlesSortedActions } from "../../model/slice/articlesSortedSlice";
 
 import { ArticleType } from "entities/Article";
-import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Tabs } from "shared/ui/Tabs";
 import { TabItem } from "shared/ui/Tabs/Tabs.types";
@@ -57,7 +55,7 @@ export const ArticlesSortedTabs: FC<ArticlesSortedTabsProps> = memo((props) => {
             tabs={typeTabs}
             onTabClick={onChangeType}
             value={type}
-            className={cln(cl.articles_sorted_tabs, [className])}
+            className={className}
         />
     );
 });

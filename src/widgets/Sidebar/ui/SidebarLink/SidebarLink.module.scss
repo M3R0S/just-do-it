@@ -6,8 +6,7 @@
 
     &_text {
         white-space: nowrap;
-        transition: color var(--transition-switch-theme-timeout),
-            opacity var(--transition-toggle-sidebar-timeout);
+        transition: opacity var(--transition-toggle-sidebar-timeout);
     }
 
     &_svg {
@@ -15,7 +14,6 @@
         justify-content: center;
         min-width: 20px;
         fill: var(--color-primary-inverted);
-        transition: fill var(--transition-switch-theme-timeout);
     }
 }
 

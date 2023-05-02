@@ -15,6 +15,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { useDynamicReducerLoader, ReducersList } from "shared/lib/hooks/useDynamicReducerLoader";
 import { Input } from "shared/ui/Input";
 import { Button } from "shared/ui/Button";
+import { HStack } from "shared/ui/Stack";
 
 const reducers: ReducersList = {
     addNewComment: addNewCommentReducer,
@@ -43,7 +44,11 @@ const AddNewComment: FC<AddNewCommentProps> = (props) => {
     }, [onChangeTextComment, onSendComment, text]);
 
     return (
-        <div className={cln(cl.add_new_comment, [className])}>
+        <HStack
+            justifyContent="space_between"
+            alignItems="center"
+            className={cln(cl.add_new_comment, [className])}
+        >
             <Input
                 className={cl.input}
                 onChangeValue={onChangeTextComment}
@@ -55,7 +60,7 @@ const AddNewComment: FC<AddNewCommentProps> = (props) => {
                 theme="outline"
                 text={t("Send")}
             />
-        </div>
+        </HStack>
     );
 };
 

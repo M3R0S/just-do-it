@@ -1,7 +1,5 @@
 import { FC, memo, useCallback } from "react";
 
-import cl from "./ArticlesPage.module.scss";
-
 import { ArticlesDisplay } from "widgets/ArticlesDisplay";
 import { Page } from "widgets/Page";
 import { fetchNextArticlePage } from "widgets/ArticlesDisplay/model/services/fetchNextArticlePage/fetchNextArticlePage";
@@ -15,10 +13,7 @@ const ArticlesPage: FC = () => {
     }, [dispatch]);
 
     return (
-        <Page
-            onScrollEnd={onLoadNextPage}
-            className={cl.articles_page}
-        >
+        <Page onScrollEnd={onLoadNextPage}>
             <ArticlesDisplay />
         </Page>
     );

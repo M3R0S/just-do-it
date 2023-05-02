@@ -10,11 +10,13 @@ export const Flex: FC<FlexProps> = (props) => {
         className,
         children,
         direction,
-        alignItems = "start",
-        justifyContent = "start",
+        alignItems = "normal",
+        justifyContent = "normal",
         rowGap,
         columnGap,
         gap,
+        max,
+        wrap = "nowrap",
     } = props;
 
     const classes = [
@@ -22,10 +24,12 @@ export const Flex: FC<FlexProps> = (props) => {
         cl[`justify_content_${justifyContent}`],
         cl[`align_items_${alignItems}`],
         cl[`direction_${direction}`],
+        cl[`wrap_${wrap}`]
     ];
 
     const mods: Mods = {
         [cl[`gap_${gap}`]]: Boolean(gap),
+        [cl.max]: max,
         [cl[`gap_row_${rowGap}`]]: Boolean(rowGap),
         [cl[`gap_column_${columnGap}`]]: Boolean(columnGap),
     };

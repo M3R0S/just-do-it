@@ -26,6 +26,7 @@ import { Text } from "shared/ui/Text";
 import { Skeleton } from "shared/ui/Skeleton";
 import { Avatar } from "shared/ui/Avatar";
 import { Svg } from "shared/ui/Svg";
+import { HStack, VStack } from "shared/ui/Stack";
 
 const reducers: ReducersList = {
     articleDetails: articleDetailsReducer,
@@ -79,7 +80,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
     if (isLoading) {
         content = (
-            <div className={cl.skeleton}>
+            <VStack rowGap="16">
                 <Skeleton
                     className={cl.avatar}
                     width={200}
@@ -103,7 +104,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                     width="100%"
                     height={200}
                 />
-            </div>
+            </VStack>
         );
     } else if (error) {
         content = (
@@ -114,12 +115,12 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         );
     } else {
         content = (
-            <article className={cl.article}>
+            <VStack rowGap="8">
                 <Avatar
                     width={200}
                     height={200}
                     src={data?.img}
-                    className={cl.article_avatar}
+                    className={cl.avatar}
                 />
                 <Text
                     size="size_xl"
@@ -132,22 +133,25 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                     tag="p"
                     text={data?.subtitle}
                 />
-                <div className={cl.article_info}>
+                <HStack columnGap="4">
                     <Svg Svg={EyeSvg} />
                     <Text
                         tag="span"
                         text={data?.views}
                     />
-                </div>
-                <div className={cl.article_info}>
+                </HStack>
+                <HStack
+                    alignItems="center"
+                    columnGap="8"
+                >
                     <Svg Svg={CalendarSvg} />
                     <Text
                         tag="span"
                         text={data?.createdAt}
                     />
-                </div>
-                <section className={cl.article_blocks}>{data?.blocks.map(renderBlock)}</section>
-            </article>
+                </HStack>
+                <VStack rowGap="16">{data?.blocks.map(renderBlock)}</VStack>
+            </VStack>
         );
     }
 

@@ -3,16 +3,22 @@ import { FC, memo } from "react";
 import cl from "./ProfileCardItem.module.scss";
 import { ProfileCardItemProps } from "./ProfileCardItem.types";
 
-import { cln } from "shared/lib/helpers/classNames";
 import { Text } from "shared/ui/Text";
 import { Input } from "shared/ui/Input";
+import { HStack } from "shared/ui/Stack";
 
 export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
     const { className, isReadonly, onChangeValue, placeholder, value, type } = props;
 
     return (
-        <div className={cln(cl.row, [className])}>
-            <Text tag="p" text={`${placeholder} :`} />
+        <HStack
+            columnGap="8"
+            className={className}
+        >
+            <Text
+                tag="p"
+                text={`${placeholder} :`}
+            />
             <Input
                 type={type}
                 className={cl.input}
@@ -21,6 +27,6 @@ export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
                 onChangeValue={onChangeValue}
                 isReadOnly={isReadonly}
             />
-        </div>
+        </HStack>
     );
 });

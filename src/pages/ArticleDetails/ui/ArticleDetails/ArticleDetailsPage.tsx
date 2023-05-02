@@ -8,6 +8,7 @@ import { CommentsForArticle } from "widgets/CommentsForArticle";
 import { Page } from "widgets/Page";
 import { ArticleRecommendationsList } from "widgets/ArticleRecomendationsList";
 import { ArticleDetailsDisplay } from "widgets/ArticleDetailsDisplay";
+import { VStack } from "shared/ui/Stack";
 
 const ArticleDetailsPage: FC = () => {
     const { t } = useTranslation("articlePage");
@@ -19,9 +20,11 @@ const ArticleDetailsPage: FC = () => {
 
     return (
         <Page className={cl.article_details_page}>
-            <ArticleDetailsDisplay id={id} />
-            <ArticleRecommendationsList />
-            <CommentsForArticle id={id} />
+            <VStack rowGap="16">
+                <ArticleDetailsDisplay id={id} />
+                <ArticleRecommendationsList />
+                <CommentsForArticle id={id} />
+            </VStack>
         </Page>
     );
 };

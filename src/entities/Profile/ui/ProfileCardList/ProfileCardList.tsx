@@ -7,7 +7,7 @@ import { ProfileCardItem } from "../ProfileCardItem/ProfileCardItem";
 
 import { CurrencySelect } from "entities/Currency";
 import { CountrySelect } from "entities/Country";
-import { cln } from "shared/lib/helpers/classNames";
+import { VStack } from "shared/ui/Stack";
 
 export const ProfileCardList: FC<ProfileCardListProps> = memo((props) => {
     const {
@@ -54,7 +54,11 @@ export const ProfileCardList: FC<ProfileCardListProps> = memo((props) => {
     );
 
     return (
-        <div className={cln(cl.profile_card_list, [className])}>
+        <VStack
+            rowGap="8"
+            className={className}
+            max
+        >
             {dataInputsListItems}
             <CurrencySelect
                 className={cl.select}
@@ -68,6 +72,6 @@ export const ProfileCardList: FC<ProfileCardListProps> = memo((props) => {
                 onChangeValue={onChangeCountry}
                 isReadonly={isReadonly}
             />
-        </div>
+        </VStack>
     );
 });

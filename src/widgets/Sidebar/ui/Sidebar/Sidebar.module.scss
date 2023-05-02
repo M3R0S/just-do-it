@@ -3,7 +3,7 @@
     width: var(--width-sidebar);
     height: var(--height-sidebar);
     background: var(--bg-color-inverted);
-    transition: var(--transition-all-switch-theme), width var(--transition-toggle-sidebar-timeout);
+    transition: width var(--transition-toggle-sidebar-timeout);
 
     .collapse_btn {
         position: absolute;
@@ -12,6 +12,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 1.2rem;
 
         &_span {
             display: block;

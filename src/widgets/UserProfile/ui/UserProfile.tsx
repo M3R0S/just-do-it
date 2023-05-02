@@ -1,7 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
-import cl from "./UserProfile.module.scss";
 import { UserProfileProps } from "./UserProfile.types";
 
 import {
@@ -9,7 +8,6 @@ import {
     fetchProfileData,
     profileReducer,
 } from "features/EditableProfileCard";
-import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
@@ -33,9 +31,5 @@ export const UserProfile: FC<UserProfileProps> = memo((props) => {
 
     useInitialEffect(initialFetchProfileData);
 
-    return (
-        <div className={cln(cl.user_profile, [className])}>
-            <EditableProfileCard />
-        </div>
-    );
+    return <EditableProfileCard className={className} />;
 });

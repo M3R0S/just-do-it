@@ -2,7 +2,6 @@ import { FC, memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import cl from "./ArticlesSortedSelect.module.scss";
 import { ArticlesSortedSelectProps } from "./ArticlesSortedSelect.types";
 import {
     getArticlesSortedOrder,
@@ -11,10 +10,10 @@ import {
 import { articlesSortedActions } from "../../model/slice/articlesSortedSlice";
 
 import { ArticleSortField } from "entities/Article";
-import { cln } from "shared/lib/helpers/classNames";
 import { SortOrder } from "shared/lib/types/serverTypes";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Select, SelectOptions } from "shared/ui/Select";
+import { HStack } from "shared/ui/Stack";
 
 export const ArticlesSortedSelect: FC<ArticlesSortedSelectProps> = memo((props) => {
     const { className, requestUpdate, returnToFirstPage } = props;
@@ -70,7 +69,11 @@ export const ArticlesSortedSelect: FC<ArticlesSortedSelectProps> = memo((props) 
     );
 
     return (
-        <div className={cln(cl.articles_sorted_select, [className])}>
+        <HStack
+            alignItems="center"
+            columnGap="16"
+            className={className}
+        >
             <Select<ArticleSortField>
                 label={t("Sorted in")}
                 options={sortFieldOptions}
@@ -83,6 +86,6 @@ export const ArticlesSortedSelect: FC<ArticlesSortedSelectProps> = memo((props) 
                 value={order}
                 onChangeValue={onChangeOrder}
             />
-        </div>
+        </HStack>
     );
 });

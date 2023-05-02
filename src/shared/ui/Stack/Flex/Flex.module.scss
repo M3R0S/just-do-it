@@ -2,6 +2,10 @@
     display: flex;
 
     &.justify_content {
+        &_normal {
+            justify-content: normal;
+        }
+
         &_start {
             justify-content: flex-start;
         }
@@ -20,6 +24,10 @@
     }
 
     &.align_items {
+        &_normal {
+            align-items: normal;
+        }
+
         &_start {
             align-items: flex-start;
         }
@@ -41,6 +49,20 @@
         &_column {
             flex-direction: column;
         }
+    }
+
+    &.wrap {
+        &_nowrap {
+            flex-wrap: nowrap;
+        }
+    
+        &_wrap {
+            flex-wrap: wrap;
+        }
+    }
+
+    &.max {
+        width: 100%;
     }
 
     &.gap {

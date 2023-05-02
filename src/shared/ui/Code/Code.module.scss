@@ -5,9 +5,6 @@
     padding: 2rem;
     color: var(--color-primary);
     background: var(--bg-color-code);
-    transition: color var(--transition-switch-theme-timeout),
-        background var(--transition-switch-theme-timeout),
-        border var(--transition-switch-theme-timeout);
 
     .copy_btn {
         position: absolute;

@@ -2,17 +2,16 @@ import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import cl from "./HeaderProfileCard.module.scss";
 import { getProfileIsCanEdit } from "../../model/selectors/getProfileIsCanEdit/getProfileIsCanEdit";
 import { getProfileIsReadonly } from "../../model/selectors/getProfileIsReadonly/getProfileIsReadonly";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
 import { profileActions } from "../../model/slice/profileSlice";
 import { HeaderProfileCardProps } from "./HeaderProfileCard.types";
 
-import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Button } from "shared/ui/Button";
 import { Text } from "shared/ui/Text";
+import { HStack } from "shared/ui/Stack";
 
 export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
     const { className } = props;
@@ -36,39 +35,39 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
     }, [dispatch]);
 
     return (
-        <div className={cln(cl.header, [className])}>
+        <HStack
+            justifyContent="space_between"
+            className={className}
+        >
             <Text
                 tag="h1"
                 isTitle
                 text={t("User profile")}
             />
             {isCanEdit && (
-                <div className={cl.wrapper}>
+                <>
                     {isReadonly ? (
                         <Button
-                            className={cl.edit_btn}
                             theme="outline"
                             onClick={onEdit}
                             text={t("Edit")}
                         />
                     ) : (
-                        <>
+                        <HStack columnGap="16">
                             <Button
-                                className={cl.edit_btn}
                                 theme="outline_red"
                                 onClick={onCancelEdit}
                                 text={t("Cancel")}
                             />
                             <Button
-                                className={cl.save_btn}
                                 theme="outline"
                                 onClick={onSave}
                                 text={t("Save")}
                             />
-                        </>
+                        </HStack>
                     )}
-                </div>
+                </>
             )}
-        </div>
+        </HStack>
     );
 });

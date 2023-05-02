@@ -4,9 +4,7 @@
     padding: 0.6rem 1.5rem;
     color: var(--color-primary);
     background: inherit;
-    transition: color var(--transition-switch-theme-timeout),
-        background var(--transition-switch-theme-timeout),
-        border var(--transition-switch-theme-timeout), opacity var(--transition-hover-timeout),
+    transition: opacity var(--transition-hover-timeout),
         fill-opacity var(--transition-hover-timeout);
     cursor: pointer;
 

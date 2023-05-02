@@ -9,6 +9,7 @@ import { cln, Mods } from "shared/lib/helpers/classNames";
 import { Text } from "shared/ui/Text";
 import { Loader } from "shared/ui/Loader";
 import { Avatar } from "shared/ui/Avatar";
+import { VStack } from "shared/ui/Stack";
 
 export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
     const {
@@ -31,15 +32,23 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
 
     if (isLoading) {
         return (
-            <div className={cln(cl.profile_card, [className, cl.loading])}>
+            <VStack
+                justifyContent="center"
+                alignItems="center"
+                className={cln(cl.profile_card, [className, cl.loading])}
+            >
                 <Loader />
-            </div>
+            </VStack>
         );
     }
 
     if (error) {
         return (
-            <div className={cln(cl.profile_card, [className, cl.error])}>
+            <VStack
+                justifyContent="center"
+                alignItems="center"
+                className={cln(cl.profile_card, [className, cl.error])}
+            >
                 <Text
                     isTitle
                     tag="h1"
@@ -51,7 +60,7 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
                     theme="error"
                     text={t("Try to reload the page")}
                 />
-            </div>
+            </VStack>
         );
     }
 
@@ -60,13 +69,12 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
     };
 
     return (
-        <div className={cln(cl.profile_card, [className], mods)}>
-            {data?.avatar && (
-                <Avatar
-                    className={cl.avatar}
-                    src={data?.avatar}
-                />
-            )}
+        <VStack
+            rowGap="8"
+            alignItems="center"
+            className={cln(cl.profile_card, [className], mods)}
+        >
+            {data?.avatar && <Avatar src={data?.avatar} />}
             <ProfileCardList
                 data={data}
                 isReadonly={isReadonly}
@@ -79,6 +87,6 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
                 onChangeLastname={onChangeLastname}
                 onChangeUsername={onChangeUsername}
             />
-        </div>
+        </VStack>
     );
 });

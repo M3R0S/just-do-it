@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
-import cl from "./ArticlesDisplay.module.scss";
 import { ArticlesDisplayProps } from "./ArticlesDisplay.types";
 import {
     articlesDisplayActions,
@@ -19,10 +18,10 @@ import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchA
 
 import { ArticlesSorted, getArticlesSortedView } from "features/ArticlesSorted";
 import { ArticleList } from "entities/Article";
-import { cln } from "shared/lib/helpers/classNames";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
+import { VStack } from "shared/ui/Stack";
 
 const reducers: ReducersList = {
     articlesDisplay: articlesDisplayReducer,
@@ -60,7 +59,10 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = memo((props) => {
     }
 
     return (
-        <div className={cln(cl.articles_display, [className])}>
+        <VStack
+            rowGap="32"
+            className={className}
+        >
             <ArticlesSorted
                 requestUpdate={requestUpdate}
                 returnToFirstPage={returnToFirstPage}
@@ -69,8 +71,7 @@ export const ArticlesDisplay: FC<ArticlesDisplayProps> = memo((props) => {
                 view={view}
                 articles={articles}
                 isLoading={isLoading}
-                className={cl.list}
             />
-        </div>
+        </VStack>
     );
 });

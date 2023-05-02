@@ -1,13 +1,12 @@
 import { FC, memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import cl from "./ArticleList.module.scss";
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListProps } from "./ArticleList.types";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 
-import { cln } from "shared/lib/helpers/classNames";
+import { HStack, VStack } from "shared/ui/Stack";
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
     const { className, articles, isLoading, view = "tile", target } = props;
@@ -38,13 +37,37 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
     const articlesList = useMemo(() => articles.map(renderArticle), [articles, renderArticle]);
 
     if (!articles.length && !isLoading) {
-        return <div className={cln(cl.article_list, [className])}>{t("Статей нет")}</div>;
+        return (
+            <VStack
+                justifyContent="center"
+                alignItems="center"
+                className={className}
+            >
+                {t("Статей нет")}
+            </VStack>
+        );
+    }
+
+    if (view === "tile") {
+        return (
+            <HStack
+                gap="16"
+                wrap="wrap"
+                className={className}
+            >
+                {articlesList}
+                {isLoading && getSkeletons(view)}
+            </HStack>
+        );
     }
 
     return (
-        <div className={cln(cl.article_list, [className, cl[view]])}>
+        <VStack
+            gap="16"
+            className={className}
+        >
             {articlesList}
             {isLoading && getSkeletons(view)}
-        </div>
+        </VStack>
     );
 });

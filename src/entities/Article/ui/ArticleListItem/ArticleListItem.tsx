@@ -55,46 +55,44 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
 
     if (view === "list") {
         return (
-            <div className={cln(cl.article_list_item, [className, cl[view]])}>
-                <Card className={cl.card}>
-                    <div className={cl.header}>
-                        <div className={cl.user}>
-                            <Avatar
-                                width={30}
-                                height={30}
-                                src={article.user.avatar}
-                            />
-                            <Text
-                                tag="p"
-                                text={article.user.username}
-                            />
-                        </div>
+            <Card className={cln(cl.card, [className, cl[view]])}>
+                <div className={cl.header}>
+                    <div className={cl.user}>
+                        <Avatar
+                            width={30}
+                            height={30}
+                            src={article.user.avatar}
+                        />
                         <Text
                             tag="p"
-                            text={article.createdAt}
+                            text={article.user.username}
                         />
                     </div>
-                    {Title}
-                    {Types}
-                    {MainImg}
-                    {typeof textBlock === "string" ? (
-                        textBlockNull
-                    ) : (
-                        <ArticleBlockText
-                            block={textBlock}
-                            className={cl.block_text}
-                        />
-                    )}
-                    <div className={cl.footer}>
-                        <AppLink
-                            theme="outline"
-                            to={PathRoutes.ARTICLE_DETAILS + article.id}
-                            text={t("Read more") + "..."}
-                        />
-                        {Views}
-                    </div>
-                </Card>
-            </div>
+                    <Text
+                        tag="p"
+                        text={article.createdAt}
+                    />
+                </div>
+                {Title}
+                {Types}
+                {MainImg}
+                {typeof textBlock === "string" ? (
+                    textBlockNull
+                ) : (
+                    <ArticleBlockText
+                        block={textBlock}
+                        className={cl.block_text}
+                    />
+                )}
+                <div className={cl.footer}>
+                    <AppLink
+                        theme="outline"
+                        to={PathRoutes.ARTICLE_DETAILS + article.id}
+                        text={t("Read more") + "..."}
+                    />
+                    {Views}
+                </div>
+            </Card>
         );
     }
 

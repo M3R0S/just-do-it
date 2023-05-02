@@ -15,11 +15,11 @@ import {
 import { fetchArticleRecommendationsList } from "../../model/services/fetchArticleRecommendationsList/fetchArticleRecommendationsList";
 
 import { ArticleList } from "entities/Article";
-import { cln } from "shared/lib/helpers/classNames";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Text } from "shared/ui/Text";
+import { VStack } from "shared/ui/Stack";
 
 const reducers: ReducersList = {
     articleRecommendationsList: articleRecommendationsListReducer,
@@ -43,7 +43,10 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = (
     );
 
     return (
-        <div className={cln(cl.article_recomendations_list, [className])}>
+        <VStack
+            rowGap="16"
+            className={className}
+        >
             <Text
                 isTitle
                 tag="h1"
@@ -56,6 +59,6 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = (
                 className={cl.list}
                 target="_blank"
             />
-        </div>
+        </VStack>
     );
 };

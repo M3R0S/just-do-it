@@ -1,14 +1,6 @@
 .profile_card {
-    display: flex;
-    flex-direction: column;
     border: 0.2rem solid var(--bg-color-inverted);
     padding: 2rem;
-    transition: border var(--transition-switch-theme-timeout);
-    row-gap: 1rem;
-
-    .avatar {
-        align-self: center;
-    }
 
     &.editing {
         border: 0.2rem solid var(--color-orange-active);
@@ -16,10 +8,6 @@
 
     &.loading,
     &.error {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height: 300px;
     }
 }

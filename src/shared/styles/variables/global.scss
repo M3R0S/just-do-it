@@ -33,7 +33,7 @@
     --z-index-modal-login: 10;
 
     // ? Продолжительность анимаций
-    --transition-switch-theme-timeout: 0.5s;
+    --transition-switch-theme-timeout: 1s;
     --transition-toggle-sidebar-timeout: 0.3s;
     --transition-toggle-overlay-timeout: 0.5s;
     --transition-toggle-modal-timeout: 0.5s;
@@ -42,5 +42,5 @@
     // ? Все анимации для смены темы
     --transition-all-switch-theme: color var(--transition-switch-theme-timeout),
         background var(--transition-switch-theme-timeout),
-        fill var(--transition-switch-theme-timeout);
+        fill var(--transition-switch-theme-timeout), stroke var(--transition-switch-theme-timeout);
 }

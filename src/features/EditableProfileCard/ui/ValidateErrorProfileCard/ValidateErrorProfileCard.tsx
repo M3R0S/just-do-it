@@ -2,13 +2,12 @@ import { FC, memo } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import cl from "./ValidateErrorProfileCard.module.scss";
 import { ValidateErrorProfileCardProps } from "./ValidateErrorProfileCard.types";
 import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import { ValidateProfileError } from "../../model/types/ProfileSchema";
 
-import { cln } from "shared/lib/helpers/classNames";
 import { Text } from "shared/ui/Text";
+import { VStack } from "shared/ui/Stack";
 
 export const ValidateErrorProfileCard: FC<ValidateErrorProfileCardProps> = memo((props) => {
     const { className } = props;
@@ -27,7 +26,7 @@ export const ValidateErrorProfileCard: FC<ValidateErrorProfileCardProps> = memo(
     };
 
     return (
-        <div className={cln(cl.validate_error_profile_card, [className])}>
+        <VStack className={className}>
             {validateErrors?.length &&
                 validateErrors?.map((error) => (
                     <Text
@@ -38,6 +37,6 @@ export const ValidateErrorProfileCard: FC<ValidateErrorProfileCardProps> = memo(
                         text={ValidateErrorTranslate[error]}
                     />
                 ))}
-        </div>
+        </VStack>
     );
 });
