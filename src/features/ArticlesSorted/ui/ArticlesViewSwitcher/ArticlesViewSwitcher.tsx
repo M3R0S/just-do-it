@@ -11,7 +11,7 @@ import { ArticleView } from "entities/Article";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Svg } from "shared/ui/Svg";
-import { ButtonWrapper } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import { HStack } from "shared/ui/Stack";
 
 export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) => {
@@ -31,7 +31,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
     return (
         <HStack className={className}>
             {viewTypes.map((viewTypes) => (
-                <ButtonWrapper
+                <Button.NotMemo
                     theme="clear"
                     key={viewTypes.id}
                     onClick={onClick(viewTypes.view)}
@@ -40,7 +40,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
                         Svg={viewTypes.svg}
                         className={cln("", [], { [cl.selected]: viewTypes.view === view })}
                     />
-                </ButtonWrapper>
+                </Button.NotMemo>
             ))}
         </HStack>
     );

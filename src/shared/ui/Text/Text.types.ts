@@ -6,7 +6,7 @@ export type TextTag = "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export type TextAlign = "left" | "center" | "right";
 
-export type TextSize = "size_m" | "size_l" | "size_xl";
+export type TextSize = "s" | "m" | "l" | "xl";
 
 export type TextAttributes = HTMLAttributes<HTMLSpanElement | HTMLParagraphElement>;
 

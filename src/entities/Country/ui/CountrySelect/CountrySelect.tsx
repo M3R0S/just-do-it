@@ -6,7 +6,8 @@ import { CountrySelectProps } from "./CountrySelect.types";
 import { Country } from "../../model/types/Country";
 
 import { cln } from "shared/lib/helpers/classNames";
-import { Select, SelectOptions } from "shared/ui/Select";
+import { SelectOptions } from "shared/ui/Select";
+import { ListBox } from "shared/ui/ListBox";
 
 const options = Object.entries(Country).map(
     (count): SelectOptions => ({
@@ -28,13 +29,15 @@ export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
     );
 
     return (
-        <Select
+        <ListBox
             className={cln(cl.country_select, [className])}
             label={t("Specify the country")}
             options={options}
             value={value}
+            defaultValue={t("Select a country")}
             onChangeValue={onChangeValueHandler}
             isReadonly={isReadonly}
+            direction="top"
         />
     );
 });

@@ -11,6 +11,7 @@ import { getUserIsInited, userActions } from "entities/User";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Loader } from "shared/ui/Loader";
 import { ErrorBoundary } from "shared/ui/ErrorBoundary";
+import { HStack } from "shared/ui/Stack";
 
 export const App: FC = memo(() => {
     const dispatch = useAppDispatch();
@@ -21,16 +22,14 @@ export const App: FC = memo(() => {
     }, [dispatch]);
 
     return (
-        <div className="app">
-            <Suspense fallback={<Loader theme="app" />}>
-                <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
-                    <Navbar />
-                    <div className="content">
-                        <Sidebar />
-                        {isInited && <AppRouter />}
-                    </div>
-                </ErrorBoundary>
-            </Suspense>
-        </div>
+        <Suspense fallback={<Loader theme="app" />}>
+            <ErrorBoundary fallback={<AppErrorBoundaryFallback />}>
+                <Navbar />
+                <HStack>
+                    <Sidebar />
+                    {isInited && <AppRouter />}
+                </HStack>
+            </ErrorBoundary>
+        </Suspense>
     );
 });

@@ -1,5 +1,3 @@
-
-
 .text {
     color: var(--color-secondary);
 
@@ -38,15 +36,19 @@
         text-align: center;
     }
 
-    &.size_m {
+    &.s {
+        font: var(--font-s);
+    }
+
+    &.m {
         font: var(--font-m);
     }
 
-    &.size_l {
+    &.l {
         font: var(--font-l);
     }
 
-    &.size_xl {
+    &.xl {
         font: var(--font-xl);
     }
 }

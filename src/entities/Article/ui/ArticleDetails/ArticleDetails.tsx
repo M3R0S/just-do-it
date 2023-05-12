@@ -123,13 +123,13 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                     className={cl.avatar}
                 />
                 <Text
-                    size="size_xl"
+                    size="xl"
                     isTitle
                     tag="h1"
                     text={data?.title}
                 />
                 <Text
-                    size="size_m"
+                    size="m"
                     tag="p"
                     text={data?.subtitle}
                 />

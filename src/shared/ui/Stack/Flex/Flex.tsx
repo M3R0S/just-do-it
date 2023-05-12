@@ -8,6 +8,7 @@ import { Mods, cln } from "shared/lib/helpers/classNames";
 export const Flex: FC<FlexProps> = (props) => {
     const {
         className,
+        Tag = "div",
         children,
         direction,
         alignItems = "normal",
@@ -24,7 +25,7 @@ export const Flex: FC<FlexProps> = (props) => {
         cl[`justify_content_${justifyContent}`],
         cl[`align_items_${alignItems}`],
         cl[`direction_${direction}`],
-        cl[`wrap_${wrap}`]
+        cl[`wrap_${wrap}`],
     ];
 
     const mods: Mods = {
@@ -34,5 +35,5 @@ export const Flex: FC<FlexProps> = (props) => {
         [cl[`gap_column_${columnGap}`]]: Boolean(columnGap),
     };
 
-    return <div className={cln(cl.flex, classes, mods)}>{children}</div>;
+    return <Tag className={cln(cl.flex, classes, mods)}>{children}</Tag>;
 };

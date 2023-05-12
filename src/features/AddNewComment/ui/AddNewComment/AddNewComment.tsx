@@ -58,8 +58,9 @@ const AddNewComment: FC<AddNewCommentProps> = (props) => {
             <Button
                 onClick={onSendHandler}
                 theme="outline"
-                text={t("Send")}
-            />
+            >
+                {t("Send")}
+            </Button>
         </HStack>
     );
 };

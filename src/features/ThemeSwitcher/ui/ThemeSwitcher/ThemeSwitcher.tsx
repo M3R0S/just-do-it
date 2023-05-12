@@ -6,7 +6,7 @@ import { ThemeSwitcherProps } from "./ThemeSwitcher.types";
 import ThemeSvg from "shared/assets/svg/theme.svg";
 import { cln } from "shared/lib/helpers/classNames";
 import { useTheme } from "shared/lib/hooks/useTheme";
-import { ButtonWrapper } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo((props) => {
     const { className, ...otherProps } = props;
@@ -14,12 +14,12 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo((props) => {
     const { toggleTheme } = useTheme();
 
     return (
-        <ButtonWrapper
+        <Button.NotMemo
             onClick={toggleTheme}
             className={cln(cl.theme_switcher, [className])}
             {...otherProps}
         >
             <ThemeSvg className={cl.svg} />
-        </ButtonWrapper>
+        </Button.NotMemo>
     );
 });

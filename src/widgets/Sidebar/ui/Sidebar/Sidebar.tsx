@@ -9,7 +9,7 @@ import { SidebarLink } from "../SidebarLink/SidebarLink";
 import { ThemeSwitcher } from "features/ThemeSwitcher";
 import { LangSwitcher } from "features/LangSwitcher";
 import { cln } from "shared/lib/helpers/classNames";
-import { ButtonWrapper } from "shared/ui/Button";
+import { Button } from "shared/ui/Button";
 import { VStack } from "shared/ui/Stack";
 
 export const Sidebar: FC<SidebarProps> = memo((props) => {
@@ -36,13 +36,14 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
 
     return (
         <VStack
+            Tag="section"
             justifyContent="space_between"
             className={cln(cl.sidebar, [className], {
                 [cl.collapsed]: collapsed,
             })}
             data-testid="sidebar"
         >
-            <ButtonWrapper
+            <Button.NotMemo
                 onClick={onToggle}
                 data-testid="sidebar-toggle"
                 className={cl.collapse_btn}
@@ -57,7 +58,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
                 >
                     {"<"}
                 </span>
-            </ButtonWrapper>
+            </Button.NotMemo>
             <VStack
                 rowGap="16"
                 className={cl.links}

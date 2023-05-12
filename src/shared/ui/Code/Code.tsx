@@ -2,7 +2,7 @@ import { FC, memo, useCallback } from "react";
 
 import cl from "./Code.module.scss";
 import { CodeProps } from "./Code.types";
-import { ButtonWrapper } from "../Button";
+import { Button } from "../Button";
 import { Svg } from "../Svg";
 
 import CopySvg from "shared/assets/svg/copy.svg";
@@ -17,7 +17,7 @@ export const Code: FC<CodeProps> = memo((props) => {
 
     return (
         <pre className={cln(cl.code, [className])}>
-            <ButtonWrapper
+            <Button.NotMemo
                 className={cl.copy_btn}
                 onClick={onCopy}
             >
@@ -25,7 +25,7 @@ export const Code: FC<CodeProps> = memo((props) => {
                     Svg={CopySvg}
                     className={cl.svg}
                 />
-            </ButtonWrapper>
+            </Button.NotMemo>
             <code>{text}</code>
         </pre>
     );

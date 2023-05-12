@@ -20,8 +20,9 @@ export const AppErrorBoundaryFallback: FC = memo(() => {
                 theme="fill"
                 className={cl.reboot}
                 onClick={reload}
-                text={t("Reboot")}
-            />
+            >
+                {t("Reboot")}
+            </Button>
         </div>
     );
 });

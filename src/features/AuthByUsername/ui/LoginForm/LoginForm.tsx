@@ -109,8 +109,9 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
                 className={cl.login_btn}
                 onClick={onLoginClick}
                 disabled={isLoading}
-                text={t("Log in")}
-            />
+            >
+                {t("Log in")}
+            </Button>
         </div>
     );
 });

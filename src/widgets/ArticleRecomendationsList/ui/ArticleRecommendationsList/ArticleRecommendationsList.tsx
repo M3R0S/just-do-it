@@ -50,7 +50,7 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = (
             <Text
                 isTitle
                 tag="h1"
-                size="size_l"
+                size="l"
                 text={t("Recommendation")}
             />
             <ArticleList

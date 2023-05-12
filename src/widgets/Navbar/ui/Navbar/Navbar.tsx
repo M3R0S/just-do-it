@@ -53,8 +53,9 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                     <Button
                         theme="clear_inverted"
                         onClick={onLogout}
-                        text={t("Logout")}
-                    />
+                    >
+                        {t("Logout")}
+                    </Button>
                 </div>
             </header>
         );
@@ -66,8 +67,9 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                 <Button
                     theme={"clear_inverted"}
                     onClick={onOpenModal}
-                    text={t("Log in")}
-                />
+                >
+                    {t("Log in")}
+                </Button>
             </div>
             <LoginModal
                 isOpened={isOpenedModal}

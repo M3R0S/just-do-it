@@ -44,14 +44,14 @@ export const SizeMLight: Story<TextProps> = Template.bind({});
 SizeMLight.args = {
     isTitle: true,
     text: "Text",
-    size: "size_m",
+    size: "m",
 };
 
 export const SizeMDark: Story<TextProps> = Template.bind({});
 SizeMDark.args = {
     isTitle: true,
     text: "Text",
-    size: "size_m",
+    size: "m",
 };
 SizeMDark.decorators = [ThemeDecorator("dark")];
 
@@ -59,14 +59,14 @@ export const SizeLLight: Story<TextProps> = Template.bind({});
 SizeLLight.args = {
     isTitle: true,
     text: "Text",
-    size: "size_l",
+    size: "l",
 };
 
 export const SizeLDark: Story<TextProps> = Template.bind({});
 SizeLDark.args = {
     isTitle: true,
     text: "Text",
-    size: "size_l",
+    size: "l",
 };
 SizeLDark.decorators = [ThemeDecorator("dark")];
 
@@ -74,13 +74,13 @@ export const SizeXLLight: Story<TextProps> = Template.bind({});
 SizeXLLight.args = {
     isTitle: true,
     text: "Text",
-    size: "size_xl",
+    size: "xl",
 };
 
 export const SizeXLDark: Story<TextProps> = Template.bind({});
 SizeXLDark.args = {
     isTitle: true,
     text: "Text",
-    size: "size_xl",
+    size: "xl",
 };
 SizeXLDark.decorators = [ThemeDecorator("dark")];

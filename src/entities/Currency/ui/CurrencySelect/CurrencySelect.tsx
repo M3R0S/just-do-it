@@ -6,7 +6,8 @@ import { CurrencySelectProps } from "./CurrencySelect.types";
 import { Currency } from "../../model/types/Currency";
 
 import { cln } from "shared/lib/helpers/classNames";
-import { Select, SelectOptions } from "shared/ui/Select";
+import { SelectOptions } from "shared/ui/Select";
+import { ListBox } from "shared/ui/ListBox";
 
 const options = Object.entries(Currency).map(
     (cur): SelectOptions => ({
@@ -28,13 +29,15 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
     );
 
     return (
-        <Select
+        <ListBox
             className={cln(cl.currency_select, [className])}
             label={t("Specify the currency")}
             options={options}
             value={value}
+            defaultValue={t("Choose a currency")}
             onChangeValue={onChangeValueHandler}
             isReadonly={isReadonly}
+            direction="top"
         />
     );
 });

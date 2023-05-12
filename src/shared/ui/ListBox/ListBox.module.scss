@@ -1,0 +1,37 @@
+.list_box {
+    position: relative;
+
+    .trigger {
+        margin: 0;
+        outline-color: transparent;
+        border: none;
+        padding: 0;
+        background: none;
+    }
+
+    .options {
+        position: absolute;
+        z-index: var(--z-index-listbox);
+        border-radius: 1.2rem;
+        box-shadow: 0 0 0.8rem var(--bg-listbox);
+        background: var(--bg-listbox);
+
+        .option {
+            padding: 1rem 2rem;
+            cursor: pointer;
+
+            &.active {
+                border-radius: 1.2rem;
+                background: var(--bg-color-inverted);
+            }
+
+            &.disabled {
+                opacity: 0.7;
+            }
+        }
+
+        &.top {
+            bottom: 100%;
+        }
+    }
+}

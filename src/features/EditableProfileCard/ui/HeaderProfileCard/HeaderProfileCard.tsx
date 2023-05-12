@@ -50,20 +50,23 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
                         <Button
                             theme="outline"
                             onClick={onEdit}
-                            text={t("Edit")}
-                        />
+                        >
+                            {t("Edit")}
+                        </Button>
                     ) : (
                         <HStack columnGap="16">
                             <Button
                                 theme="outline_red"
                                 onClick={onCancelEdit}
-                                text={t("Cancel")}
-                            />
+                            >
+                                {t("Cancel")}
+                            </Button>
                             <Button
                                 theme="outline"
                                 onClick={onSave}
-                                text={t("Save")}
-                            />
+                            >
+                                {t("Save")}
+                            </Button>
                         </HStack>
                     )}
                 </>

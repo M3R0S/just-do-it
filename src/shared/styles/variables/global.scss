@@ -2,6 +2,11 @@
     // ? Шрифты
     --font-family-main: "Montserrat", system-ui;
 
+    // * s-размер
+    --font-size-s: 0.8rem;
+    --font-line-s: 1.6rem;
+    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
     // * m-размер
     --font-size-m: 1.6rem;
     --font-line-m: 2.4rem;
@@ -31,6 +36,8 @@
 
     // ? z-индексы
     --z-index-modal-login: 10;
+    --z-index-listbox: 20;
+    --z-index-menu: 30;
 
     // ? Продолжительность анимаций
     --transition-switch-theme-timeout: 1s;

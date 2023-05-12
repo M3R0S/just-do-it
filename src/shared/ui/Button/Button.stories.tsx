@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
 
-import { ButtonProps } from "./Button.types";
+import { ButtonMemoProps } from "./Button.types";
 import { Button } from "./Button";
 
 import { ThemeDecorator } from "shared/config/storybook/decorators/ThemeDecorator";
@@ -12,175 +12,175 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const PrimaryLight: Story<ButtonProps> = Template.bind({});
+export const PrimaryLight: Story<ButtonMemoProps> = Template.bind({});
 PrimaryLight.args = {
-    text: "Text",
+    children: "Text",
 };
 
-export const PrimaryDark: Story<ButtonProps> = Template.bind({});
+export const PrimaryDark: Story<ButtonMemoProps> = Template.bind({});
 PrimaryDark.args = {
-    text: "Text",
+    children: "Text",
 };
 PrimaryDark.decorators = [ThemeDecorator("dark")];
 
-export const ClearLight: Story<ButtonProps> = Template.bind({});
+export const ClearLight: Story<ButtonMemoProps> = Template.bind({});
 ClearLight.args = {
-    text: "Text",
+    children: "Text",
     theme: "clear",
 };
 
-export const ClearDark: Story<ButtonProps> = Template.bind({});
+export const ClearDark: Story<ButtonMemoProps> = Template.bind({});
 ClearDark.args = {
-    text: "Text",
+    children: "Text",
     theme: "clear",
 };
 ClearDark.decorators = [ThemeDecorator("dark")];
 
-export const ClearInvertedLight: Story<ButtonProps> = Template.bind({});
+export const ClearInvertedLight: Story<ButtonMemoProps> = Template.bind({});
 ClearInvertedLight.args = {
-    text: "Text",
+    children: "Text",
     theme: "clear",
 };
 ClearInvertedLight.decorators = [ThemeDecorator("dark")];
 
-export const ClearInvertedDark: Story<ButtonProps> = Template.bind({});
+export const ClearInvertedDark: Story<ButtonMemoProps> = Template.bind({});
 ClearInvertedDark.args = {
-    text: "Text",
+    children: "Text",
     theme: "clear",
 };
 
-export const RebootLight: Story<ButtonProps> = Template.bind({});
+export const RebootLight: Story<ButtonMemoProps> = Template.bind({});
 RebootLight.args = {
-    text: "Text",
+    children: "Text",
     theme: "fill",
 };
 
-export const RebootDark: Story<ButtonProps> = Template.bind({});
+export const RebootDark: Story<ButtonMemoProps> = Template.bind({});
 RebootDark.args = {
-    text: "Text",
+    children: "Text",
     theme: "fill",
 };
 RebootDark.decorators = [ThemeDecorator("dark")];
 
-export const OutlineLightSizeM: Story<ButtonProps> = Template.bind({});
+export const OutlineLightSizeM: Story<ButtonMemoProps> = Template.bind({});
 OutlineLightSizeM.args = {
-    text: "Text",
+    children: "Text",
     theme: "outline",
     size: "m",
 };
 
-export const OutlineLightSizeL: Story<ButtonProps> = Template.bind({});
+export const OutlineLightSizeL: Story<ButtonMemoProps> = Template.bind({});
 OutlineLightSizeL.args = {
-    text: "Text",
+    children: "Text",
     theme: "outline",
     size: "l",
 };
 
-export const OutlineLightSizeXL: Story<ButtonProps> = Template.bind({});
+export const OutlineLightSizeXL: Story<ButtonMemoProps> = Template.bind({});
 OutlineLightSizeXL.args = {
-    text: "Text",
+    children: "Text",
     theme: "outline",
     size: "xl",
 };
 
-export const OutlineDarkSizeM: Story<ButtonProps> = Template.bind({});
+export const OutlineDarkSizeM: Story<ButtonMemoProps> = Template.bind({});
 OutlineDarkSizeM.args = {
-    text: "Text",
+    children: "Text",
     theme: "outline",
     size: "m",
 };
 OutlineDarkSizeM.decorators = [ThemeDecorator("dark")];
 
-export const OutlineDarkSizeL: Story<ButtonProps> = Template.bind({});
+export const OutlineDarkSizeL: Story<ButtonMemoProps> = Template.bind({});
 OutlineDarkSizeL.args = {
-    text: "Text",
+    children: "Text",
     theme: "outline",
     size: "l",
 };
 OutlineDarkSizeL.decorators = [ThemeDecorator("dark")];
 
-export const OutlineDarkSizeXL: Story<ButtonProps> = Template.bind({});
+export const OutlineDarkSizeXL: Story<ButtonMemoProps> = Template.bind({});
 OutlineDarkSizeXL.args = {
-    text: "Text",
+    children: "Text",
     theme: "outline",
     size: "xl",
 };
 OutlineDarkSizeXL.decorators = [ThemeDecorator("dark")];
 
-export const BackgroundLight: Story<ButtonProps> = Template.bind({});
+export const BackgroundLight: Story<ButtonMemoProps> = Template.bind({});
 BackgroundLight.args = {
-    text: "Text",
+    children: "Text",
     theme: "background",
 };
 
-export const BackgroundDark: Story<ButtonProps> = Template.bind({});
+export const BackgroundDark: Story<ButtonMemoProps> = Template.bind({});
 BackgroundDark.args = {
-    text: "Text",
+    children: "Text",
     theme: "background_inverted",
 };
 BackgroundDark.decorators = [ThemeDecorator("dark")];
 
-export const SquareSizeMLight: Story<ButtonProps> = Template.bind({});
+export const SquareSizeMLight: Story<ButtonMemoProps> = Template.bind({});
 SquareSizeMLight.args = {
-    text: ">",
+    children: ">",
     square: true,
     theme: "background",
     size: "m",
 };
 
-export const SquareSizeLLight: Story<ButtonProps> = Template.bind({});
+export const SquareSizeLLight: Story<ButtonMemoProps> = Template.bind({});
 SquareSizeLLight.args = {
-    text: ">",
+    children: ">",
     square: true,
     theme: "background",
     size: "l",
 };
 
-export const SquareSizeXLLight: Story<ButtonProps> = Template.bind({});
+export const SquareSizeXLLight: Story<ButtonMemoProps> = Template.bind({});
 SquareSizeXLLight.args = {
-    text: ">",
+    children: ">",
     square: true,
     theme: "background",
     size: "xl",
 };
 
-export const SquareSizeMDark: Story<ButtonProps> = Template.bind({});
+export const SquareSizeMDark: Story<ButtonMemoProps> = Template.bind({});
 SquareSizeMDark.args = {
-    text: ">",
+    children: ">",
     square: true,
     theme: "background_inverted",
     size: "m",
 };
 SquareSizeMDark.decorators = [ThemeDecorator("dark")];
 
-export const SquareSizeLDark: Story<ButtonProps> = Template.bind({});
+export const SquareSizeLDark: Story<ButtonMemoProps> = Template.bind({});
 SquareSizeLDark.args = {
-    text: ">",
+    children: ">",
     square: true,
     theme: "background_inverted",
     size: "l",
 };
 SquareSizeLDark.decorators = [ThemeDecorator("dark")];
 
-export const SquareSizeXLDark: Story<ButtonProps> = Template.bind({});
+export const SquareSizeXLDark: Story<ButtonMemoProps> = Template.bind({});
 SquareSizeXLDark.args = {
-    text: ">",
+    children: ">",
     square: true,
     theme: "background_inverted",
     size: "xl",
 };
 SquareSizeXLDark.decorators = [ThemeDecorator("dark")];
 
-export const DisabledLight: Story<ButtonProps> = Template.bind({});
+export const DisabledLight: Story<ButtonMemoProps> = Template.bind({});
 DisabledLight.args = {
-    text: "Text",
+    children: "Text",
     theme: "background_inverted",
     disabled: true,
 };
 
-export const DisabledDark: Story<ButtonProps> = Template.bind({});
+export const DisabledDark: Story<ButtonMemoProps> = Template.bind({});
 DisabledDark.args = {
-    text: "Text",
+    children: "Text",
     theme: "background_inverted",
     disabled: true,
 };

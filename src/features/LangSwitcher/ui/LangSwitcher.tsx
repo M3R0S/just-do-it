@@ -25,7 +25,8 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo((props) => {
         <Button
             onClick={changeLang}
             className={cln(cl.lang_switcher, [className])}
-            text={short ? t("Lang") : t("Language")}
-        />
+        >
+            {short ? t("Lang") : t("Language")}
+        </Button>
     );
 });

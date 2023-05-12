@@ -17,7 +17,7 @@ export const Text: FC<TextProps> = memo((props) => {
         ...otherProps
     } = props;
 
-    const defaultSize: TextSize = isTitle ? "size_l" : "size_m";
+    const defaultSize: TextSize = isTitle ? "l" : "m";
     const actualSize: TextSize = size ? size : defaultSize;
 
     const mods: Mods = {

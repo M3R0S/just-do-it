@@ -11,17 +11,14 @@ export type ButtonTheme =
 
 export type ButtonSize = "m" | "l" | "xl";
 
-interface ButtonSharedProps extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonNotMemoProps extends HTMLAttributes<HTMLButtonElement> {
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    children: ReactNode;
 }
 
-export interface ButtonProps extends Omit<ButtonSharedProps, "children"> {
-    text: string;
-}
-
-export interface ButtonWrapperProps extends ButtonSharedProps {
-    children?: ReactNode;
+export interface ButtonMemoProps extends ButtonNotMemoProps {
+    children: string;
 }
