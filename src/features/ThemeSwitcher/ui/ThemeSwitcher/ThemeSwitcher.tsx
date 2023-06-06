@@ -14,12 +14,12 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo((props) => {
     const { toggleTheme } = useTheme();
 
     return (
-        <Button.NotMemo
+        <Button
             onClick={toggleTheme}
             className={cln(cl.theme_switcher, [className])}
             {...otherProps}
         >
             <ThemeSvg className={cl.svg} />
-        </Button.NotMemo>
+        </Button>
     );
 });

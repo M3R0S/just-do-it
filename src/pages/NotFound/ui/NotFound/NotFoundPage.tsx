@@ -6,7 +6,7 @@ import cl from "./NotFoundPage.module.scss";
 import { Page } from "widgets/Page";
 
 const NotFoundPage: FC = memo(() => {
-    const { t } = useTranslation("notFoundPage");
+    const { t } = useTranslation();
 
     return (
         <Page className={cl.not_found_page}>

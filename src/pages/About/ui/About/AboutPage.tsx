@@ -6,7 +6,7 @@ import cl from "./AboutPage.module.scss";
 import { Page } from "widgets/Page";
 
 const AboutPage: FC = memo(() => {
-    const { t } = useTranslation("aboutPage");
+    const { t } = useTranslation();
 
     return <Page className={cl.main}>{t("About Page")}</Page>;
 });

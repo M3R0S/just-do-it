@@ -18,9 +18,10 @@ Light.args = {
     children: (
         <Text
             isTitle
-            tag="h1"
-            text="Text"
-        />
+            Tag="h1"
+        >
+            Text
+        </Text>
     ),
 };
 
@@ -29,9 +30,10 @@ Dark.args = {
     children: (
         <Text
             isTitle
-            tag="h1"
-            text="Text"
-        />
+            Tag="h1"
+        >
+            Text
+        </Text>
     ),
 };
 Dark.decorators = [ThemeDecorator("dark")];

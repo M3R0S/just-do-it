@@ -17,7 +17,7 @@ export const Code: FC<CodeProps> = memo((props) => {
 
     return (
         <pre className={cln(cl.code, [className])}>
-            <Button.NotMemo
+            <Button
                 className={cl.copy_btn}
                 onClick={onCopy}
             >
@@ -25,7 +25,7 @@ export const Code: FC<CodeProps> = memo((props) => {
                     Svg={CopySvg}
                     className={cl.svg}
                 />
-            </Button.NotMemo>
+            </Button>
             <code>{text}</code>
         </pre>
     );

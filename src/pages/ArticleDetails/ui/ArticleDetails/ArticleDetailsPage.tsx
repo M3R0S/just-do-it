@@ -11,7 +11,7 @@ import { ArticleDetailsDisplay } from "widgets/ArticleDetailsDisplay";
 import { VStack } from "shared/ui/Stack";
 
 const ArticleDetailsPage: FC = () => {
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
     const { id } = useParams<{ id: string }>();
 
     if (!id) {

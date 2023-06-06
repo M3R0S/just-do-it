@@ -19,11 +19,12 @@ export const ArticleBlockImage: FC<ArticleBlockImageProps> = memo((props) => {
             {block.title && (
                 <Text
                     isTitle
-                    tag="h3"
+                    Tag="h3"
                     size="m"
                     align="center"
-                    text={block.title}
-                />
+                >
+                    {block.title}
+                </Text>
             )}
         </div>
     );

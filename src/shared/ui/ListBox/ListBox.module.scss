@@ -30,8 +30,24 @@
             }
         }
 
-        &.top {
+        &.top_left {
+            right: 0;
             bottom: 100%;
+        }
+
+        &.top_right {
+            left: 0;
+            bottom: 100%;
+        }
+
+        &.bottom_left {
+            right: 0;
+            top: 100%;
+        }
+
+        &.bottom_right {
+            left: 0;
+            top: 100%;
         }
     }
 }

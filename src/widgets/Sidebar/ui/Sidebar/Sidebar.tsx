@@ -43,7 +43,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
             })}
             data-testid="sidebar"
         >
-            <Button.NotMemo
+            <Button
                 onClick={onToggle}
                 data-testid="sidebar-toggle"
                 className={cl.collapse_btn}
@@ -58,7 +58,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
                 >
                     {"<"}
                 </span>
-            </Button.NotMemo>
+            </Button>
             <VStack
                 rowGap="16"
                 className={cl.links}

@@ -14,18 +14,20 @@ export const ArticleBlockText: FC<ArticleBlockTextProps> = memo((props) => {
             {block.title && (
                 <Text
                     isTitle
-                    tag="h2"
+                    Tag="h2"
                     className={cl.title}
-                    text={block.title}
-                />
+                >
+                    {block.title}
+                </Text>
             )}
             {block.paragraphs.map((paragraph, index) => (
                 <Text
-                    tag="p"
+                    Tag="p"
                     key={index}
                     className={cl.paragraph}
-                    text={paragraph}
-                />
+                >
+                    {paragraph}
+                </Text>
             ))}
         </div>
     );

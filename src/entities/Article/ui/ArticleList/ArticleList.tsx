@@ -11,7 +11,7 @@ import { HStack, VStack } from "shared/ui/Stack";
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
     const { className, articles, isLoading, view = "tile", target } = props;
 
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
 
     const getSkeletons = (view: ArticleView) => {
         return new Array(view === "tile" ? 9 : 3).fill(0).map((_, index) => (
@@ -34,9 +34,9 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
         [view, target]
     );
 
-    const articlesList = useMemo(() => articles.map(renderArticle), [articles, renderArticle]);
+    const articlesList = useMemo(() => articles?.map(renderArticle), [articles, renderArticle]);
 
-    if (!articles.length && !isLoading) {
+    if (!articles?.length && !isLoading) {
         return (
             <VStack
                 justifyContent="center"

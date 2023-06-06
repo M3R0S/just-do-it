@@ -4,6 +4,7 @@ import { StateSchema } from "./StateSchema";
 
 import { scrollReducer } from "widgets/Page";
 import { userReducer } from "entities/User";
+import { rtkApi } from "shared/api/rtkApi";
 
 export const rootReducer = (
     asyncReducers?: ReducersMapObject<StateSchema>
@@ -12,5 +13,6 @@ export const rootReducer = (
         ...asyncReducers,
         user: userReducer,
         scroll: scrollReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer
     };
 };

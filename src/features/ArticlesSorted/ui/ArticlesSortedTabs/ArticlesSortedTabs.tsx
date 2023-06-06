@@ -14,7 +14,7 @@ import { TabItem } from "shared/ui/Tabs/Tabs.types";
 export const ArticlesSortedTabs: FC<ArticlesSortedTabsProps> = memo((props) => {
     const { className, requestUpdate, returnToFirstPage } = props;
 
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     const type = useSelector(getArticlesSortedType);

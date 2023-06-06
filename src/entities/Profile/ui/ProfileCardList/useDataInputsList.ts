@@ -16,7 +16,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
         onChangeUsername,
     } = params;
 
-    const { t } = useTranslation("profilePage");
+    const { t } = useTranslation();
 
     const dataInputsList: ProfileCardListItem = useMemo(
         () => [

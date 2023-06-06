@@ -13,35 +13,31 @@ import { Text } from "shared/ui/Text";
 import { Svg } from "shared/ui/Svg";
 import { Card } from "shared/ui/Card";
 import { Avatar } from "shared/ui/Avatar";
-import { AppLinkWrapper, AppLink } from "shared/ui/AppLink";
+import { AppLink } from "shared/ui/AppLink";
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     const { className, article, view, target } = props;
 
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
 
     const textBlockNull = t("A short description is not available");
     const textBlock =
         (article.blocks.find((block) => block.type === "TEXT") as
             | ArticleBlockTextType
             | undefined) ?? textBlockNull;
-    const Types = (
-        <Text
-            className={cl.types}
-            text={article.type.join(", ")}
-        />
-    );
+    const Types = <Text className={cl.types}>{article.type.join(", ")}</Text>;
     const Title = (
         <Text
             isTitle
-            tag="h1"
+            Tag="h1"
             className={cl.title}
-            text={article.title}
-        />
+        >
+            {article.title}
+        </Text>
     );
     const Views = (
         <div className={cl.views_wrapper}>
-            <Text text={article.views} />
+            <Text>{article.views}</Text>
             <Svg Svg={ViewSvg} />
         </div>
     );
@@ -63,15 +59,9 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                             height={30}
                             src={article.user.avatar}
                         />
-                        <Text
-                            tag="p"
-                            text={article.user.username}
-                        />
+                        <Text Tag="p">{article.user.username}</Text>
                     </div>
-                    <Text
-                        tag="p"
-                        text={article.createdAt}
-                    />
+                    <Text Tag="p">{article.createdAt}</Text>
                 </div>
                 {Title}
                 {Types}
@@ -88,8 +78,9 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                     <AppLink
                         theme="outline"
                         to={PathRoutes.ARTICLE_DETAILS + article.id}
-                        text={t("Read more") + "..."}
-                    />
+                    >
+                        {t("Read more") + "..."}
+                    </AppLink>
                     {Views}
                 </div>
             </Card>
@@ -97,7 +88,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     }
 
     return (
-        <AppLinkWrapper
+        <AppLink
             target={target}
             to={PathRoutes.ARTICLE_DETAILS + article.id}
             className={cln(cl.article_list_item, [className, cl[view]])}
@@ -105,10 +96,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             <Card>
                 <div className={cl.image_wrapper}>
                     {MainImg}
-                    <Text
-                        className={cl.created_at}
-                        text={article.createdAt}
-                    />
+                    <Text className={cl.created_at}>{article.createdAt}</Text>
                 </div>
                 <div className={cl.info_wrapper}>
                     {Types}
@@ -116,6 +104,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                 </div>
                 {Title}
             </Card>
-        </AppLinkWrapper>
+        </AppLink>
     );
 });

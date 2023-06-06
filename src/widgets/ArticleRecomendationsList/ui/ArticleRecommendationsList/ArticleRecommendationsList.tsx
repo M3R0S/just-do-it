@@ -1,23 +1,13 @@
-import { FC, useCallback } from "react";
-import { useSelector } from "react-redux";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import cl from "./ArticleRecommendationsList.module.scss";
 import { ArticleRecommendationsListProps } from "./ArticleRecommendationsList.types";
-import {
-    articleRecommendationsListReducer,
-    getArticleRecommendations,
-} from "../../model/slice/articleRecommendationsListSlice";
-import {
-    getArticleRecommendationsListError,
-    getArticleRecommendationsListIsLoading,
-} from "../../model/selectors/articleRecommendationsListSelectors";
-import { fetchArticleRecommendationsList } from "../../model/services/fetchArticleRecommendationsList/fetchArticleRecommendationsList";
+import { articleRecommendationsListReducer } from "../../model/slice/articleRecommendationsListSlice";
+import { useGetArticleRecommendationsListQuery } from "../../api/articleRecommendationsApi";
 
 import { ArticleList } from "entities/Article";
 import { ReducersList, useDynamicReducerLoader } from "shared/lib/hooks/useDynamicReducerLoader";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { Text } from "shared/ui/Text";
 import { VStack } from "shared/ui/Stack";
 
@@ -29,18 +19,24 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = (
     const { className } = props;
 
     useDynamicReducerLoader({ reducers });
-    const { t } = useTranslation("articlePage");
-    const dispatch = useAppDispatch();
+    const { t } = useTranslation();
+    // const dispatch = useAppDispatch();
 
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
-    const isLoading = useSelector(getArticleRecommendationsListIsLoading);
-    const error = useSelector(getArticleRecommendationsListError);
+    // const recommendations = useSelector(getArticleRecommendations.selectAll);
+    // const isLoading = useSelector(getArticleRecommendationsListIsLoading);
+    // const error = useSelector(getArticleRecommendationsListError);
 
-    useInitialEffect(
-        useCallback(() => {
-            dispatch(fetchArticleRecommendationsList());
-        }, [dispatch])
-    );
+    const { isFetching, data: articles, isError } = useGetArticleRecommendationsListQuery(3);
+
+    // useInitialEffect(
+    //     useCallback(() => {
+    //         dispatch(fetchArticleRecommendationsList());
+    //     }, [dispatch])
+    // );
+
+    if (isError) {
+        return <Text theme="error">{t("Error")}</Text>;
+    }
 
     return (
         <VStack
@@ -49,13 +45,14 @@ export const ArticleRecommendationsList: FC<ArticleRecommendationsListProps> = (
         >
             <Text
                 isTitle
-                tag="h1"
+                Tag="h1"
                 size="l"
-                text={t("Recommendation")}
-            />
+            >
+                {t("Recommendation")}
+            </Text>
             <ArticleList
-                articles={recommendations}
-                isLoading={isLoading}
+                articles={articles}
+                isLoading={isFetching}
                 className={cl.list}
                 target="_blank"
             />

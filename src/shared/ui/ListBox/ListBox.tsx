@@ -18,7 +18,7 @@ const ListBox = <V extends string>(props: ListBoxProps<V>) => {
         value,
         label,
         isReadonly,
-        direction = "bottom",
+        direction = "bottom_left",
     } = props;
 
     return (

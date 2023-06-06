@@ -17,10 +17,12 @@ import { AddNewCommentSchema } from "features/AddNewComment";
 import { ArticlesSortedSchema } from "features/ArticlesSorted/model/types/articlesSortedSchema";
 import { UserSchema } from "entities/User";
 import { ArticleDetailsSchema } from "entities/Article";
+import { rtkApi } from "shared/api/rtkApi";
 
 export interface StateSchema {
     user: UserSchema;
     scroll: ScrollSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     //? async reducers
     login?: LoginSchema;

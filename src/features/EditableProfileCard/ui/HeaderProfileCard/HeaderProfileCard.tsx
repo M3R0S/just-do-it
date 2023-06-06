@@ -16,7 +16,7 @@ import { HStack } from "shared/ui/Stack";
 export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
     const { className } = props;
 
-    const { t } = useTranslation("profilePage");
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     const isReadonly = useSelector(getProfileIsReadonly);
@@ -40,10 +40,11 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
             className={className}
         >
             <Text
-                tag="h1"
+                Tag="h1"
                 isTitle
-                text={t("User profile")}
-            />
+            >
+                {t("User profile")}
+            </Text>
             {isCanEdit && (
                 <>
                     {isReadonly ? (

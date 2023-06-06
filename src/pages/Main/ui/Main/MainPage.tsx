@@ -7,7 +7,7 @@ import { Page } from "widgets/Page";
 import { Button } from "shared/ui/Button";
 
 const MainPage: FC = memo(() => {
-    const { t } = useTranslation("mainPage");
+    const { t } = useTranslation();
     const [state, setState] = useState(0);
 
     return (

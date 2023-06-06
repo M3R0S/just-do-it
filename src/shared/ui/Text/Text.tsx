@@ -1,15 +1,15 @@
-import { createElement, FC, memo } from "react";
+import { FC } from "react";
 
 import cl from "./Text.module.scss";
-import { TextAttributes, TextProps, TextSize } from "./Text.types";
+import { TextProps, TextSize } from "./Text.types";
 
 import { cln, Mods } from "shared/lib/helpers/classNames";
 
-export const Text: FC<TextProps> = memo((props) => {
+export const Text: FC<TextProps> = (props) => {
     const {
         className,
-        text,
-        tag = "span",
+        children,
+        Tag = "span",
         theme = "clear",
         isTitle = false,
         align = "left",
@@ -25,10 +25,16 @@ export const Text: FC<TextProps> = memo((props) => {
         [cl.text]: !isTitle,
     };
 
-    const newProps: TextAttributes = {
-        className: cln(cl.title_and_text, [cl[theme], cl[align], cl[actualSize], className], mods),
-        ...otherProps,
-    };
-
-    return createElement(tag, { ...newProps }, text);
-});
+    return (
+        <Tag
+            className={cln(
+                cl.title_and_text,
+                [cl[theme], cl[align], cl[actualSize], className],
+                mods
+            )}
+            {...otherProps}
+        >
+            {children}
+        </Tag>
+    );
+};

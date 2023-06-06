@@ -8,14 +8,7 @@ export type AppLinkTheme =
     | "secondary_inverted"
     | "outline";
 
-interface AppLinkSharedProps extends LinkProps {
+export interface AppLinkProps extends LinkProps {
     theme?: AppLinkTheme;
-}
-
-export interface AppLinkProps extends Omit<AppLinkSharedProps, "children"> {
-    text: string;
-}
-
-export interface AppLinkWrapperProps extends AppLinkSharedProps {
-    children?: ReactNode;
+    children: ReactNode
 }

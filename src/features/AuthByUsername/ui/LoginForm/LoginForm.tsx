@@ -80,15 +80,13 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
 
     return (
         <div className={cln(cl.login_form, [className])}>
-            <Text
-                tag="h1"
-                text={t("Authorization form")}
-            />
+            <Text Tag="h1">{t("Authorization form")}</Text>
             <Text
                 theme="error"
                 className={cl.error}
-                text={error ? ErrorText() : ""}
-            />
+            >
+                {error ? ErrorText() : ""}
+            </Text>
             <Input
                 onChangeValue={onChangeUsername}
                 value={username}

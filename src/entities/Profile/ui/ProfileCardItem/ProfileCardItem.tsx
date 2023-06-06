@@ -15,10 +15,7 @@ export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
             columnGap="8"
             className={className}
         >
-            <Text
-                tag="p"
-                text={`${placeholder} :`}
-            />
+            <Text Tag="p">{`${placeholder} :`}</Text>
             <Input
                 type={type}
                 className={cl.input}

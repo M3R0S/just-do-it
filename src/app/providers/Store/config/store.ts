@@ -5,6 +5,7 @@ import { rootReducer } from "./rootReducer";
 import { createReducerManager } from "./reducerManager";
 
 import { $axios } from "shared/api/axios";
+import { rtkApi } from "shared/api/rtkApi";
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -25,7 +26,7 @@ export const createReduxStore = (
                 thunk: {
                     extraArgument,
                 },
-            }),
+            }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

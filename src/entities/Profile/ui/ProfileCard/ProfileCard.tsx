@@ -28,7 +28,7 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
         onChangeUsername,
     } = props;
 
-    const { t } = useTranslation("profilePage");
+    const { t } = useTranslation();
 
     if (isLoading) {
         return (
@@ -51,15 +51,19 @@ export const ProfileCard: FC<ProfileCardProps> = memo((props) => {
             >
                 <Text
                     isTitle
-                    tag="h1"
+                    Tag="h1"
                     theme="error"
-                    text={t("There was an error loading the profile")}
-                />
+                    
+                >
+                    {t("There was an error loading the profile")}
+                </Text>
                 <Text
-                    tag="p"
+                    Tag="p"
                     theme="error"
-                    text={t("Try to reload the page")}
-                />
+                    
+                >
+                    {t("Try to reload the page")}
+                </Text>
             </VStack>
         );
     }

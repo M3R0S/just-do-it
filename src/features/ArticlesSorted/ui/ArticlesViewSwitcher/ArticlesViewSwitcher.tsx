@@ -31,7 +31,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
     return (
         <HStack className={className}>
             {viewTypes.map((viewTypes) => (
-                <Button.NotMemo
+                <Button
                     theme="clear"
                     key={viewTypes.id}
                     onClick={onClick(viewTypes.view)}
@@ -40,7 +40,7 @@ export const ArticlesViewSwitcher: FC<ArticlesViewSwitcherProps> = memo((props) 
                         Svg={viewTypes.svg}
                         className={cln("", [], { [cl.selected]: viewTypes.view === view })}
                     />
-                </Button.NotMemo>
+                </Button>
             ))}
         </HStack>
     );

@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 export type TextTheme = "clear" | "error" | "inverted";
 
@@ -11,9 +11,9 @@ export type TextSize = "s" | "m" | "l" | "xl";
 export type TextAttributes = HTMLAttributes<HTMLSpanElement | HTMLParagraphElement>;
 
 export interface TextProps extends Omit<TextAttributes, "children"> {
-    text?: string;
+    children?: ReactNode;
     isTitle?: boolean;
-    tag?: TextTag;
+    Tag?: TextTag;
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;

@@ -13,7 +13,7 @@ export const ValidateErrorProfileCard: FC<ValidateErrorProfileCardProps> = memo(
     const { className } = props;
 
     const validateErrors = useSelector(getProfileValidateErrors);
-    const { t } = useTranslation("profilePage");
+    const { t } = useTranslation();
 
     const ValidateErrorTranslate = {
         [ValidateProfileError.SERVER_ERROR]: t("Server response error"),
@@ -31,11 +31,12 @@ export const ValidateErrorProfileCard: FC<ValidateErrorProfileCardProps> = memo(
                 validateErrors?.map((error) => (
                     <Text
                         key={error}
-                        tag="h1"
+                        Tag="h1"
                         isTitle
                         theme="error"
-                        text={ValidateErrorTranslate[error]}
-                    />
+                    >
+                        {ValidateErrorTranslate[error]}
+                    </Text>
                 ))}
         </VStack>
     );

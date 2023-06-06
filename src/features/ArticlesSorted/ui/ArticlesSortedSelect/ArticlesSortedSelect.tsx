@@ -18,7 +18,7 @@ import { HStack } from "shared/ui/Stack";
 export const ArticlesSortedSelect: FC<ArticlesSortedSelectProps> = memo((props) => {
     const { className, requestUpdate, returnToFirstPage } = props;
 
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     const orderOptions = useMemo<SelectOptions<SortOrder>[]>(

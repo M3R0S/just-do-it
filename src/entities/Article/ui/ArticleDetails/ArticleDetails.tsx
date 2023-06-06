@@ -64,7 +64,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
     useDynamicReducerLoader({ reducers });
     const dispatch = useAppDispatch();
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
 
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const error = useSelector(getArticleDetailsError);
@@ -107,12 +107,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
             </VStack>
         );
     } else if (error) {
-        content = (
-            <Text
-                align="center"
-                text={t("An error occurred while loading the article")}
-            />
-        );
+        content = <Text align="center">{t("An error occurred while loading the article")}</Text>;
     } else {
         content = (
             <VStack rowGap="8">
@@ -125,30 +120,26 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                 <Text
                     size="xl"
                     isTitle
-                    tag="h1"
-                    text={data?.title}
-                />
+                    Tag="h1"
+                >
+                    {data?.title}
+                </Text>
                 <Text
                     size="m"
-                    tag="p"
-                    text={data?.subtitle}
-                />
+                    Tag="p"
+                >
+                    {data?.subtitle}
+                </Text>
                 <HStack columnGap="4">
                     <Svg Svg={EyeSvg} />
-                    <Text
-                        tag="span"
-                        text={data?.views}
-                    />
+                    <Text Tag="span">{data?.views}</Text>
                 </HStack>
                 <HStack
                     alignItems="center"
                     columnGap="8"
                 >
                     <Svg Svg={CalendarSvg} />
-                    <Text
-                        tag="span"
-                        text={data?.createdAt}
-                    />
+                    <Text Tag="span">{data?.createdAt}</Text>
                 </HStack>
                 <VStack rowGap="16">{data?.blocks.map(renderBlock)}</VStack>
             </VStack>

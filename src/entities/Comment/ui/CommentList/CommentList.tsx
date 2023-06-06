@@ -37,7 +37,7 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
             {comments?.length ? (
                 comments?.map(renderCommentsList)
             ) : (
-                <Text text={t("There are no comments")} />
+                <Text>{t("There are no comments")}</Text>
             )}
         </div>
     );

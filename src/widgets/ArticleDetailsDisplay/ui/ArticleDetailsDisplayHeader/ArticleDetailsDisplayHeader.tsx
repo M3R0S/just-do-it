@@ -14,7 +14,7 @@ import { AppLink } from "shared/ui/AppLink";
 export const ArticleDetailsDisplayHeader: FC<ArticleDetailsDisplayHeaderProps> = memo((props) => {
     const { className } = props;
 
-    const { t } = useTranslation("articlePage");
+    const { t } = useTranslation();
     const { id } = useParams();
 
     const isCanEdit = useSelector(getCanEditArticle);
@@ -24,14 +24,16 @@ export const ArticleDetailsDisplayHeader: FC<ArticleDetailsDisplayHeaderProps> =
             <AppLink
                 theme="outline"
                 to={PathRoutes.ARTICLES}
-                text={t("Back to the list")}
-            />
+            >
+                {t("Back to the list")}
+            </AppLink>
             {isCanEdit && (
                 <AppLink
                     to={id ? `${PathRoutes.ARTICLE_DETAILS}${id}/edit` : PathRoutes.NOT_FOUND}
                     theme="outline"
-                    text={t("Edit")}
-                />
+                >
+                    {t("Edit")}
+                </AppLink>
             )}
         </div>
     );
