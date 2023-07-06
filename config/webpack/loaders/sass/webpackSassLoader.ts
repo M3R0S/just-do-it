@@ -6,7 +6,7 @@ export const webpackSassLoader: WebpackSassLoader = (options) => {
     const { isDev } = options;
 
     return {
-        test: /\.s[ac]ss$/i,
+        test: /\.(sc|sa|c)ss$/i,
         use: [
             isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             {
@@ -20,7 +20,13 @@ export const webpackSassLoader: WebpackSassLoader = (options) => {
                     },
                 },
             },
-            "sass-loader",
+            "resolve-url-loader",
+            {
+                loader: "sass-loader",
+                options: {
+                    sourceMap: true,
+                },
+            },
         ],
     };
 };

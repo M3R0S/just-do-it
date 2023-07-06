@@ -1,26 +1,12 @@
+@use "../fonts.scss" as *;
+
 :root {
     // ? Шрифты
-    --font-family-main: "Montserrat", system-ui;
-
-    // * s-размер
-    --font-size-s: 0.8rem;
-    --font-line-s: 1.6rem;
-    --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
-
-    // * m-размер
-    --font-size-m: 1.6rem;
-    --font-line-m: 2.4rem;
-    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-
-    // * l-рамер
-    --font-size-l: 2.4rem;
-    --font-line-l: 3.2rem;
-    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-
-    // * xl-рамер
-    --font-size-xl: 3.2rem;
-    --font-line-xl: 4rem;
-    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+    --font-family-main: "SB Sans Interface Regular", system-ui;
+    --font-s: 0.8rem / 1.6rem var(--font-family-main);
+    --font-m: 1.6rem / 2.4rem var(--font-family-main);
+    --font-l: 2.4rem / 3.2rem var(--font-family-main);
+    --font-xl: 3.2rem / 4rem var(--font-family-main);
 
     // ? Размеры
     --height-navbar: 5rem;
