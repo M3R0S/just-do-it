@@ -18,6 +18,7 @@ export const Flex: FC<FlexProps> = (props) => {
         gap,
         max,
         wrap = "nowrap",
+        ...otherProps
     } = props;
 
     const classes = [
@@ -35,5 +36,12 @@ export const Flex: FC<FlexProps> = (props) => {
         [cl[`gap_column_${columnGap}`]]: Boolean(columnGap),
     };
 
-    return <Tag className={cln(cl.flex, classes, mods)}>{children}</Tag>;
+    return (
+        <Tag
+            className={cln(cl.flex, classes, mods)}
+            {...otherProps}
+        >
+            {children}
+        </Tag>
+    );
 };

@@ -5,7 +5,7 @@ import { Button } from "./";
 describe("Button", () => {
     test("Render", () => {
         render(<Button>test</Button>);
-        expect(screen.getByText("TEST")).toBeInTheDocument();
+        expect(screen.getByText("test")).toBeInTheDocument();
     });
 
     test("Class in theme attrib", () => {
@@ -14,6 +14,6 @@ describe("Button", () => {
                 theme="clear"
             >test</Button>
         );
-        expect(screen.getByText("TEST")).toHaveClass("clear");
+        expect(screen.getByText("test")).toHaveClass("clear");
     });
 });

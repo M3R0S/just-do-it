@@ -21,5 +21,14 @@ export const jestConfig: JestConfig = () => {
             __API__: "",
             __PROJECT__: "jest",
         },
+        reporters: [
+            "default",
+            ["jest-html-reporters", {
+              publicPath: "<rootDir>/reports/unit",
+              filename: "report.html",
+              openReport: true,
+              inlineSource: true,
+            }]
+          ]
     };
 };

@@ -4,3 +4,6 @@ node_modules
 # builds
 /build
 /storybook-static
+
+# reports
+/reports

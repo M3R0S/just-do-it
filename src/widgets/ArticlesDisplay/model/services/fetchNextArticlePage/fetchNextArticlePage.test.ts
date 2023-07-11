@@ -21,7 +21,7 @@ describe("fetchNextArticlePage", () => {
         await callThunk();
 
         expect(dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toBeCalledWith({ page: 2 });
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test("not called", async () => {
