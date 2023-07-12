@@ -6,7 +6,9 @@ import { NotFoundPage } from "pages/NotFound";
 import { ProfilePage } from "pages/Profile";
 import { ArticlesPage } from "pages/Articles";
 import { ArticleDetailsPage } from "pages/ArticleDetails";
-import ArticleEditPage from "pages/ArticleEdit/ui/ArticleEdit/ArticleEditPage";
+import { ArticleEditPage } from "pages/ArticleEdit";
+import { AdminPanelPage } from "pages/AdminPanel";
+import { ForbiddenPage } from "pages/Forbidden";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 
 export const routesConfig: RoutesConfig = {
@@ -49,6 +51,18 @@ export const routesConfig: RoutesConfig = {
         path: PathRoutes.ARTICLE_EDIT,
         element: <ArticleEditPage />,
         authOnly: true,
+    },
+    ADMIN_PANEL: {
+        routeId: 8,
+        path: PathRoutes.ADMIN_PANEL,
+        element: <AdminPanelPage />,
+        authOnly: true,
+        roles: ["ADMIN", "MANAGER"],
+    },
+    FORBIDDEN: {
+        routeId: 9,
+        path: PathRoutes.FORBIDDEN,
+        element: <ForbiddenPage />,
     },
     // last
     NOT_FOUND: {

@@ -6,7 +6,7 @@ import cl from "./Navbar.module.scss";
 import { NavbarProps } from "./Navbar.types";
 
 import { LoginModal } from "features/AuthByUsername";
-import { getUserAuthData, userActions } from "entities/User";
+import { getIsUserAdmin, getIsUserManager, getUserAuthData, userActions } from "entities/User";
 import { PathRoutes } from "shared/config/router/pathRoutes";
 import { cln } from "shared/lib/helpers/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
@@ -23,6 +23,10 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(getIsUserAdmin);
+    const isManager = useSelector(getIsUserManager);
+
+    const isAdminPanelAvalible = isAdmin || isManager;
 
     const [isOpenedModal, setIsOpenedModal] = useState<boolean>(false);
 
@@ -40,6 +44,14 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
 
     const dropDownItems = useMemo<DropdownItem[]>(
         () => [
+            ...(isAdminPanelAvalible
+                ? [
+                      {
+                          content: t("Admin Panel"),
+                          href: PathRoutes.ADMIN_PANEL,
+                      },
+                  ]
+                : []),
             {
                 content: t("Pofile"),
                 href: PathRoutes.PROFILE + authData?.id,
@@ -49,7 +61,7 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                 onClick: onLogout,
             },
         ],
-        [t, onLogout, authData?.id]
+        [isAdminPanelAvalible, t, authData?.id, onLogout]
     );
 
     if (authData) {
@@ -70,7 +82,6 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
                         {t("Create an article")}
                     </AppLink>
                     <Dropdown
-                        className={cl.menu}
                         direction="bottom_left"
                         trigger={
                             <Avatar
