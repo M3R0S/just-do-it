@@ -8,12 +8,13 @@ import { Input } from "shared/ui/Input";
 import { HStack } from "shared/ui/Stack";
 
 export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
-    const { className, isReadonly, onChangeValue, placeholder, value, type } = props;
+    const { className, isReadonly, onChangeValue, placeholder, value, type, name } = props;
 
     return (
         <HStack
             columnGap="8"
             className={className}
+            data-testid="ProfileCardItem"
         >
             <Text Tag="p">{`${placeholder} :`}</Text>
             <Input
@@ -23,6 +24,8 @@ export const ProfileCardItem: FC<ProfileCardItemProps> = memo((props) => {
                 placeholder={placeholder}
                 onChangeValue={onChangeValue}
                 isReadOnly={isReadonly}
+                name={name}
+                data-testid={`ProfileCardItem.${name}`}
             />
         </HStack>
     );

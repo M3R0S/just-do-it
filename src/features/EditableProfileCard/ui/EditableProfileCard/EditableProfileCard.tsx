@@ -15,6 +15,7 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = memo((props) =>
             className={className}
             max
             rowGap="8"
+            data-testid="EditableProfileCard"
         >
             <HeaderProfileCard />
             <ValidateErrorProfileCard />

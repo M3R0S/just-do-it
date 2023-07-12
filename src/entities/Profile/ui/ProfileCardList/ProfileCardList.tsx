@@ -38,15 +38,11 @@ export const ProfileCardList: FC<ProfileCardListProps> = memo((props) => {
     const dataInputsListItems = useMemo(
         () =>
             dataInputsList?.map((item) => {
-                const { id, onChangeValue, placeholder, value, type, isReadonly } = item;
+                const { id } = item;
                 return (
                     <ProfileCardItem
                         key={id}
-                        isReadonly={isReadonly}
-                        onChangeValue={onChangeValue}
-                        placeholder={placeholder}
-                        value={value}
-                        type={type}
+                        {...item}
                     />
                 );
             }),

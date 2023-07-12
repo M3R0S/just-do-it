@@ -28,6 +28,7 @@ export interface ProfileCardItem {
     onChangeValue?: (value: string) => void;
     isReadonly?: boolean;
     type?: HTMLInputTypeAttribute;
+    name?: string;
 }
 
 export type ProfileCardListItem = ProfileCardItem[];

@@ -12,10 +12,13 @@ export const RenderWithComponent = (
     component: ReactNode,
     options: RenderWithComponentOptions = {}
 ) => {
-    const { route = "/", initialState } = options;
+    const { route = "/", initialState, asyncReducers } = options;
 
     return render(
-        <StoreProvider initialState={initialState as StateSchema}>
+        <StoreProvider
+            asyncReducers={asyncReducers}
+            initialState={initialState as StateSchema}
+        >
             <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nTestConfig}>{component}</I18nextProvider>
             </MemoryRouter>

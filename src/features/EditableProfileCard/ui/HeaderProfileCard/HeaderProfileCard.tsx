@@ -51,6 +51,7 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
                         <Button
                             theme="outline"
                             onClick={onEdit}
+                            data-testid="HeaderProfileCard.editButton"
                         >
                             {t("Edit")}
                         </Button>
@@ -59,12 +60,14 @@ export const HeaderProfileCard: FC<HeaderProfileCardProps> = memo((props) => {
                             <Button
                                 theme="outline_red"
                                 onClick={onCancelEdit}
+                                data-testid="HeaderProfileCard.cancelEditButton"
                             >
                                 {t("Cancel")}
                             </Button>
                             <Button
                                 theme="outline"
                                 onClick={onSave}
+                                data-testid="HeaderProfileCard.saveButton"
                             >
                                 {t("Save")}
                             </Button>

@@ -26,6 +26,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
                 onChangeValue: onChangeFirstname,
                 placeholder: t("Your name"),
                 isReadonly,
+                name: "firstname",
             },
             {
                 id: "2",
@@ -33,6 +34,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
                 onChangeValue: onChangeLastname,
                 placeholder: t("Your last name"),
                 isReadonly,
+                name: "lastname",
             },
             {
                 id: "3",
@@ -41,6 +43,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
                 placeholder: t("Your age"),
                 isReadonly,
                 type: "number",
+                name: "age",
             },
             {
                 id: "4",
@@ -48,6 +51,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
                 onChangeValue: onChangeCity,
                 placeholder: t("Your city"),
                 isReadonly,
+                name: "city",
             },
             {
                 id: "5",
@@ -55,6 +59,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
                 onChangeValue: onChangeUsername,
                 placeholder: t("Your username"),
                 isReadonly,
+                name: "username",
             },
             {
                 id: "6",
@@ -62,6 +67,7 @@ export const useDataInputsList = (params: UseDataInputsListParams) => {
                 onChangeValue: onChangeAvatar,
                 placeholder: t("Your link in avatar"),
                 isReadonly,
+                name: "avatar",
             },
         ],
         [
